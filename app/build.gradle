@@ -37,6 +37,6 @@ dependencies {
 	implementation 'com.scottyab:rootbeer-lib:0.1.0'
 	
 	// Import the libraries for AAR
-    compile files('libs/DeviceHealth.aar')
+    	compile files('libs/DeviceHealth.aar')
 
 	}
