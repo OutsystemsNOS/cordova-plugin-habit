@@ -20,7 +20,7 @@
             </feature>
         </config-file>
 
-        <framework src="Android/build.gradle" custom="true" type="gradleReference"/>
+        <framework src="app/build.gradle" custom="true" type="gradleReference"/>
     </platform>
 </plugin>
 
