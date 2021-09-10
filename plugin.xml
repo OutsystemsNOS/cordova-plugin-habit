@@ -19,7 +19,7 @@
                 <param name="android-package" value="com.outsystems.cordova.plugin.NOSHabit"/>
             </feature>
         </config-file>				
-		<framework src="src/android/build.gradle" custom="true" type="gradleReference" />
+		<framework src="src/Android/build.gradle" custom="true" type="gradleReference" />
 		<resource-file src="library/batatas.aar" target="libs/batatas.aar" />	
     </platform>
 </plugin>
