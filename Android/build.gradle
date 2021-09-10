@@ -11,10 +11,17 @@ android {
         }
     }
     
-compileOptions {
-        sourceCompatibility '1.8'
-        targetCompatibility '1.8'
+ buildTypes {
+    release {
+        matchingFallbacks = ['release']
     }
+    enterprise {
+        matchingFallbacks = ['release']
+    }
+    debug {
+        matchingFallbacks = ['debug']
+    }
+}
 	
 dependencies {
 	compile files('libs/DeviceHealth.aar')
