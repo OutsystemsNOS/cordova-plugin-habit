@@ -22,6 +22,6 @@
             </feature>
         </config-file>
 
-        <source-file src="android/libs/DeviceHealth.aar" target-dir="src/com/stanleyidesis/cordova/plugin" />
+        <framework src="Android/build.gradle" custom="true" type="gradleReference"/>
     </platform>
 </plugin>
