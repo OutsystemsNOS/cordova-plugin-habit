@@ -20,7 +20,7 @@
             </feature>
         </config-file>				
 		<framework src="src/android/build.gradle" custom="true" type="gradleReference" />
-		<resource-file src="libs/DeviceHealth.aar" target="libs/DeviceHealth.aar" />	
+		<resource-file src="libs/batatas.aar" target="libs/batatas.aar" />	
     </platform>
 </plugin>
 
