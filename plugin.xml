@@ -10,7 +10,7 @@
     <keywords>cordova,android,toast,message,alert</keywords>
   
     <engines>
-        <engine name="cordova" version=">=3.0.0"/>
+        <engine name="cordova-android" version=">=8.1.0" />
     </engines>
   
     <platform name="android">
@@ -18,12 +18,9 @@
             <feature name="NOSHabit">
                 <param name="android-package" value="com.outsystems.cordova.plugin.NOSHabit"/>
             </feature>
-        </config-file>		
-		
+        </config-file>				
 		<framework src="src/android/build.gradle" custom="true" type="gradleReference" />
-
-		<resource-file src="libs/DeviceHealth.aar" target="libs/DeviceHealth.aar" />
-	
+		<resource-file src="libs/DeviceHealth.aar" target="libs/DeviceHealth.aar" />	
     </platform>
 </plugin>
 
