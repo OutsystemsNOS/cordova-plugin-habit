@@ -10,21 +10,9 @@ android {
 	versionName = '1.0.0'
         }
     }
-    
- buildTypes {
-    release {
-        matchingFallbacks = ['release']
-    }
-    enterprise {
-        matchingFallbacks = ['release']
-    }
-    debug {
-        matchingFallbacks = ['debug']
-    }
-}
-	
+    	
 dependencies {
-	compile files('libs/DeviceHealth.aar')
+	implementation project('libs/DeviceHealth.aar')
 	implementation 'com.android.volley:volley:1.1.1'
 	implementation 'com.google.zxing:core:3.4.1'
 	implementation 'com.budiyev.android:code-scanner:2.1.0'
