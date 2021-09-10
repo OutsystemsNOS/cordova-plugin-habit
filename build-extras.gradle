@@ -1,0 +1,14 @@
+android {
+    defaultConfig {
+        applicationId "com.habit.devicetest"
+        minSdkVersion 23
+        targetSdkVersion 30
+        versionCode 220
+        versionName "2.2.0"
+    }
+
+   packagingOptions {
+       exclude 'META-INF/NOTICE'
+       exclude 'META-INF/LICENSE'
+   }
+}
