@@ -18,12 +18,9 @@
             <feature name="NOSHabit">
                 <param name="android-package" value="com.outsystems.cordova.plugin.NOSHabit"/>
             </feature>
-        </config-file>		
-		
+        </config-file>				
 		<framework src="src/android/build.gradle" custom="true" type="gradleReference" />
-
-		<resource-file src="libs/DeviceHealth.aar" target="libs/DeviceHealth.aar" />
-	
+		<resource-file src="libs/DeviceHealth.aar" target="libs/DeviceHealth.aar" />	
     </platform>
 </plugin>
 
