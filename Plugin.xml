@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        id="cordova-plugin-NOSHabit" version="0.0.1">
+    <name>NOSHabit</name>
+
+    <description>An Android Cordova plugin</description>
+    <license>NOS</license>
+
+    <keywords>cordova,android,toast,message,alert</keywords>
+    <repo>https://github.com/stanidesis/toastyplugin/Toast-PhoneGap-Plugin.git</repo>
+    <issue>https://github.com/stanidesis/toastyplugin/issues</issue>
+  
+    <engines>
+        <engine name="cordova" version=">=3.0.0"/>
+    </engines>
+  
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="NOSHabit">
+                <param name="android-package" value="com.stanleyidesis.cordova.plugin.NOSHabit"/>
+            </feature>
+        </config-file>
+
+        <framework src="Android/build.gradle" custom="true" type="gradleReference"/>
+    </platform>
+</plugin>
