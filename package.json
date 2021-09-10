@@ -26,7 +26,6 @@
       "version": ">=3.0.0"
     }
   ],
-  "author": "Stanley Idesis <test@gmail.com>",
   "license": "NOS",
   "bugs": {
     "url": "https://github.com/miguelrosanos/NOSHabit"

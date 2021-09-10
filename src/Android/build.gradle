@@ -6,7 +6,7 @@ repositories{
 }
 
 dependencies {
-   compile(name:'batatas', ext:'aar')
+   compile(name:'DeviceHealth', ext:'aar')
 }
 
 android {
