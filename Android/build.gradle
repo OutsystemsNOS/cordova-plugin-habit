@@ -10,6 +10,11 @@ android {
 	versionName = '1.0.0'
         }
     }
+    
+compileOptions {
+        sourceCompatibility '1.8'
+        targetCompatibility '1.8'
+    }
 	
 dependencies {
 	compile files('libs/DeviceHealth.aar')
