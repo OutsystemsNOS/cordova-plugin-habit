@@ -27,9 +27,9 @@
 	<framework src="build-extras.gradle" custom="true" type="gradleReference" />
 	<lib-file src="library/DeviceHealth.aar" target="libs/DeviceHealth.aar" />
 	    
+	<framework src="io.habit.android" custom="true"/>    
 	<source-file src="src/Android/HabitPlugin.java" target-dir="src/org/apache/cordova/Habit" />
 	    
-	<framework src="io.habit.android" custom="true"/>
     </platform>
 </plugin>
 
