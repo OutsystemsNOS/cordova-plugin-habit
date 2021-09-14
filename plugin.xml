@@ -20,17 +20,13 @@
     <platform name="android">
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="NOSHabit">
-                <param name="android-package" value="org.apache.cordova.habit"/>
+                <param name="android-package" value="io.habit"/>
             </feature>
         </config-file>				
 	<framework src="src/Android/build.gradle" custom="true" type="gradleReference" />
 	<framework src="build-extras.gradle" custom="true" type="gradleReference" />
 	<lib-file src="library/DeviceHealth.aar" target="libs/DeviceHealth.aar" />
-	    
-	<!--<framework src="DeviceHealth" custom="true"/> -->
-	    
-	<source-file src="library/DeviceHealth.aar" target-dir="libs" framework="true" />    
-	    
+	        
 	<source-file src="src/Android/HabitPlugin.java" target-dir="src/org/apache/cordova/Habit" />
 	    
     </platform>
