@@ -20,7 +20,7 @@
     <platform name="android">
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="NOSHabit">
-                <param name="android-package" value="io.habit.android"/>
+                <param name="android-package" value="io.habit.android.devicehealth"/>
             </feature>
         </config-file>				
 	<framework src="src/Android/build.gradle" custom="true" type="gradleReference" />
