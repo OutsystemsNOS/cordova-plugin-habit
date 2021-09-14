@@ -1,5 +1,6 @@
 package com.habit.devicetest;
 
+import io.habit.android.devicehealth.DeviceInfoCallback;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
