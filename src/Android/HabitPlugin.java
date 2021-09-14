@@ -1,6 +1,3 @@
-package org.apache.cordova.plugin;
-package com.habit.devicetest;
-
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.graphics.Color;
