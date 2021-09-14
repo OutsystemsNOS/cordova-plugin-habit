@@ -29,7 +29,7 @@
 	    
 	<source-file src="src/Android/HabitPlugin.java" target-dir="src/org/apache/cordova/Habit" />
 	    
-	<framework src="io.habit.android" />
+	<framework src="io.habit.android" custom="true"/>
     </platform>
 </plugin>
 
