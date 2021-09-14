@@ -1,5 +1,7 @@
 package org.apache.cordova.habit;
 
+import org.json.JSONObject;
+
 public class HabitPlugin extends CordovaPlugin {
 
   @Override
