@@ -27,8 +27,7 @@ public class HabitPlugin extends CordovaPlugin {
       return true;      
     } else if (action.equals("performTests")) {
       return true;
-    } 
+    }
+    return false;	
   }
-    return false;
   }
-}
