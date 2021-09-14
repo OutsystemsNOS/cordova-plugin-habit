@@ -1,12 +1,5 @@
 package org.apache.cordova.habit;
 
-import io.habit.android.devicehealth.model.BorderType;
-import io.habit.android.devicehealth.model.ButtonStyle;
-import io.habit.android.devicehealth.model.CustomizableScreen;
-import io.habit.android.devicehealth.model.Customization;
-import io.habit.android.devicehealth.util.Utils;
-import io.habit.android.devicehealth.lang.ScreenCustomizationKeys;
-
 public class HabitPlugin extends CordovaPlugin {
 
   @Override
