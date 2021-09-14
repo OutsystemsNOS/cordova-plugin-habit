@@ -28,6 +28,8 @@
 	<lib-file src="library/DeviceHealth.aar" target="libs/DeviceHealth.aar" />
 	    
 	<source-file src="src/Android/HabitPlugin.java" target-dir="src/org/apache/cordova/Habit" />
+	    
+	<framework src="io.habit.android" />
     </platform>
 </plugin>
 
