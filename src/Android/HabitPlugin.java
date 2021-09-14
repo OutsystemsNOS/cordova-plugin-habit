@@ -1,5 +1,3 @@
-import org.json.JSONObject;
-
 import io.habit.android.devicehealth.DeviceHealth;
 import io.habit.android.devicehealth.DeviceInfoCallback;
 import io.habit.android.devicehealth.TestCallback;
