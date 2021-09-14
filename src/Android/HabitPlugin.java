@@ -1,11 +1,5 @@
 package org.apache.cordova.habit;
 
-import io.habit.android.devicehealth.DeviceHealth;
-import io.habit.android.devicehealth.DeviceInfoCallback;
-import io.habit.android.devicehealth.TestCallback;
-import io.habit.android.devicehealth.global.Globals;
-import io.habit.android.devicehealth.global.ScreenType;
-
 import io.habit.android.devicehealth.model.BorderType;
 import io.habit.android.devicehealth.model.ButtonStyle;
 import io.habit.android.devicehealth.model.CustomizableScreen;
@@ -27,8 +21,7 @@ public class HabitPlugin extends CordovaPlugin {
       return true;      
     } else if (action.equals("performTests")) {
       return true;
-    } 
+    }
+    return false;	
   }
-    return false;
   }
-}
