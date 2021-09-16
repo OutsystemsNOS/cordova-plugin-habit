@@ -22,6 +22,8 @@ import org.json.JSONObject;
 import android.util.Log;
 
 public class HabitPlugin extends CordovaPlugin {
+  
+  private static final String TAG = "HabitPlugin";
 
   @Override
   public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
