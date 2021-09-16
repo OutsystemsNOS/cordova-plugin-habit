@@ -42,14 +42,12 @@ public class HabitPlugin extends CordovaPlugin {
                 DeviceHealth.getDeviceInfo(cordova.getActivity().getApplicationContext(), cordova.getActivity(), number, imei, new DeviceInfoCallback() {
                 @Override
                 public void onResponse(JSONObject obj) {
-
-                // obj == null : Canceled
-                // obj != null : Success
-
+                  callbackContext.success(obj);
                 }
             });
             Log.d(TAG, "getDeviceInfo  success");
           } catch (Exception e) {
+            Log.d(TAG, "getDeviceInfo  error");
             callbackContext.error(e.getMessage());
           }
       }
