@@ -34,26 +34,25 @@ public class HabitPlugin extends CordovaPlugin {
     return false;
     }
    
-    private void getDeviceInfo(final CallbackContext callbackContext, final int number) {
-      
-    Log.d(TAG, "getDeviceInfo  called. number: " + Integer.toString(number));
-    cordova.getThreadPool().execute(new Runnable() {
-    public void run() {
-      try {
-            DeviceHealth.getDeviceInfo(this, this, "<-serial number->", "<-device IMEI->", new DeviceInfoCallback() {
-            @Override
-            public void onResponse(JSONObject obj) {
+    private void getDeviceInfo(final CallbackContext callbackContext, final int number) {      
+      Log.d(TAG, "getDeviceInfo  called. number: " + Integer.toString(number));
+      cordova.getThreadPool().execute(new Runnable() {
+        public void run() {
+          try {
+                DeviceHealth.getDeviceInfo(this, this, "<-serial number->", "<-device IMEI->", new DeviceInfoCallback() {
+                @Override
+                public void onResponse(JSONObject obj) {
 
-            // obj == null : Canceled
-            // obj != null : Success
+                // obj == null : Canceled
+                // obj != null : Success
 
-            }
-        });
-        Log.d(TAG, "getDeviceInfo  success");
-      } catch (Exception e) {
-        callbackContext.error(e.getMessage());
+                }
+            });
+            Log.d(TAG, "getDeviceInfo  success");
+          } catch (Exception e) {
+            callbackContext.error(e.getMessage());
+          }
       }
-    }
     });
   }
   }
