@@ -28,7 +28,7 @@ public class HabitPlugin extends CordovaPlugin {
   @Override
   public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
     if (action.equals("getDeviceInfo")) {
-            this.getDeviceInfo(callbackContext, args.getInt(0), args.getInt(1));
+            this.getDeviceInfo(callbackContext, args.getString(0), args.getString(1));
             return true;
         } 
     return false;
