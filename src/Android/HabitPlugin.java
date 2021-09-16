@@ -13,8 +13,8 @@ import io.habit.android.devicehealth.model.Customization;
 import io.habit.android.devicehealth.util.Utils;
 import io.habit.android.devicehealth.lang.ScreenCustomizationKeys;
 
-import org.apache.cordova.api.CordovaPlugin;
-import org.apache.cordova.api.PluginResult;
+import org.apache.cordova.CordovaPlugin;
+import org.apache.cordova.PluginResult;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
