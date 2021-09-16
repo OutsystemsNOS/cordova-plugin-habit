@@ -35,7 +35,7 @@ public class HabitPlugin extends CordovaPlugin {
     }
    
     private void getDeviceInfo(final CallbackContext callbackContext, final String number, final String imei) {      
-      Log.d(TAG, "getDeviceInfo  called. number: " + Integer.toString(number));
+      Log.d(TAG, "getDeviceInfo  called. number: " + number + " IMEI: " + imei);
       cordova.getThreadPool().execute(new Runnable() {
         public void run() {
           try {
