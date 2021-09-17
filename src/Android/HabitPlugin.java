@@ -29,20 +29,11 @@ public class HabitPlugin extends CordovaPlugin {
   public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
     if (action.equals("getDeviceInfo")) {
             //this.getDeviceInfo(callbackContext, args.getString(0), args.getString(1));
-            try{
-              callbackContext.success(args.getString(1));
-            }
-            catch (Exception e) {
-            callbackContext.error(e.getMessage());
-          }
+            PluginResult pluginresult = new PluginResult(PluginResult.Status.OK, args.getString(1));
+            pluginresult.setKeepCallback(true);
+            callbackContext.sendPluginResult(pluginresult);
             return true;
         } 
-                try{
-              callbackContext.error(args.getString(1));
-            }
-            catch (Exception e) {
-            callbackContext.error(e.getMessage());
-          }
     return false;
     }
    
