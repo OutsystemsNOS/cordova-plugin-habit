@@ -31,7 +31,7 @@ public class HabitPlugin extends CordovaPlugin {
       getDeviceInfo(callbackContext, args.getString(0), args.getString(1));
       return true;      
     }  
-    return true;
+    return false;
     }
    
     private void getDeviceInfo(final CallbackContext callbackContext, final String number, final String imei) {      
