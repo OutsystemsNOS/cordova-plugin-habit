@@ -14,7 +14,7 @@
     </engines>
 	
     <js-module name="HabitPlugin" src="www/habit.js">
-      <clobbers target="fp" />
+      <clobbers target="Habit" />
     </js-module>
   
     <platform name="android">
