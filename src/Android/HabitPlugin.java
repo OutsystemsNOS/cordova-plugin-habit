@@ -21,9 +21,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import android.util.Log;
 
-// Crashlytics
-import com.crashlytics.android.Crashlytics;
-
 public class HabitPlugin extends CordovaPlugin {
   
   private static final String TAG = "HabitPlugin";
@@ -36,7 +33,6 @@ public class HabitPlugin extends CordovaPlugin {
               callbackContext.success(args.getString(1));
             }
             catch (Exception e) {
-            Crashlytics.logException(e);
             callbackContext.error(e.getMessage());
           }
             return true;
@@ -45,7 +41,6 @@ public class HabitPlugin extends CordovaPlugin {
               callbackContext.error(args.getString(1));
             }
             catch (Exception e) {
-            Crashlytics.logException(e);
             callbackContext.error(e.getMessage());
           }
     return false;
@@ -65,7 +60,6 @@ public class HabitPlugin extends CordovaPlugin {
             Log.d(TAG, "getDeviceInfo  success");
           } catch (Exception e) {
             Log.d(TAG, "getDeviceInfo  error");
-            Crashlytics.logException(e);
             callbackContext.error(e.getMessage());
           }
       }
