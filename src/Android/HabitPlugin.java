@@ -21,15 +21,12 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import android.util.Log;
 
-import static javax.swing.JOptionPane.showMessageDialog;
-
 public class HabitPlugin extends CordovaPlugin {
   
   private static final String TAG = "HabitPlugin";
 
   @Override
   public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
-    showMessageDialog(null, "action: " + action);
     if (action.equals("getDeviceInfo")) {
             //this.getDeviceInfo(callbackContext, args.getString(0), args.getString(1));
       
