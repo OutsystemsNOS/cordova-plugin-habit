@@ -28,11 +28,7 @@ public class HabitPlugin extends CordovaPlugin {
   @Override
   public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
     
-    cordova.getActivity().runOnUiThread(new Runnable() {
-                  public void run() {
-                    callbackContext.success("teste1");
-                  }
-              });
+    
             return true;
     }
    
