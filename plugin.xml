@@ -2,7 +2,7 @@
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
         xmlns:android="http://schemas.android.com/apk/res/android"
         id="cordova-plugin-NOSHabit" version="0.0.1">
-    <name>NOSHabit</name>
+    <name>HabitPlugin</name>
 
     <description>An Android Cordova plugin</description>
     <license>NOS</license>
