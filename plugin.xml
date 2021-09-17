@@ -21,7 +21,6 @@
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="HabitPlugin">
                 <param name="android-package" value="io.habit.android.devicehealth"/>
-		<param name="onload" value="true" />
             </feature>
         </config-file>				
 	<framework src="src/Android/build.gradle" custom="true" type="gradleReference" />
