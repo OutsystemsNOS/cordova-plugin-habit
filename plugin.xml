@@ -2,7 +2,7 @@
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
         xmlns:android="http://schemas.android.com/apk/res/android"
         id="cordova-plugin-NOSHabit" version="0.0.1">
-    <name>HabitPlugin</name>
+    <name>Habit</name>
 
     <description>An Android Cordova plugin</description>
     <license>NOS</license>
@@ -19,6 +19,11 @@
     </js-module>
   
     <platform name="android">
+	    
+	<feature name="HabitPlugin">
+        	<param name="android-package" value="org.apache.cordova.Habit.HabitPlugin" />
+    	</feature>
+	    
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="HabitPlugin">
                 <param name="android-package" value="io.habit.android.devicehealth"/>
