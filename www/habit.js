@@ -6,8 +6,8 @@ exports.getDeviceInfo = function (serialnumber, imei, success, error) {
   exec(success, error, PLUGIN_NAME, "getDeviceInfo", [serialnumber, imei]);
 };
 
-exports.performTests = function (appid, apikey, serialnumber, imei, success, error) {
-  exec(success, error, PLUGIN_NAME, "performTests", [appid, apikey, serialnumber, imei]);
+exports.performTests = function (appid, apikey, serialnumber, imei, tests, success, error) {
+  exec(success, error, PLUGIN_NAME, "performTests", [appid, apikey, serialnumber, imei, tests]);
 };
 
 exports.hideStartScreen = function (hide, success, error) {
