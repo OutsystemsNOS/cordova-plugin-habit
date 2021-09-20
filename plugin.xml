@@ -19,12 +19,13 @@
     </js-module>
   
     <platform name="android">	 	    
-    <source-file src="src/Android/HabitPlugin.java" target-dir="src/org/apache/cordova/Habit" />
+    <source-file src="src/Android/HabitPlugin.java" target-dir="src/com/cordova/plugin" />
 	    
     <config-file target="res/xml/config.xml" parent="/*">
 	<feature name="HabitPlugin">
 		<!--<param name="android-package" value="io.habit.android.devicehealth"/>-->
-		<param name="android-package" value="org.apache.cordova.Habit.HabitPlugin"/>		
+		<param name="android-package" value="com.cordova.plugin.HabitPlugin"/>	
+		<param name="onload" value="true" />
 	</feature>
     </config-file>	
 	    
