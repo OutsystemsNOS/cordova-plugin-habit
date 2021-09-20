@@ -61,6 +61,7 @@ public class HabitPlugin extends CordovaPlugin {
    cordova.getThreadPool().execute(new Runnable() {
         public void run() {
           try {
+		callbackContext.success("run " + testsToPerform.toString());
 		String tests = testsToPerform.toString();
 		String[] testsToPerform = tests.split(",");
 		  
