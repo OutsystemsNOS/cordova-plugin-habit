@@ -30,19 +30,19 @@ public class HabitPlugin extends CordovaPlugin {
       this.getDeviceInfo(callbackContext, args.getString(0), args.getString(1));
       return true;   
       
-      } else if {
+      } else if (action.equals("performTests")) {
         this.performTests(callbackContext, args.getString(0), args.getString(1), args.getString(3), args.getString(4));
         return true;  
 
-      } else if {
+      } else if (action.equals("hideStartScreen")) {
         this.hideStartScreen(callbackContext, args.getString(0));
         return true; 
 
-      } else if {
+      } else if (action.equals("setLanguage")) {
         this.setLanguage(callbackContext, args.getString(0));
         return true; 
 
-      } else if {
+      } else if (action.equals("setThemeColor")) {
         this.setThemeColor(callbackContext, args.getString(0), args.getString(1), args.getString(1));
         return true; 
 
