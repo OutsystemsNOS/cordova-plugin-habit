@@ -53,7 +53,7 @@ public class HabitPlugin extends CordovaPlugin {
         }
     }
    
-  private void performTests(final CallbackContext callbackContext, final String appid, final String apikey, final String serialnumber, final String imei){
+  private void performTests(final CallbackContext callbackContext, final String appid, final String apikey, final String serialnumber, final String imei, final String tests){
    cordova.getThreadPool().execute(new Runnable() {
         public void run() {
           try {
