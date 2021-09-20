@@ -61,7 +61,6 @@ public class HabitPlugin extends CordovaPlugin {
    cordova.getThreadPool().execute(new Runnable() {
         public void run() {
           try {
-		callbackContext.success("run " + testsToPerform.toString());
 		String tests = testsToPerform.toString();
 		String[] testsToPerform = tests.split(",");
 		  
@@ -104,18 +103,14 @@ public class HabitPlugin extends CordovaPlugin {
 		@Override
 		public void onResponse(JSONObject obj) {
 			if (obj != null) {                  	
-			    try {
-				callbackContext.success(obj);
-			    } catch (Exception e) {
-				callbackContext.error(e.getMessage());
-			    }
+			    callbackContext.success(obj);
 			} else {
-				callbackContext.error("Error performing device test - Empty obj");
+			    callbackContext.error("Error performing device test - Empty obj");
 			}
 		    }
 		});
           } catch (Exception e) {
-            callbackContext.error(e.getMessage());
+            callbackContext.error(e.getMessage() + tests);
           }
       } });
   }
