@@ -21,6 +21,8 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import android.graphics.Color;
+import java.util.HashMap;
+import java.util.Map;
 
 public class HabitPlugin extends CordovaPlugin {
   
