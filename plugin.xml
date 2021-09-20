@@ -19,21 +19,17 @@
     </js-module>
   
     <platform name="android">
-	    
+	    	    
+    <config-file target="res/xml/config.xml" parent="/*">
 	<feature name="HabitPlugin">
-        	<param name="android-package" value="org.apache.cordova.Habit.HabitPlugin" />
-    	</feature>
-	    
-        <config-file target="res/xml/config.xml" parent="/*">
-            <feature name="HabitPlugin">
-                <param name="android-package" value="io.habit.android.devicehealth"/>
-            </feature>
-        </config-file>				
-	<framework src="src/Android/build.gradle" custom="true" type="gradleReference" />
-	<framework src="build-extras.gradle" custom="true" type="gradleReference" />
-	<lib-file src="library/DeviceHealth.aar" target="libs/DeviceHealth.aar" />
-	        
-	<source-file src="src/Android/HabitPlugin.java" target-dir="src/org/apache/cordova/Habit" />
+		<param name="android-package" value="io.habit.android.devicehealth"/>
+	</feature>
+	</config-file>				
+    <framework src="src/Android/build.gradle" custom="true" type="gradleReference" />
+    <framework src="build-extras.gradle" custom="true" type="gradleReference" />
+    <lib-file src="library/DeviceHealth.aar" target="libs/DeviceHealth.aar" />
+
+    <source-file src="src/Android/HabitPlugin.java" target-dir="src/org/apache/cordova/Habit" />
 	    
     </platform>
 </plugin>
