@@ -19,7 +19,7 @@
     </js-module>
   
     <platform name="android">	 	    
-    <source-file src="src/Android/HabitPlugin.java" target-dir="src/com/cordova/plugin/HabitPlugin" />
+    <source-file src="src/android/HabitPlugin.java" target-dir="src/com/cordova/plugin/HabitPlugin" />
 	    
     <config-file target="res/xml/config.xml" parent="/*">
 	<feature name="HabitPlugin">
@@ -28,7 +28,7 @@
 	</feature>
     </config-file>	
 	    
-    <framework src="src/Android/build.gradle" custom="true" type="gradleReference" />
+    <framework src="src/android/build.gradle" custom="true" type="gradleReference" />
     <framework src="build-extras.gradle" custom="true" type="gradleReference" />
     <lib-file src="library/DeviceHealth.aar" target="libs/DeviceHealth.aar" />	    
     </platform>
