@@ -19,7 +19,6 @@ import org.apache.cordova.CallbackContext;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import android.util.Log;
 
 public class HabitPlugin extends CordovaPlugin {
   
@@ -29,14 +28,80 @@ public class HabitPlugin extends CordovaPlugin {
   public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
     if (action.equals("getDeviceInfo")) {
       this.getDeviceInfo(callbackContext, args.getString(0), args.getString(1));
-      return true;      
-    }  
-      callbackContext.error("\"" + action + "\" is not a recognized action.");
-      return false;
+      return true;   
+      
+      } else if {
+        this.performTests(callbackContext, args.getString(0), args.getString(1), args.getString(3), args.getString(4));
+        return true;  
+
+      } else if {
+        this.hideStartScreen(callbackContext, args.getString(0));
+        return true; 
+
+      } else if {
+        this.setLanguage(callbackContext, args.getString(0));
+        return true; 
+
+      } else if {
+        this.setThemeColor(callbackContext, args.getString(0), args.getString(1), args.getString(1));
+        return true; 
+
+      } else {
+        callbackContext.error("\"" + action + "\" is not a recognized action.");
+        return false;
+
+        }
     }
    
-    private void getDeviceInfo(final CallbackContext callbackContext, final String serialnumber, final String imei) {      
-      Log.d(TAG, "getDeviceInfo  called. number: " + serialnumber + " IMEI: " + imei);
+  private void performTests(final CallbackContext callbackContext, final String appid, final String apikey, final String serialnumber, final String imei){
+   cordova.getThreadPool().execute(new Runnable() {
+        public void run() {
+          try {
+				      callbackContext.success("ok");
+            });
+          } catch (Exception e) {
+            callbackContext.error(e.getMessage());
+          }
+      } });
+  }
+  
+  private void hideStartScreen(final CallbackContext callbackContext, final String hide){
+     cordova.getThreadPool().execute(new Runnable() {
+        public void run() {
+          try {
+				      callbackContext.success("ok");
+            });
+          } catch (Exception e) {
+            callbackContext.error(e.getMessage());
+          }
+      } });
+  }
+  
+  private void setLanguage(final CallbackContext callbackContext, final String language){
+     cordova.getThreadPool().execute(new Runnable() {
+        public void run() {
+          try {
+				      callbackContext.success("ok");
+            });
+          } catch (Exception e) {
+            callbackContext.error(e.getMessage());
+          }
+      } });
+  }
+  
+  private void setThemeColor(final CallbackContext callbackContext, final String red, final String blue, final String green){
+     cordova.getThreadPool().execute(new Runnable() {
+        public void run() {
+          try {
+				      callbackContext.success("ok");
+            });
+          } catch (Exception e) {
+            callbackContext.error(e.getMessage());
+          }
+      } });
+  }
+    
+  private void getDeviceInfo(final CallbackContext callbackContext, final String serialnumber, final String imei) {      
       cordova.getThreadPool().execute(new Runnable() {
         public void run() {
           try {
@@ -46,9 +111,7 @@ public class HabitPlugin extends CordovaPlugin {
                   callbackContext.success(obj);
                 }
             });
-            Log.d(TAG, "getDeviceInfo  success");
           } catch (Exception e) {
-            Log.d(TAG, "getDeviceInfo  error");
             callbackContext.error(e.getMessage());
           }
       }
