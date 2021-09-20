@@ -62,6 +62,40 @@ public class HabitPlugin extends CordovaPlugin {
 		String tests = testsToPerform.toString();
 		String[] testsToPerform = tests.split(",");
 		  
+		Customization customization = new Customization();
+
+		ButtonStyle buttonStyle = new ButtonStyle();
+		buttonStyle.setBackgroundColor(Color.rgb(254, 242, 79));
+		buttonStyle.setForegroundColor(Color.rgb(0, 0, 0));
+		buttonStyle.setBorderType(BorderType.Rounded);
+		customization.setButtonsStyle(buttonStyle);
+
+		customization.setSkipTestButtonColor(Color.DKGRAY);
+		customization.setProgressBarBackgroundColor(Color.rgb(0, 0, 0));
+		customization.setProgressBarSelectedColor(Color.rgb(3, 198, 252));
+		customization.setCustomNavigationBarBackgroundColor(Color.rgb(255, 255, 255));
+		customization.setCustomNavigationBarTextColor(Color.rgb(0, 0, 0));
+		customization.setCustomNavigationBarButtonsTextColor(Color.GRAY);
+
+		Map<String, String> customStartCopy = new HashMap<>();
+		customStartCopy.put(ScreenCustomizationKeys.start_screen.Copy.title, "My custom title");
+		customStartCopy.put(ScreenCustomizationKeys.start_screen.Copy.description, "My custom description");
+
+		//Map<String, Drawable> images = new HashMap<>();
+		//images.put(ScreenCustomizationKeys.start_screen.Elements.image, context.getDrawable(R.drawable.your_custom_image));
+
+		CustomizableScreen screen = new CustomizableScreen();
+		screen.screenType = ScreenType.start_screen;
+		screen.backgroundColor = Color.rgb(240, 240, 240);
+		screen.textAccentColor = Color.rgb(255, 165, 0);
+		screen.textColor = Color.GRAY;
+		//screen.images = images;
+		screen.copyStrings = customStartCopy;
+
+		CustomizableScreen[] customScreens = new CustomizableScreen[]{ screen };
+
+		customization.setCustomScreens(customScreens);
+		  
 		DeviceHealth.performTests(cordova.getActivity().getApplicationContext(), cordova.getActivity(), appid, apikey, serialnumber, imei, testsToPerform, customization, new TestCallback() {
 
 		@Override
