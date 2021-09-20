@@ -57,8 +57,7 @@ public class HabitPlugin extends CordovaPlugin {
    cordova.getThreadPool().execute(new Runnable() {
         public void run() {
           try {
-				      callbackContext.success("ok");
-            });
+		callbackContext.success("ok");
           } catch (Exception e) {
             callbackContext.error(e.getMessage());
           }
@@ -69,8 +68,7 @@ public class HabitPlugin extends CordovaPlugin {
      cordova.getThreadPool().execute(new Runnable() {
         public void run() {
           try {
-				      callbackContext.success("ok");
-            });
+		callbackContext.success("ok");
           } catch (Exception e) {
             callbackContext.error(e.getMessage());
           }
@@ -81,8 +79,7 @@ public class HabitPlugin extends CordovaPlugin {
      cordova.getThreadPool().execute(new Runnable() {
         public void run() {
           try {
-				      callbackContext.success("ok");
-            });
+		callbackContext.success("ok");
           } catch (Exception e) {
             callbackContext.error(e.getMessage());
           }
@@ -93,8 +90,7 @@ public class HabitPlugin extends CordovaPlugin {
      cordova.getThreadPool().execute(new Runnable() {
         public void run() {
           try {
-				      callbackContext.success("ok");
-            });
+		callbackContext.success("ok");
           } catch (Exception e) {
             callbackContext.error(e.getMessage());
           }
