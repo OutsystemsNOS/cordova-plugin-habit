@@ -1,9 +1,9 @@
 {
-  "name": "cordova-plugin-NOSHabit",
+  "name": "com.cordova.plugin.HabitPlugin",
   "version": "0.0.1",
   "description": "An Android Cordova plugin that allows users to display simple Toast messages at the bottom of the screen.",
   "cordova": {
-    "id": "cordova-plugin-NOSHabit",
+    "id": "com.cordova.plugin.HabitPlugin",
     "platforms": [
       "android"
     ]
