@@ -60,7 +60,7 @@ public class HabitPlugin extends CordovaPlugin {
         public void run() {
           try {
 		Gson gson = new Gson();
-		String[] testsToPerform = new String[]{tests};
+		String[] testsToPerform = new String[]{testsToPerform};
 		  
 		DeviceHealth.performTests(cordova.getActivity().getApplicationContext(), cordova.getActivity(), appid, apikey, serialnumber, imei, testsToPerform, customization, new TestCallback() {
 
