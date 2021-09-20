@@ -1,4 +1,4 @@
-package com.cordova.plugin.HabitPlugin;
+package com.cordova.plugin;
 
 import io.habit.android.devicehealth.DeviceHealth;
 import io.habit.android.devicehealth.DeviceInfoCallback;
