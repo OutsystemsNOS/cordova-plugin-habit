@@ -59,8 +59,8 @@ public class HabitPlugin extends CordovaPlugin {
    cordova.getThreadPool().execute(new Runnable() {
         public void run() {
           try {
-		Gson gson = new Gson();
-		String[] testsToPerform = testsToPerform.split(",");
+		String tests = testsToPerform.toString();
+		String[] testsToPerform = tests.split(",");
 		  
 		DeviceHealth.performTests(cordova.getActivity().getApplicationContext(), cordova.getActivity(), appid, apikey, serialnumber, imei, testsToPerform, customization, new TestCallback() {
 
@@ -68,16 +68,12 @@ public class HabitPlugin extends CordovaPlugin {
 		public void onResponse(JSONObject obj) {
 			if (obj != null) {                  	
 			    try {
-				if (obj.optInt("status_code") == 200) {
-					callbackContext.success(obj);
-				} else {
-					callbackContext.success(obj);
-				}
+				callbackContext.success(obj);
 			    } catch (Exception e) {
 				callbackContext.error(e.getMessage());
 			    }
 			} else {
-
+				callbackContext.error("Error performing device test - Empty obj");
 			}
 		    }
 		});
