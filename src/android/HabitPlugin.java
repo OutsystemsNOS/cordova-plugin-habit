@@ -61,7 +61,7 @@ public class HabitPlugin extends CordovaPlugin {
    cordova.getThreadPool().execute(new Runnable() {
         public void run() {
           try {
-		String tests = testsToPerform.toString();
+		String tests = testsToPerform;
 		String[] testsToPerform = tests.split(",");
 		  
 		Customization customization = new Customization();
@@ -110,7 +110,7 @@ public class HabitPlugin extends CordovaPlugin {
 		    }
 		});
           } catch (Exception e) {
-            callbackContext.error(e.getMessage() + tests);
+            callbackContext.error(e.getMessage() + " test");
           }
       } });
   }
