@@ -20,6 +20,8 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import com.google.gson.Gson;
+
 public class HabitPlugin extends CordovaPlugin {
   
   private static final String TAG = "HabitPlugin";
@@ -53,11 +55,32 @@ public class HabitPlugin extends CordovaPlugin {
         }
     }
    
-  private void performTests(final CallbackContext callbackContext, final String appid, final String apikey, final String serialnumber, final String imei, final String tests){
+  private void performTests(final CallbackContext callbackContext, final String appid, final String apikey, final String serialnumber, final String imei, final String testsToPerform){
    cordova.getThreadPool().execute(new Runnable() {
         public void run() {
           try {
-		callbackContext.success("ok");
+		Gson gson = new Gson();
+		String[] testsToPerform = new String[]{tests};
+		  
+		DeviceHealth.performTests(cordova.getActivity().getApplicationContext(), cordova.getActivity(), appid, apikey, serialnumber, imei, testsToPerform, customization, new TestCallback() {
+
+		@Override
+		public void onResponse(JSONObject obj) {
+			if (obj != null) {                  	
+			    try {
+				if (obj.optInt("status_code") == 200) {
+					callbackContext.success(obj);
+				} else {
+					callbackContext.success(obj);
+				}
+			    } catch (Exception e) {
+				callbackContext.error(e.getMessage());
+			    }
+			} else {
+
+			}
+		    }
+		});
           } catch (Exception e) {
             callbackContext.error(e.getMessage());
           }
