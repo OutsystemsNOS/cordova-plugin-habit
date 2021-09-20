@@ -31,7 +31,8 @@ public class HabitPlugin extends CordovaPlugin {
       getDeviceInfo(callbackContext, args.getString(0), args.getString(1));
       return true;      
     }  
-    return false;
+      callbackContext.error("\"" + action + "\" is not a recognized action.");
+      return false;
     }
    
     private void getDeviceInfo(final CallbackContext callbackContext, final String number, final String imei) {      
