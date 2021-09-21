@@ -37,7 +37,6 @@ import android.widget.TextView;
 public class HabitPlugin extends CordovaPlugin {
   
   private static final String TAG = "HabitPlugin";
-  TextView tvDeviceInfo;
 
   @Override
   public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
@@ -71,9 +70,7 @@ public class HabitPlugin extends CordovaPlugin {
   private void performTests(final CallbackContext callbackContext, final String appid, final String apikey, final String serialnumber, final String imei, final String testsToPerform){
    cordova.getThreadPool().execute(new Runnable() {
         public void run() {
-          try {	
-		tvDeviceInfo = findViewById("testcontainer");
-		  
+          try {			  
 		DeviceHealth.setLanguage(cordova.getActivity().getApplicationContext(), "pt");
         	DeviceHealth.setThemeColor(cordova.getActivity().getApplicationContext(), Color.argb(255, 3, 198, 252));
         	DeviceHealth.hideStartScreen(false);
@@ -119,7 +116,6 @@ public class HabitPlugin extends CordovaPlugin {
 		@Override
 		public void onResponse(JSONObject obj) {
 			if (obj != null) {              
-			    tvDeviceInfo.setText(formatString(obj.toString()));
 			    callbackContext.success(obj);
 			} else {
 			    callbackContext.error("Error performing device test - Empty obj");
