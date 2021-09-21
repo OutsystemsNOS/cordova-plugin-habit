@@ -12,6 +12,7 @@ import io.habit.android.devicehealth.model.CustomizableScreen;
 import io.habit.android.devicehealth.model.Customization;
 import io.habit.android.devicehealth.util.Utils;
 import io.habit.android.devicehealth.lang.ScreenCustomizationKeys;
+import io.habit.android.devicehealth.global.ScreenType;
 
 import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.PluginResult;
@@ -35,8 +36,7 @@ public class HabitPlugin extends CordovaPlugin {
       return true;   
       
       } else if (action.equals("performTests")) {
-	callbackContext.success("ok");
-        //this.performTests(callbackContext, args.getString(0), args.getString(1), args.getString(3), args.getString(4), args.getString(5));
+        this.performTests(callbackContext, args.getString(0), args.getString(1), args.getString(3), args.getString(4), args.getString(5));
         return true;  
 
       } else if (action.equals("hideStartScreen")) {
@@ -62,8 +62,10 @@ public class HabitPlugin extends CordovaPlugin {
    cordova.getThreadPool().execute(new Runnable() {
         public void run() {
           try {
-		String tests = testsToPerform;
-		String[] testsToPerform = tests.split(",");
+		//String tests = testsToPerform;
+		//String[] testsToPerform = tests.split(",");
+		  
+		String[] testsToPerform2 = new String[]{ScreenType.buttons_v2, ScreenType.charging_v2, ScreenType.multi_touch_v2, ScreenType.device_front_video_v2};
 		  
 		Customization customization = new Customization();
 
@@ -99,7 +101,7 @@ public class HabitPlugin extends CordovaPlugin {
 
 		customization.setCustomScreens(customScreens);
 		  
-		DeviceHealth.performTests(cordova.getActivity().getApplicationContext(), cordova.getActivity(), appid, apikey, serialnumber, imei, testsToPerform, customization, new TestCallback() {
+		DeviceHealth.performTests(cordova.getActivity().getApplicationContext(), cordova.getActivity(), appid, apikey, serialnumber, imei, testsToPerform2, customization, new TestCallback() {
 
 		@Override
 		public void onResponse(JSONObject obj) {
@@ -111,7 +113,7 @@ public class HabitPlugin extends CordovaPlugin {
 		    }
 		});
           } catch (Exception e) {
-            callbackContext.error(e.getMessage() + " test");
+            callbackContext.error(e.getMessage());
           }
       } });
   }
