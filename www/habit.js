@@ -7,6 +7,7 @@ exports.getDeviceInfo = function (serialnumber, imei, success, error) {
 };
 
 exports.performTests = function (appid, apikey, serialnumber, imei, tests, success, error) {
+  alert(appid + " " + apikey + " " + serialnumber + " " + imei + " " + tests);
   exec(success, error, PLUGIN_NAME, "performTests", [appid, apikey, serialnumber, imei, tests]);
 };
 
