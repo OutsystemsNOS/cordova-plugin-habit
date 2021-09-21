@@ -45,7 +45,7 @@ public class HabitPlugin extends CordovaPlugin {
       	return true;   
       
       } else if (action.equals("performTests")) {
-        this.performTests(callbackContext, args.getString(0), args.getString(1), args.getString(2), args.getString(3), args.getString(4));	    
+        this.performTests(callbackContext, args.getString(0), args.getString(1), args.getString(2), args.getString(3), args.getString(4), args.getString(5), args.getString(6), args.getBoolean(7), args.getString(8));	    
         return true;  
 
       } else {
@@ -55,7 +55,7 @@ public class HabitPlugin extends CordovaPlugin {
         }
     }
 	
-  private void performTests(final CallbackContext callbackContext, final String appid, final String apikey, final String serialnumber, final String imei, final String testsToPerform){
+  private void performTests(final CallbackContext callbackContext, final String appid, final String apikey, final String serialnumber, final String imei, final String testsToPerform, final String language, final String themecolor, final boolean hidesstartcreen, final String screencustomization){
    cordova.getThreadPool().execute(new Runnable() {
         public void run() {
           try {			  
