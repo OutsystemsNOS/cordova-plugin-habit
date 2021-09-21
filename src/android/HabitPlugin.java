@@ -61,10 +61,7 @@ public class HabitPlugin extends CordovaPlugin {
   private void performTests(final CallbackContext callbackContext, final String appid, final String apikey, final String serialnumber, final String imei, final String testsToPerform){
    cordova.getThreadPool().execute(new Runnable() {
         public void run() {
-          try {
-		//String tests = testsToPerform;
-		//String[] testsToPerform = tests.split(",");
-		  
+          try {		  
 		String[] testsToPerform2 = new String[]{ScreenType.buttons_v2, ScreenType.charging_v2, ScreenType.multi_touch_v2, ScreenType.device_front_video_v2};
 		  
 		Customization customization = new Customization();
