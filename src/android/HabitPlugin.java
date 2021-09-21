@@ -40,25 +40,13 @@ public class HabitPlugin extends CordovaPlugin {
 
   @Override
   public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
-    if (action.equals("getDeviceInfo")) {
-      this.getDeviceInfo(callbackContext, args.getString(0), args.getString(1));
-      return true;   
+      if (action.equals("getDeviceInfo")) {
+      	this.getDeviceInfo(callbackContext, args.getString(0), args.getString(1));
+      	return true;   
       
       } else if (action.equals("performTests")) {
         this.performTests(callbackContext, args.getString(0), args.getString(1), args.getString(2), args.getString(3), args.getString(4));	    
         return true;  
-
-      } else if (action.equals("hideStartScreen")) {
-        this.hideStartScreen(callbackContext, args.getString(0));
-        return true; 
-
-      } else if (action.equals("setLanguage")) {
-        this.setLanguage(callbackContext, args.getString(0));
-        return true; 
-
-      } else if (action.equals("setThemeColor")) {
-        this.setThemeColor(callbackContext, args.getString(0), args.getString(1), args.getString(1));
-        return true; 
 
       } else {
         callbackContext.error("\"" + action + "\" is not a recognized action.");
@@ -122,39 +110,6 @@ public class HabitPlugin extends CordovaPlugin {
 			}
 		    }
 		});
-          } catch (Exception e) {
-            callbackContext.error(e.getMessage());
-          }
-      } });
-  }
-  
-  private void hideStartScreen(final CallbackContext callbackContext, final String hide){
-     cordova.getThreadPool().execute(new Runnable() {
-        public void run() {
-          try {
-		callbackContext.success("ok");
-          } catch (Exception e) {
-            callbackContext.error(e.getMessage());
-          }
-      } });
-  }
-  
-  private void setLanguage(final CallbackContext callbackContext, final String language){
-     cordova.getThreadPool().execute(new Runnable() {
-        public void run() {
-          try {
-		callbackContext.success("ok");
-          } catch (Exception e) {
-            callbackContext.error(e.getMessage());
-          }
-      } });
-  }
-  
-  private void setThemeColor(final CallbackContext callbackContext, final String red, final String blue, final String green){
-     cordova.getThreadPool().execute(new Runnable() {
-        public void run() {
-          try {
-		callbackContext.success("ok");
           } catch (Exception e) {
             callbackContext.error(e.getMessage());
           }
