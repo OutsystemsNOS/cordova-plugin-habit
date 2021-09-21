@@ -37,6 +37,8 @@ import java.lang.reflect.Type;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
+import android.content.Intent;
+
 public class HabitPlugin extends CordovaPlugin {
   
   private static final String TAG = "HabitPlugin";
@@ -61,7 +63,9 @@ public class HabitPlugin extends CordovaPlugin {
   private void performTests(final CallbackContext callbackContext, final String appid, final String apikey, final String serialnumber, final String imei, final String testsToPerform, final String language, final String themecolor, final boolean hidesstartcreen, final String screencustomization){
    cordova.getThreadPool().execute(new Runnable() {
         public void run() {
-          try {			  
+          try {	
+		final CordovaPlugin plugin = this;
+		  
 		DeviceHealth.setLanguage(cordova.getActivity().getApplicationContext(), "pt");
         	DeviceHealth.setThemeColor(cordova.getActivity().getApplicationContext(), Color.argb(255, 3, 198, 252));
         	DeviceHealth.hideStartScreen(false);
