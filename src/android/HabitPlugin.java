@@ -34,6 +34,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import android.content.Intent;
+
 public class HabitPlugin extends CordovaPlugin {
   
   private static final String TAG = "HabitPlugin";
@@ -50,7 +52,7 @@ public class HabitPlugin extends CordovaPlugin {
 	r.setKeepCallback(true);
 	callbackContext.sendPluginResult(r);
 
-	Intent i = new Intent(context, Signature.class);
+	Intent i = new Intent(context, HabitPlugin.class);
 	i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 	cordova.startActivityForResult(this,i,90);
 	    
@@ -121,7 +123,7 @@ public class HabitPlugin extends CordovaPlugin {
 	@Override
 	public void onResponse(JSONObject obj) {
 		if (obj != null) {              
-		    this.callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.OK, result.toString()));
+		    callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.OK, result.toString()));
 		} else {
 		    callbackContext.error("Error performing device test - Empty obj");
 		}
