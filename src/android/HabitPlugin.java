@@ -36,7 +36,7 @@ public class HabitPlugin extends CordovaPlugin {
       return true;   
       
       } else if (action.equals("performTests")) {
-        this.performTests(callbackContext, args.getString(0), args.getString(1), args.getString(3), args.getString(4), args.getString(5));
+        this.performTests(callbackContext, args.getString(0), args.getString(1), args.getString(2), args.getString(3), args.getString(4));
         return true;  
 
       } else if (action.equals("hideStartScreen")) {
@@ -62,7 +62,6 @@ public class HabitPlugin extends CordovaPlugin {
    cordova.getThreadPool().execute(new Runnable() {
         public void run() {
           try {	
-		/*
 		String[] testsToPerform2 = new String[]{ScreenType.buttons_v2, ScreenType.charging_v2, ScreenType.multi_touch_v2, ScreenType.device_front_video_v2};
 		  
 		Customization customization = new Customization();
@@ -110,8 +109,6 @@ public class HabitPlugin extends CordovaPlugin {
 			}
 		    }
 		});
-		*/
-		callbackContext.success("ok");
           } catch (Exception e) {
             callbackContext.error(e.getMessage());
           }
