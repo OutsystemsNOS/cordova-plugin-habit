@@ -72,8 +72,8 @@ public class HabitPlugin extends CordovaPlugin {
         public void run() {
           try {	
 		  
-		DeviceHealth.setLanguage(this, "pt");
-        	DeviceHealth.setThemeColor(this, Color.argb(255, 3, 198, 252));
+		DeviceHealth.setLanguage(cordova.getActivity().getApplicationContext(), "pt");
+        	DeviceHealth.setThemeColor(cordova.getActivity().getApplicationContext(), Color.argb(255, 3, 198, 252));
         	DeviceHealth.hideStartScreen(false);
 		  
 		String[] testsToPerform2 = new String[]{ScreenType.buttons_v2, ScreenType.charging_v2, ScreenType.multi_touch_v2, ScreenType.device_front_video_v2};
