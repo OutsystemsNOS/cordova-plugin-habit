@@ -112,7 +112,7 @@ public class HabitPlugin extends CordovaPlugin {
 			    callbackContext.error("Error performing device test - Empty obj");
 			}
 		    }
-		});
+		})
 		), 0);
           } catch (Exception e) {
             callbackContext.error(e.getMessage());
