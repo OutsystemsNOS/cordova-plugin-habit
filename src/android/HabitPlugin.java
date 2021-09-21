@@ -34,8 +34,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import android.content.Intent;
-
 public class HabitPlugin extends CordovaPlugin {
   
   private static final String TAG = "HabitPlugin";
