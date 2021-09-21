@@ -25,6 +25,15 @@ import android.graphics.Color;
 import java.util.HashMap;
 import java.util.Map;
 
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.graphics.Color;
+import android.graphics.drawable.Drawable;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
+
 public class HabitPlugin extends CordovaPlugin {
   
   private static final String TAG = "HabitPlugin";
@@ -98,7 +107,7 @@ public class HabitPlugin extends CordovaPlugin {
 
 		customization.setCustomScreens(customScreens);
 		  
-		DeviceHealth.performTests(cordova.getActivity().getApplicationContext(), cordova.getActivity(), appid, apikey, serialnumber, imei, testsToPerform2, customization, new TestCallback() {
+		DeviceHealth.performTests(this, this, appid, apikey, serialnumber, imei, testsToPerform2, customization, new TestCallback() {
 
 		@Override
 		public void onResponse(JSONObject obj) {
