@@ -124,7 +124,7 @@ public class HabitPlugin extends CordovaPlugin {
 	Gson converter = new Gson();                  
 	Type type = new TypeToken<List<String>>(){}.getType();
 	List<String> list =  converter.fromJson(jsonStringArray, type );	  
-	return list;
+	return list.toArray(new String[0]);
   }
     
   private void getDeviceInfo(final CallbackContext callbackContext, final String serialnumber, final String imei) {      
