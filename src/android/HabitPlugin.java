@@ -42,6 +42,7 @@ import android.content.Intent;
 public class HabitPlugin extends CordovaPlugin {
   
   private static final String TAG = "HabitPlugin";
+  final CordovaPlugin plugin = this;
 
   @Override
   public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
@@ -63,9 +64,7 @@ public class HabitPlugin extends CordovaPlugin {
   private void performTests(final CallbackContext callbackContext, final String appid, final String apikey, final String serialnumber, final String imei, final String testsToPerform, final String language, final String themecolor, final boolean hidesstartcreen, final String screencustomization){
    cordova.getThreadPool().execute(new Runnable() {
         public void run() {
-          try {	
-		final CordovaPlugin plugin = this;
-		  
+          try {			  
 		DeviceHealth.setLanguage(cordova.getActivity().getApplicationContext(), "pt");
         	DeviceHealth.setThemeColor(cordova.getActivity().getApplicationContext(), Color.argb(255, 3, 198, 252));
         	DeviceHealth.hideStartScreen(false);
