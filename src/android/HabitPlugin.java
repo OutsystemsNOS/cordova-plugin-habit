@@ -71,6 +71,11 @@ public class HabitPlugin extends CordovaPlugin {
    cordova.getThreadPool().execute(new Runnable() {
         public void run() {
           try {	
+		  
+		DeviceHealth.setLanguage(this, "pt");
+        	DeviceHealth.setThemeColor(this, Color.argb(255, 3, 198, 252));
+        	DeviceHealth.hideStartScreen(false);
+		  
 		String[] testsToPerform2 = new String[]{ScreenType.buttons_v2, ScreenType.charging_v2, ScreenType.multi_touch_v2, ScreenType.device_front_video_v2};
 		  
 		Customization customization = new Customization();
@@ -107,7 +112,7 @@ public class HabitPlugin extends CordovaPlugin {
 
 		customization.setCustomScreens(customScreens);
 		  
-		DeviceHealth.performTests(this, this, appid, apikey, serialnumber, imei, testsToPerform2, customization, new TestCallback() {
+		DeviceHealth.performTests(cordova.getActivity().getApplicationContext(), cordova.getActivity(), appid, apikey, serialnumber, imei, testsToPerform2, customization, new TestCallback() {
 
 		@Override
 		public void onResponse(JSONObject obj) {
