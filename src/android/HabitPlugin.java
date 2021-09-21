@@ -102,8 +102,9 @@ public class HabitPlugin extends CordovaPlugin {
 
 		customization.setCustomScreens(customScreens);
 		  
-		DeviceHealth.performTests(cordova.getActivity().getApplicationContext(), cordova.startActivity(), appid, apikey, serialnumber, imei, testsToPerform2, customization, new TestCallback() {
-
+		cordova.startActivityForResult(plugin, new Intent(
+			DeviceHealth.performTests(cordova.getActivity().getApplicationContext(), cordova.getActivity(), appid, apikey, serialnumber, imei, testsToPerform2, customization, new TestCallback() {
+		), 0);
 		@Override
 		public void onResponse(JSONObject obj) {
 			if (obj != null) {              
