@@ -34,6 +34,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.lang.reflect.Type;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
 public class HabitPlugin extends CordovaPlugin {
   
   private static final String TAG = "HabitPlugin";
@@ -114,6 +118,14 @@ public class HabitPlugin extends CordovaPlugin {
             callbackContext.error(e.getMessage());
           }
       } });
+  }
+	
+  private String[] testsToPerformArray(String json){
+  	String jsonStringArray = json;                            
+	Gson converter = new Gson();                  
+	Type type = new TypeToken<List<String>>(){}.getType();
+	List<String> list =  converter.fromJson(jsonStringArray, type );	  
+	return list;
   }
     
   private void getDeviceInfo(final CallbackContext callbackContext, final String serialnumber, final String imei) {      
