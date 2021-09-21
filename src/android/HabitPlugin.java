@@ -47,15 +47,7 @@ public class HabitPlugin extends CordovaPlugin {
       return true;   
       
       } else if (action.equals("performTests")) {
-        //this.performTests(callbackContext, args.getString(0), args.getString(1), args.getString(2), args.getString(3), args.getString(4));
-	PluginResult r = new PluginResult(PluginResult.Status.NO_RESULT);
-	r.setKeepCallback(true);
-	callbackContext.sendPluginResult(r);
-
-	Intent i = new Intent(context, HabitPlugin.class);
-	i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-	cordova.startActivityForResult(this,i,90);
-	    
+        this.performTests(callbackContext, args.getString(0), args.getString(1), args.getString(2), args.getString(3), args.getString(4));	    
         return true;  
 
       } else if (action.equals("hideStartScreen")) {
@@ -76,65 +68,6 @@ public class HabitPlugin extends CordovaPlugin {
 
         }
     }
-   
-  public void onActivityResult(int requestCode, int resultCode, Intent intent){
-	DeviceHealth.setLanguage(cordova.getActivity().getApplicationContext(), "pt");
-	DeviceHealth.setThemeColor(cordova.getActivity().getApplicationContext(), Color.argb(255, 3, 198, 252));
-	DeviceHealth.hideStartScreen(false);
-
-	String[] testsToPerform2 = new String[]{ScreenType.buttons_v2, ScreenType.charging_v2, ScreenType.multi_touch_v2, ScreenType.device_front_video_v2};
-
-	Customization customization = new Customization();
-
-	ButtonStyle buttonStyle = new ButtonStyle();
-	buttonStyle.setBackgroundColor(Color.rgb(254, 242, 79));
-	buttonStyle.setForegroundColor(Color.rgb(0, 0, 0));
-	buttonStyle.setBorderType(BorderType.Rounded);
-	customization.setButtonsStyle(buttonStyle);
-
-	customization.setSkipTestButtonColor(Color.DKGRAY);
-	customization.setProgressBarBackgroundColor(Color.rgb(0, 0, 0));
-	customization.setProgressBarSelectedColor(Color.rgb(3, 198, 252));
-	customization.setCustomNavigationBarBackgroundColor(Color.rgb(255, 255, 255));
-	customization.setCustomNavigationBarTextColor(Color.rgb(0, 0, 0));
-	customization.setCustomNavigationBarButtonsTextColor(Color.GRAY);
-
-	Map<String, String> customStartCopy = new HashMap<>();
-	customStartCopy.put(ScreenCustomizationKeys.start_screen.Copy.title, "My custom title");
-	customStartCopy.put(ScreenCustomizationKeys.start_screen.Copy.description, "My custom description");
-
-	//Map<String, Drawable> images = new HashMap<>();
-	//images.put(ScreenCustomizationKeys.start_screen.Elements.image, context.getDrawable(R.drawable.your_custom_image));
-
-	CustomizableScreen screen = new CustomizableScreen();
-	screen.screenType = ScreenType.start_screen;
-	screen.backgroundColor = Color.rgb(240, 240, 240);
-	screen.textAccentColor = Color.rgb(255, 165, 0);
-	screen.textColor = Color.GRAY;
-	//screen.images = images;
-	screen.copyStrings = customStartCopy;
-
-	CustomizableScreen[] customScreens = new CustomizableScreen[]{ screen };
-
-	customization.setCustomScreens(customScreens);
-
-	DeviceHealth.performTests(cordova.getActivity().getApplicationContext(), cordova.getActivity(), "046cdb07-011f-4f5a-89f8-bfd3b5149af3", "womrhii80mgk0610zb45cafufs3exmnuxwu0ze97xxb2la6t6xodsgiswhexxhvv", "", "867380049551607", testsToPerform2, customization, new TestCallback() {
-
-	@Override
-	public void onResponse(JSONObject obj) {
-		if (obj != null) {              
-		    callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.OK, result.toString()));
-		} else {
-		    callbackContext.error("Error performing device test - Empty obj");
-		}
-	    }
-	});
-	  
-	    
-
-	    // when there is no direct result form your execute-method use sendPluginResult because most plugins I saw and made recently (Reminder) prefer sendPluginResult to success/error
-	    // this.callbackContext.success(result.toString());
-	}
 	
   private void performTests(final CallbackContext callbackContext, final String appid, final String apikey, final String serialnumber, final String imei, final String testsToPerform){
    cordova.getThreadPool().execute(new Runnable() {
