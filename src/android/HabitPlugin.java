@@ -42,7 +42,6 @@ import android.content.Intent;
 public class HabitPlugin extends CordovaPlugin {
   
   private static final String TAG = "HabitPlugin";
-  final CordovaPlugin plugin = this;
 
   @Override
   public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
@@ -105,8 +104,7 @@ public class HabitPlugin extends CordovaPlugin {
 
 		customization.setCustomScreens(customScreens);
 		  
-		cordova.startActivityForResult(plugin, new Intent(
-			DeviceHealth.performTests(cordova.getActivity().getApplicationContext(), cordova.getActivity(), appid, apikey, serialnumber, imei, testsToPerform2, customization, new TestCallback() {
+		DeviceHealth.performTests(cordova.getActivity().getApplicationContext(), cordova.getActivity(), appid, apikey, serialnumber, imei, testsToPerform2, customization, new TestCallback() {
 		@Override
 		public void onResponse(JSONObject obj) {
 			if (obj != null) {              
@@ -115,8 +113,7 @@ public class HabitPlugin extends CordovaPlugin {
 			    callbackContext.error("Error performing device test - Empty obj");
 			}
 		    }
-		})
-		), 0);
+		});
           } catch (Exception e) {
             callbackContext.error(e.getMessage());
           }
