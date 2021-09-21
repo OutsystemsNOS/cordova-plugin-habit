@@ -104,7 +104,6 @@ public class HabitPlugin extends CordovaPlugin {
 		  
 		cordova.startActivityForResult(plugin, new Intent(
 			DeviceHealth.performTests(cordova.getActivity().getApplicationContext(), cordova.getActivity(), appid, apikey, serialnumber, imei, testsToPerform2, customization, new TestCallback() {
-		), 0);
 		@Override
 		public void onResponse(JSONObject obj) {
 			if (obj != null) {              
@@ -114,6 +113,7 @@ public class HabitPlugin extends CordovaPlugin {
 			}
 		    }
 		});
+		), 0);
           } catch (Exception e) {
             callbackContext.error(e.getMessage());
           }
