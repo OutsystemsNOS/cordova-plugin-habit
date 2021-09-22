@@ -67,9 +67,10 @@ public class HabitPlugin extends CordovaPlugin {
 		Gson g = new Gson();  
     	 	MyCustomization cust = g.fromJson(screencustomization, MyCustomization.class);
 		  
-		String[] testsToPerform2 = new String[]{ScreenType.buttons_v2, ScreenType.charging_v2, ScreenType.multi_touch_v2, ScreenType.device_front_video_v2};
-		  
-		String[] testsToPerform3 = testsToPerform.split(",");
+		String[] testsToPerform2 = new String[]{ if(testsToPerform.contains("ScreenType.buttons_v2")) {ScreenType.buttons_v2}, 
+							if(testsToPerform.contains("ScreenType.charging_v2"))  {ScreenType.charging_v2}, 
+							if(testsToPerform.contains("ScreenType.multi_touch_v2"))  {ScreenType.multi_touch_v2}, 
+							if(testsToPerform.contains("ScreenType.device_front_video_v2"))  {ScreenType.device_front_video_v2}};
 		  
 		Customization customization = new Customization();
 
@@ -105,7 +106,7 @@ public class HabitPlugin extends CordovaPlugin {
 
 		customization.setCustomScreens(customScreens);
 		  
-		DeviceHealth.performTests(cordova.getActivity().getApplicationContext(), cordova.getActivity(), appid, apikey, serialnumber, imei, testsToPerform3, customization, new TestCallback() {
+		DeviceHealth.performTests(cordova.getActivity().getApplicationContext(), cordova.getActivity(), appid, apikey, serialnumber, imei, testsToPerform2, customization, new TestCallback() {
 		@Override
 		public void onResponse(JSONObject obj) {
 			if (obj != null) {              
