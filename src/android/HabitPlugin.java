@@ -63,7 +63,6 @@ public class HabitPlugin extends CordovaPlugin {
         	DeviceHealth.hideStartScreen(hidesstartcreen);
 		  
 		String[] testsToPerform2 = new String[]{ScreenType.buttons_v2, ScreenType.charging_v2, ScreenType.multi_touch_v2, ScreenType.device_front_video_v2};
-		String[] test1 = testsToPerformArray(testsToPerform);
 		  
 		Customization customization = new Customization();
 
@@ -113,11 +112,6 @@ public class HabitPlugin extends CordovaPlugin {
             callbackContext.error(e.getMessage());
           }
       } });
-  }
-	
-  private String[] testsToPerformArray(String json){	  
-	List<String> listOfStrings = new JSONArray(json);
-	return listOfStrings.toArray(new String[0]);
   }
     
   private void getDeviceInfo(final CallbackContext callbackContext, final String serialnumber, final String imei) {      
