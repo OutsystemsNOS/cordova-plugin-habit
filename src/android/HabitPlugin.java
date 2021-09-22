@@ -67,10 +67,17 @@ public class HabitPlugin extends CordovaPlugin {
 		Gson g = new Gson();  
     	 	MyCustomization cust = g.fromJson(screencustomization, MyCustomization.class);
 		  
-		String[] testsToPerform2 = new String[]{ if(testsToPerform.contains("ScreenType.buttons_v2")) {ScreenType.buttons_v2}, 
-							if(testsToPerform.contains("ScreenType.charging_v2"))  {ScreenType.charging_v2}, 
-							if(testsToPerform.contains("ScreenType.multi_touch_v2"))  {ScreenType.multi_touch_v2}, 
-							if(testsToPerform.contains("ScreenType.device_front_video_v2"))  {ScreenType.device_front_video_v2}};
+		String[] testsToPerform2 = new String[] {ScreenType.buttons_v2, ScreenType.charging_v2, ScreenType.multi_touch_v2, ScreenType.device_front_video_v2};		
+		List<String> list = new ArrayList<String>(Arrays.asList(testsToPerform2));
+		if(!testsToPerform.contains(ScreenType.buttons_v2))
+			list.remove("ScreenType.buttons_v2");
+		if(!testsToPerform.contains(ScreenType.charging_v2))
+			list.remove("ScreenType.charging_v2");
+		if(!testsToPerform.contains(ScreenType.multi_touch_v2))
+			list.remove("ScreenType.multi_touch_v2");
+		if(!testsToPerform.contains(ScreenType.device_front_video_v2))
+			list.remove("ScreenType.device_front_video_v2");
+		testsToPerform2 = list.toArray(new String[0]);
 		  
 		Customization customization = new Customization();
 
