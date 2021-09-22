@@ -77,7 +77,7 @@ public class HabitPlugin extends CordovaPlugin {
 			list.remove("ScreenType.multi_touch_v2");
 		if(!testsToPerform.contains(ScreenType.device_front_video_v2))
 			list.remove("ScreenType.device_front_video_v2");
-		testsToPerform2 = list.toArray(new String[0]);
+		String[] testsToPerform3 = list.toArray(new String[0]);
 		  
 		Customization customization = new Customization();
 
