@@ -33,12 +33,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import java.lang.reflect.Type;
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
-
-import android.content.Intent;
-
 public class HabitPlugin extends CordovaPlugin {
   
   private static final String TAG = "HabitPlugin";
@@ -69,6 +63,7 @@ public class HabitPlugin extends CordovaPlugin {
         	DeviceHealth.hideStartScreen(hidesstartcreen);
 		  
 		String[] testsToPerform2 = new String[]{ScreenType.buttons_v2, ScreenType.charging_v2, ScreenType.multi_touch_v2, ScreenType.device_front_video_v2};
+		String[] test1 = testsToPerformArray(testsToPerform);
 		  
 		Customization customization = new Customization();
 
@@ -120,12 +115,9 @@ public class HabitPlugin extends CordovaPlugin {
       } });
   }
 	
-  private String[] testsToPerformArray(String json){
-  	String jsonStringArray = json;                            
-	Gson converter = new Gson();                  
-	Type type = new TypeToken<List<String>>(){}.getType();
-	List<String> list =  converter.fromJson(jsonStringArray, type );	  
-	return list.toArray(new String[0]);
+  private String[] testsToPerformArray(String json){	  
+	List<String> listOfStrings = new JSONArray(json);
+	return listOfStrings.toArray(new String[0]);
   }
     
   private void getDeviceInfo(final CallbackContext callbackContext, final String serialnumber, final String imei) {      
