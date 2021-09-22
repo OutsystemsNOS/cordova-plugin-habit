@@ -1,3 +1,5 @@
+package com.cordova.plugin;
+
 public class MyCustomization {
 	
 	String ScreenTitle;
