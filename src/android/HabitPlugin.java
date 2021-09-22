@@ -62,6 +62,9 @@ public class HabitPlugin extends CordovaPlugin {
         	DeviceHealth.setThemeColor(cordova.getActivity().getApplicationContext(), Color.argb(255, 3, 198, 252));
         	DeviceHealth.hideStartScreen(hidesstartcreen);
 		  
+		Gson g = new Gson();  
+    	 	Customization cust = g.fromJson(screencustomization, Customization.class);
+		  
 		String[] testsToPerform2 = new String[]{ScreenType.buttons_v2, ScreenType.charging_v2, ScreenType.multi_touch_v2, ScreenType.device_front_video_v2};
 		  
 		String[] testsToPerform3 = testsToPerform.split(",");
@@ -82,8 +85,8 @@ public class HabitPlugin extends CordovaPlugin {
 		customization.setCustomNavigationBarButtonsTextColor(Color.GRAY);
 
 		Map<String, String> customStartCopy = new HashMap<>();
-		customStartCopy.put(ScreenCustomizationKeys.start_screen.Copy.title, "My custom title");
-		customStartCopy.put(ScreenCustomizationKeys.start_screen.Copy.description, "My custom description");
+		customStartCopy.put(ScreenCustomizationKeys.start_screen.Copy.title, cust.ScreenTitle);
+		customStartCopy.put(ScreenCustomizationKeys.start_screen.Copy.description, cust.ScreenDescription);
 
 		//Map<String, Drawable> images = new HashMap<>();
 		//images.put(ScreenCustomizationKeys.start_screen.Elements.image, context.getDrawable(R.drawable.your_custom_image));
@@ -129,7 +132,24 @@ public class HabitPlugin extends CordovaPlugin {
           } catch (Exception e) {
             callbackContext.error(e.getMessage());
           }
-      }
-    });
+     	}
+    	});
+  	}
   }
-  }
+public class Customization {
+	
+	String ScreenTitle;
+	String ScreenDescription;
+	String ScreenBackgroundColor;
+	String ScreenTextAccentColor;
+	String ScreenTestColor;
+	String ButtonStyleBackgroundColor;
+	String ButtonStyleForegroundColor;
+	String ButtonStyleBorderType;
+	String StyleSkipTestButtonColor;
+	String StyleProgressBarBackgroundColor;
+	String ProgressBarSelectedColor;
+	String CustomNavigationBarBackgroundColor;
+	String CustomNavigationBarTextColor;
+	String CustomNavigationBarButtonsTextColor;
+}
