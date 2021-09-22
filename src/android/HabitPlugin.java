@@ -65,7 +65,7 @@ public class HabitPlugin extends CordovaPlugin {
         	DeviceHealth.hideStartScreen(hidesstartcreen);
 		  
 		Gson g = new Gson();  
-    	 	Customization cust = g.fromJson(screencustomization, Customization.class);
+    	 	MyCustomization cust = g.fromJson(screencustomization, MyCustomization.class);
 		  
 		String[] testsToPerform2 = new String[]{ScreenType.buttons_v2, ScreenType.charging_v2, ScreenType.multi_touch_v2, ScreenType.device_front_video_v2};
 		  
