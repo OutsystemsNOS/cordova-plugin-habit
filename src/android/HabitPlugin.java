@@ -33,11 +33,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import java.lang.reflect.Type;
 import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
-
-import android.content.Intent;
 
 public class HabitPlugin extends CordovaPlugin {
   
@@ -64,11 +60,16 @@ public class HabitPlugin extends CordovaPlugin {
    cordova.getThreadPool().execute(new Runnable() {
         public void run() {
           try {			  
-		DeviceHealth.setLanguage(cordova.getActivity().getApplicationContext(), "pt");
+		DeviceHealth.setLanguage(cordova.getActivity().getApplicationContext(), language);
         	DeviceHealth.setThemeColor(cordova.getActivity().getApplicationContext(), Color.argb(255, 3, 198, 252));
-        	DeviceHealth.hideStartScreen(false);
+        	DeviceHealth.hideStartScreen(hidesstartcreen);
+		  
+		Gson g = new Gson();  
+    	 	Customization cust = g.fromJson(screencustomization, Customization.class);
 		  
 		String[] testsToPerform2 = new String[]{ScreenType.buttons_v2, ScreenType.charging_v2, ScreenType.multi_touch_v2, ScreenType.device_front_video_v2};
+		  
+		String[] testsToPerform3 = testsToPerform.split(",");
 		  
 		Customization customization = new Customization();
 
@@ -86,8 +87,8 @@ public class HabitPlugin extends CordovaPlugin {
 		customization.setCustomNavigationBarButtonsTextColor(Color.GRAY);
 
 		Map<String, String> customStartCopy = new HashMap<>();
-		customStartCopy.put(ScreenCustomizationKeys.start_screen.Copy.title, "My custom title");
-		customStartCopy.put(ScreenCustomizationKeys.start_screen.Copy.description, "My custom description");
+		customStartCopy.put(ScreenCustomizationKeys.start_screen.Copy.title, cust.ScreenTitle);
+		customStartCopy.put(ScreenCustomizationKeys.start_screen.Copy.description, cust.ScreenDescription);
 
 		//Map<String, Drawable> images = new HashMap<>();
 		//images.put(ScreenCustomizationKeys.start_screen.Elements.image, context.getDrawable(R.drawable.your_custom_image));
@@ -104,7 +105,7 @@ public class HabitPlugin extends CordovaPlugin {
 
 		customization.setCustomScreens(customScreens);
 		  
-		DeviceHealth.performTests(cordova.getActivity().getApplicationContext(), cordova.getActivity(), appid, apikey, serialnumber, imei, testsToPerform2, customization, new TestCallback() {
+		DeviceHealth.performTests(cordova.getActivity().getApplicationContext(), cordova.getActivity(), appid, apikey, serialnumber, imei, testsToPerform3, customization, new TestCallback() {
 		@Override
 		public void onResponse(JSONObject obj) {
 			if (obj != null) {              
@@ -118,14 +119,6 @@ public class HabitPlugin extends CordovaPlugin {
             callbackContext.error(e.getMessage());
           }
       } });
-  }
-	
-  private String[] testsToPerformArray(String json){
-  	String jsonStringArray = json;                            
-	Gson converter = new Gson();                  
-	Type type = new TypeToken<List<String>>(){}.getType();
-	List<String> list =  converter.fromJson(jsonStringArray, type );	  
-	return list.toArray(new String[0]);
   }
     
   private void getDeviceInfo(final CallbackContext callbackContext, final String serialnumber, final String imei) {      
@@ -141,7 +134,7 @@ public class HabitPlugin extends CordovaPlugin {
           } catch (Exception e) {
             callbackContext.error(e.getMessage());
           }
-      }
-    });
-  }
+     	}
+    	});
+  	}
   }
