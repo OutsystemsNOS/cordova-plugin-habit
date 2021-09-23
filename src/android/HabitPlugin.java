@@ -61,7 +61,7 @@ public class HabitPlugin extends CordovaPlugin {
         public void run() {
           try {			  
 		DeviceHealth.setLanguage(cordova.getActivity().getApplicationContext(), language);
-        	DeviceHealth.setThemeColor(cordova.getActivity().getApplicationContext(), Color.argb(255, 3, 198, 252));
+        	DeviceHealth.setThemeColor(cordova.getActivity().getApplicationContext(), Color.parseColor(themecolor));
         	DeviceHealth.hideStartScreen(hidesstartcreen);
 		  
 		Gson g = new Gson();  
@@ -83,16 +83,16 @@ public class HabitPlugin extends CordovaPlugin {
 		Customization customization = new Customization();
 
 		ButtonStyle buttonStyle = new ButtonStyle();
-		buttonStyle.setBackgroundColor(Color.rgb(254, 242, 79));
-		buttonStyle.setForegroundColor(Color.rgb(0, 0, 0));
+		buttonStyle.setBackgroundColor(Color.parseColor(cust.ButtonBackgroundColor));
+		buttonStyle.setForegroundColor(Color.parseColor(cust.ButtonForegroundColor));
 		buttonStyle.setBorderType(BorderType.Rounded);
 		customization.setButtonsStyle(buttonStyle);
 
 		customization.setSkipTestButtonColor(Color.DKGRAY);
-		customization.setProgressBarBackgroundColor(Color.rgb(0, 0, 0));
-		customization.setProgressBarSelectedColor(Color.rgb(3, 198, 252));
-		customization.setCustomNavigationBarBackgroundColor(Color.rgb(255, 255, 255));
-		customization.setCustomNavigationBarTextColor(Color.rgb(0, 0, 0));
+		customization.setProgressBarBackgroundColor(Color.parseColor(cust.StyleProgressBarBackgroundColor));
+		customization.setProgressBarSelectedColor(Color.parseColor(cust.ProgressBarSelectedColor));
+		customization.setCustomNavigationBarBackgroundColor(Color.parseColor(cust.CustomNavigationBarBackgroundColor));
+		customization.setCustomNavigationBarTextColor(Color.parseColor(cust.CustomNavigationBarTextColor));
 		customization.setCustomNavigationBarButtonsTextColor(Color.GRAY);
 
 		Map<String, String> customStartCopy = new HashMap<>();
