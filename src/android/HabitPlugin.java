@@ -40,7 +40,7 @@ public class HabitPlugin extends CordovaPlugin {
   private static final String TAG = "HabitPlugin";
 	
   public enum CustomBorderType {
-	    ROUNDED(BorderType.Rounded),
+	    ROUNDED(BorderType.Rounded);
 
 	    private BorderType borderType;
 	    private CustomLogLevel(BorderType bt) {
