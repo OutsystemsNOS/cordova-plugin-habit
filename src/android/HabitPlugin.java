@@ -38,15 +38,6 @@ import com.google.gson.Gson;
 public class HabitPlugin extends CordovaPlugin {
   
   private static final String TAG = "HabitPlugin";
-	
-  public enum CustomBorderType {
-	    ROUNDED(BorderType.Rounded);
-
-	    private BorderType borderType;
-	    private CustomLogLevel(BorderType bt) {
-		this.borderType = bt;
-	    }
-  }
 
   @Override
   public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
@@ -94,8 +85,7 @@ public class HabitPlugin extends CordovaPlugin {
 		ButtonStyle buttonStyle = new ButtonStyle();
 		buttonStyle.setBackgroundColor(Color.parseColor(cust.ButtonStyleBackgroundColor));
 		buttonStyle.setForegroundColor(Color.parseColor(cust.ButtonStyleForegroundColor));
-		CustomBorderType borderType = CustomBorderType.ROUNDED;
-		buttonStyle.setBorderType(borderType);
+		buttonStyle.setBorderType(BorderType.valueOf(cust.ButtonStyleBorderType));
 		customization.setButtonsStyle(buttonStyle);
 
 		customization.setSkipTestButtonColor(Color.parseColor(cust.StyleSkipTestButtonColor));
