@@ -88,12 +88,12 @@ public class HabitPlugin extends CordovaPlugin {
 		buttonStyle.setBorderType(BorderType.Rounded);
 		customization.setButtonsStyle(buttonStyle);
 
-		customization.setSkipTestButtonColor(Color.DKGRAY);
+		customization.setSkipTestButtonColor(Color.parseColor(cust.StyleSkipTestButtonColor));
 		customization.setProgressBarBackgroundColor(Color.parseColor(cust.StyleProgressBarBackgroundColor));
 		customization.setProgressBarSelectedColor(Color.parseColor(cust.ProgressBarSelectedColor));
 		customization.setCustomNavigationBarBackgroundColor(Color.parseColor(cust.CustomNavigationBarBackgroundColor));
 		customization.setCustomNavigationBarTextColor(Color.parseColor(cust.CustomNavigationBarTextColor));
-		customization.setCustomNavigationBarButtonsTextColor(Color.GRAY);
+		customization.setCustomNavigationBarButtonsTextColor(Color.parseColor(cust.CustomNavigationBarButtonsTextColor));
 
 		Map<String, String> customStartCopy = new HashMap<>();
 		customStartCopy.put(ScreenCustomizationKeys.start_screen.Copy.title, cust.ScreenTitle);
@@ -106,7 +106,7 @@ public class HabitPlugin extends CordovaPlugin {
 		screen.screenType = ScreenType.start_screen;
 		screen.backgroundColor = Color.parseColor(cust.ScreenBackgroundColor);
 		screen.textAccentColor = Color.parseColor(cust.ScreenTextAccentColor);
-		screen.textColor = Color.GRAY;
+		screen.textColor = Color.parseColor(cust.ScreenTestColor);
 		//screen.images = images;
 		screen.copyStrings = customStartCopy;
 
