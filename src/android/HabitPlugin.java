@@ -104,8 +104,8 @@ public class HabitPlugin extends CordovaPlugin {
 
 		CustomizableScreen screen = new CustomizableScreen();
 		screen.screenType = ScreenType.start_screen;
-		screen.backgroundColor = Color.decode(cust.ScreenBackgroundColor);
-		screen.textAccentColor = Color.decode(cust.ScreenTextAccentColor);
+		screen.backgroundColor = Color.parseColor(cust.ScreenBackgroundColor);
+		screen.textAccentColor = Color.parseColor(cust.ScreenTextAccentColor);
 		screen.textColor = Color.GRAY;
 		//screen.images = images;
 		screen.copyStrings = customStartCopy;
