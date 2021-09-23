@@ -85,7 +85,7 @@ public class HabitPlugin extends CordovaPlugin {
 		ButtonStyle buttonStyle = new ButtonStyle();
 		buttonStyle.setBackgroundColor(Color.parseColor(cust.ButtonStyleBackgroundColor));
 		buttonStyle.setForegroundColor(Color.parseColor(cust.ButtonStyleForegroundColor));
-		buttonStyle.setBorderType(BorderType.Rounded);
+		buttonStyle.setBorderType(cust.ButtonStyleBorderType);
 		customization.setButtonsStyle(buttonStyle);
 
 		customization.setSkipTestButtonColor(Color.parseColor(cust.StyleSkipTestButtonColor));
