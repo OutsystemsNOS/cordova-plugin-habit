@@ -33,5 +33,9 @@
     <framework src="build-extras.gradle" custom="true" type="gradleReference" />
     <lib-file src="library/DeviceHealth.aar" target="libs/DeviceHealth.aar" />	    
     </platform>
+	
+    <platform name="ios">
+	
+    </platform>
 </plugin>
 
