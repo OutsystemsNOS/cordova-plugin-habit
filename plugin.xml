@@ -34,7 +34,7 @@
     </platform>
 	
     <platform name="ios">
-	
+    	<framework src="src/ios/Frameworks/DeviceHealth.xcframework" custom="true" />
     </platform>
 </plugin>
 
