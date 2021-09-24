@@ -9,10 +9,19 @@
 - (void)getDeviceInfo:(CDVInvokedUrlCommand *)command {
         NSString* serialnumber = [[command.arguments objectAtIndex:0]];
         NSString* imeinumber = [[command.arguments objectAtIndex:1]];
+        CDVPluginResult* pluginResult = nil;
         
-        DeviceHealthSDK.shared.getDeviceInfo(imei: imeinumber, serialNumber: serialnumber) { (result) in
-                CDVPluginResult *pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
-                [self.commandDelegate sendPluginResult:pluginResult callbackId:self.result];
+        @try {
+        DeviceHealthSDK.shared.getDeviceInfo(imei: imeinumber, serialNumber: serialnumber) { (result) in               
+                if (result != nil) {
+                        pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
+                } else {
+                        pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:@"Some error getting device info"];
+                }                                                                                                                                                                    
+                [self.commandDelegate sendPluginResult:pluginResult callbackId:result];
+        }
+        }@catch (NSException* exception) {
+              pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_JSON_EXCEPTION messageAsString:[exception reason]];  
         }
 }
 
