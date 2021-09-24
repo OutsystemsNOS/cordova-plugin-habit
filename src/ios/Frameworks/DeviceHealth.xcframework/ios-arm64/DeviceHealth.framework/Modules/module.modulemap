@@ -1,0 +1,4 @@
+framework module DeviceHealth {
+  header "DeviceHealth-Swift.h"
+  requires objc
+}

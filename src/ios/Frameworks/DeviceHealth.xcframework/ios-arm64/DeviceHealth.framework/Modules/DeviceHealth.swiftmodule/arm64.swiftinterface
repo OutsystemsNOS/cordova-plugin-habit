@@ -1,0 +1,238 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.4.2 (swiftlang-1205.0.28.2 clang-1205.0.19.57)
+// swift-module-flags: -target arm64-apple-ios12.1 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name DeviceHealth
+import AVFoundation
+import AVKit
+import SystemConfiguration.CaptiveNetwork
+import CommonCrypto
+import CoreLocation
+import CoreTelephony
+import Foundation
+import MediaPlayer
+import MobileCoreServices
+import Swift
+import SystemConfiguration
+import UIKit
+public class CustomizableScreen {
+  public var screenType: Swift.String?
+  public var copyStrings: [Swift.String : Swift.String]?
+  public var images: [Swift.String : UIKit.UIImage]?
+  public var backgroundColor: UIKit.UIColor?
+  public var textColor: UIKit.UIColor?
+  public var textAccentColor: UIKit.UIColor?
+  public init()
+  public init(screenType: Swift.String, copyStrings: [Swift.String : Swift.String]? = nil, images: [Swift.String : UIKit.UIImage]? = nil, backgroundColor: UIKit.UIColor? = nil, textColor: UIKit.UIColor? = nil, textAccentColor: UIKit.UIColor? = nil)
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers public class DeviceHealthSDK : ObjectiveC.NSObject {
+  @objc public static let shared: DeviceHealth.DeviceHealthSDK
+  public var environment: DeviceHealth.Environment
+  public var language: DeviceHealth.SupportedLanguage
+  public var hideStartScreen: Swift.Bool
+  public var themeColor: UIKit.UIColor?
+  @objc public func performTests(appID: Swift.String, apiKey: Swift.String, testsToPerform: [Swift.String]?, imei: Swift.String? = nil, serialNumber: Swift.String? = nil, customization: DeviceHealth.Customization? = nil, completion: @escaping ([Swift.String : Any]?) -> Swift.Void)
+  @objc public func getDeviceInfo(imei: Swift.String? = nil, serialNumber: Swift.String? = nil) -> [Swift.String : Any]?
+  @objc override dynamic public init()
+  @objc deinit
+}
+public struct ScreenCustomizationKeys {
+  public struct start_screen {
+    public static let start_screen: Swift.String
+    public struct Copy {
+      public static let title: Swift.String
+      public static let description: Swift.String
+      public static let testsWarning_title: Swift.String
+      public static let testsWarning_charging: Swift.String
+      public static let testsWarning_camera: Swift.String
+      public static let testsWarning_audio: Swift.String
+    }
+    public struct Elements {
+      public static let image: Swift.String
+      public static let backgroundColor: Swift.String
+      public static let textColor: Swift.String
+      public static let textAccentColor: Swift.String
+    }
+  }
+  public struct end_screen {
+    public static let end_screen: Swift.String
+    public struct Copy {
+      public static let text: Swift.String
+      public static let buttonFinish: Swift.String
+      public static let buttonTestAgain: Swift.String
+    }
+    public struct Elements {
+      public static let image: Swift.String
+      public static let backgroundColor: Swift.String
+      public static let textColor: Swift.String
+      public static let textAccentColor: Swift.String
+    }
+  }
+  public struct imei_screen {
+    public static let start_screen: Swift.String
+    public struct Copy {
+      public static let title: Swift.String
+      public static let description: Swift.String
+      public static let textfield_placeholder: Swift.String
+      public static let attach_text_label: Swift.String
+      public static let attach_button: Swift.String
+      public static let or: Swift.String
+    }
+    public struct Elements {
+      public static let backgroundColor: Swift.String
+      public static let textColor: Swift.String
+      public static let textAccentColor: Swift.String
+    }
+  }
+  public struct multi_touch_v2 {
+    public static let multi_touch_v2: Swift.String
+    public struct Copy {
+      public static let title: Swift.String
+      public static let description: Swift.String
+    }
+    public struct Elements {
+      public static let imageOff: Swift.String
+      public static let imageOn: Swift.String
+      public static let backgroundColor: Swift.String
+      public static let textColor: Swift.String
+      public static let textAccentColor: Swift.String
+    }
+  }
+  public struct charging_v2 {
+    public static let charging_v2: Swift.String
+    public struct Copy {
+      public static let title: Swift.String
+      public static let description: Swift.String
+    }
+    public struct Elements {
+      public static let image: Swift.String
+      public static let backgroundColor: Swift.String
+      public static let textColor: Swift.String
+      public static let textAccentColor: Swift.String
+    }
+  }
+  public struct buttons_v2 {
+    public static let buttons_v2: Swift.String
+    public struct Copy {
+      public static let title_volume_up: Swift.String
+      public static let description_volume_up: Swift.String
+      public static let title_volume_down: Swift.String
+      public static let description_volume_down: Swift.String
+    }
+    public struct Elements {
+      public static let image_volume_up: Swift.String
+      public static let image_volume_down: Swift.String
+      public static let backgroundColor: Swift.String
+      public static let textColor: Swift.String
+      public static let textAccentColor: Swift.String
+    }
+  }
+  public struct device_front_video_v2 {
+    public static let device_front_video_v2: Swift.String
+    public struct Copy {
+      public static let initial_title: Swift.String
+      public static let initial_description: Swift.String
+      public static let initial_next_button: Swift.String
+      public static let info_button_copy: Swift.String
+      public static let preview_title: Swift.String
+      public static let preview_description: Swift.String
+      public static let video_review_title: Swift.String
+      public static let video_review_description: Swift.String
+      public static let video_review_try_again: Swift.String
+      public static let video_review_checkbox_text: Swift.String
+      public static let video_review_next_button: Swift.String
+    }
+    public struct Elements {
+      public static let image_initial_screen: Swift.String
+    }
+  }
+}
+@objc @_inheritsConvenienceInitializers public class Customization : ObjectiveC.NSObject {
+  public var skipTestButtonColor: UIKit.UIColor
+  public var customNavigationBarBackgroundColor: UIKit.UIColor
+  public var customNavigationBarTextColor: UIKit.UIColor
+  public var customNavigationBarButtonsTextColor: UIKit.UIColor
+  public var progressBarBackgroundColor: UIKit.UIColor
+  public var progressBarSelectedColor: UIKit.UIColor
+  public var buttonsStyle: DeviceHealth.ButtonsStyle
+  public var customScreens: [DeviceHealth.CustomizableScreen]
+  @objc override dynamic public init()
+  @objc deinit
+}
+public struct ScreenType {
+  public static let start_screen: Swift.String
+  public static let imei_screen: Swift.String
+  public static let end_screen: Swift.String
+  public static let device_front_video_v2: Swift.String
+  public static let multi_touch_v2: Swift.String
+  public static let buttons_v2: Swift.String
+  public static let charging_v2: Swift.String
+}
+@_hasMissingDesignatedInitializers public class ButtonsStyle {
+  public var borderType: DeviceHealth.BorderType
+  public var backgroundColor: UIKit.UIColor?
+  public var foregroundColor: UIKit.UIColor
+  @objc deinit
+}
+extension UINavigationController {
+  @objc override dynamic open var supportedInterfaceOrientations: UIKit.UIInterfaceOrientationMask {
+    @objc get
+  }
+}
+public enum Model : Swift.String {
+  case simulator, iPod1, iPod2, iPod3, iPod4, iPod5, iPod6, iPod7, iPad2, iPad3, iPad4, iPadAir, iPadAir2, iPadAir3, iPadAir4, iPad5, iPad6, iPad7, iPad8, iPadMini, iPadMini2, iPadMini3, iPadMini4, iPadMini5, iPadPro9_7, iPadPro10_5, iPadPro11, iPadPro2_11, iPadPro12_9, iPadPro2_12_9, iPadPro3_12_9, iPadPro4_12_9, iPhone4, iPhone4S, iPhone5, iPhone5S, iPhone5C, iPhone6, iPhone6Plus, iPhone6S, iPhone6SPlus, iPhoneSE, iPhone7, iPhone7Plus, iPhone8, iPhone8Plus, iPhoneX, iPhoneXS, iPhoneXSMax, iPhoneXR, iPhone11, iPhone11Pro, iPhone11ProMax, iPhoneSE2, iPhone12Mini, iPhone12, iPhone12Pro, iPhone12ProMax, AppleWatch1, AppleWatchS1, AppleWatchS2, AppleWatchS3, AppleWatchS4, AppleWatchS5, AppleWatchSE, AppleWatchS6, AppleTV1, AppleTV2, AppleTV3, AppleTV4, AppleTV_4K, unrecognized
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+extension UIDevice {
+  public var type: DeviceHealth.Model {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers public class DeviceImages {
+  @objc deinit
+}
+extension Data {
+  public func sha256() -> Swift.String
+  public func MD5() -> Swift.String
+}
+public enum SupportedLanguage {
+  case English, Portuguese
+  public static func == (a: DeviceHealth.SupportedLanguage, b: DeviceHealth.SupportedLanguage) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public enum Environment {
+  case PRD, QA, INT
+  public static func == (a: DeviceHealth.Environment, b: DeviceHealth.Environment) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public enum BorderType {
+  case Rounded, RoundedCorners, Square
+  public static func == (a: DeviceHealth.BorderType, b: DeviceHealth.BorderType) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+@objc @_inheritsConvenienceInitializers public class StatusCodes : ObjectiveC.NSObject {
+  @objc public static func getDescription(code: Swift.Int) -> Swift.String
+  @objc override dynamic public init()
+  @objc deinit
+}
+extension DeviceHealth.Model : Swift.Equatable {}
+extension DeviceHealth.Model : Swift.Hashable {}
+extension DeviceHealth.Model : Swift.RawRepresentable {}
+extension DeviceHealth.SupportedLanguage : Swift.Equatable {}
+extension DeviceHealth.SupportedLanguage : Swift.Hashable {}
+extension DeviceHealth.Environment : Swift.Equatable {}
+extension DeviceHealth.Environment : Swift.Hashable {}
+extension DeviceHealth.BorderType : Swift.Equatable {}
+extension DeviceHealth.BorderType : Swift.Hashable {}
