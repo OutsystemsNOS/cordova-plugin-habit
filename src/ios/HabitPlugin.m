@@ -11,7 +11,6 @@
         NSString* imeinumber = [[command.arguments objectAtIndex:1]];
         
         DeviceHealthSDK.shared.getDeviceInfo(imei: imeinumber, serialNumber: serialnumber) { (result) in
-                print(result)
                 CDVPluginResult *pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
                 [self.commandDelegate sendPluginResult:pluginResult callbackId:self.result];
         }
