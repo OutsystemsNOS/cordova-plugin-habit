@@ -3,6 +3,9 @@
 
 @implementation HabitPlugin
 
+@synthesize deviceInfoCallback;
+@synthesize performTestsCallback;
+
 - (void)getDeviceInfo:(CDVInvokedUrlCommand *)command {
 
 }
