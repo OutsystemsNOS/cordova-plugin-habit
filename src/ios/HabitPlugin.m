@@ -14,7 +14,7 @@
         @try {
         DeviceHealthSDK.shared.getDeviceInfo(imei: imeinumber, serialNumber: serialnumber) { (result) in               
                 if (result != nil) {
-                        pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
+                        pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:result];
                 } else {
                         pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:@"Some error getting device info"];
                 }                                                                                                                                                                    
