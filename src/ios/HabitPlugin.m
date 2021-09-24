@@ -3,9 +3,6 @@
 
 @implementation HabitPlugin
 
-@synthesize deviceInfoCallback;
-@synthesize performTestsCallback;
-
 - (void)getDeviceInfo:(CDVInvokedUrlCommand *)command {
         NSString* serialnumber = [[command.arguments objectAtIndex:0]];
         NSString* imeinumber = [[command.arguments objectAtIndex:1]];
