@@ -1,6 +1,8 @@
 #import "HabitPlugin.h"
 #import <Cordova/CDV.h>
 
+import DeviceHealth
+
 @implementation HabitPlugin
 
 - (void)getDeviceInfo:(CDVInvokedUrlCommand *)command {
