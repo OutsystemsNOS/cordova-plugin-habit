@@ -18,7 +18,7 @@
                 } else {
                         pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:@"Some error getting device info"];
                 }                                                                                                                                                                    
-                [self.commandDelegate sendPluginResult:pluginResult callbackId:result];
+                [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
         }
         }@catch (NSException* exception) {
               pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_JSON_EXCEPTION messageAsString:[exception reason]];  
