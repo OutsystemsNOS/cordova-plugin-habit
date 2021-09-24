@@ -21,7 +21,8 @@
                 [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
         }
         }@catch (NSException* exception) {
-              pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_JSON_EXCEPTION messageAsString:[exception reason]];  
+              pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:[exception reason]];  
+              [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
         }
 }
 
