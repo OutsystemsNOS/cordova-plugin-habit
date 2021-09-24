@@ -8,7 +8,13 @@
 
 - (void)getDeviceInfo:(CDVInvokedUrlCommand *)command {
         NSString* serialnumber = [[command.arguments objectAtIndex:0]];
-        NSString* imei = [[command.arguments objectAtIndex:1]];
+        NSString* imeinumber = [[command.arguments objectAtIndex:1]];
+        
+        DeviceHealthSDK.shared.getDeviceInfo(imei: imeinumber, serialNumber: serialnumber) { (result) in
+                print(result)
+                CDVPluginResult *pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
+                [self.commandDelegate sendPluginResult:pluginResult callbackId:self.result];
+        }
 }
 
 - (void)performTests:(CDVInvokedUrlCommand *)command {
