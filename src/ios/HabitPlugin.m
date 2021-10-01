@@ -35,4 +35,9 @@ import DeviceHealth
         NSString* themecolor = [[command.arguments objectAtIndex:6]];
         BOOL hidesstartcreen = [[command.arguments objectAtIndex:7] boolValue];
         NSString* screencustomization = [[command.arguments objectAtIndex:8]];
+        
+        CDVPluginResult* pluginResult = nil;
+        
+        pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:result];
+        [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
 }
