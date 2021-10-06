@@ -1,7 +1,4 @@
-#import <Cordova/CDV.h>
 #import "HabitPlugin.h"
-
-#import DeviceHealth
 
 @implementation HabitPlugin
 
