@@ -3,6 +3,8 @@
 @interface HabitPlugin : CDVPlugin {
 }
 
-+ (NSString*) get;
+// The hooks for our plugin commands
+- (void)getDeviceInfo:(CDVInvokedUrlCommand *)command;
+- (void)performTests:(CDVInvokedUrlCommand *)command;
 
 @end
