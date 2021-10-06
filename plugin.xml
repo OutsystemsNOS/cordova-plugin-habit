@@ -13,6 +13,8 @@
     	<engine name="cordova" version=">=4.2.0" />
     </engines>
 	
+    <dependency id="cordova-plugin-add-swift-support" version="1.7.1"/>
+	
     <js-module name="HabitPlugin" src="www/habit.js">
     	<clobbers target="Habit" />
     </js-module>
