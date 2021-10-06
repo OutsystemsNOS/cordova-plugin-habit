@@ -1,4 +1,4 @@
-#import <Cordova/CDVPlugin.h>
+#import <sys/unistd.h>
 
 @interface HabitPlugin : CDVPlugin {
 }
