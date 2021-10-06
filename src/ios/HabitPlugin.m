@@ -1,6 +1,6 @@
 #import "HabitPlugin.h"
 
-#import DeviceHealth
+#import "DeviceHealth-Swift.h"
 
 @implementation HabitPlugin
 
