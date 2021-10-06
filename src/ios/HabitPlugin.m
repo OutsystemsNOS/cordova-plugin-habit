@@ -1,5 +1,7 @@
 #import "HabitPlugin.h"
 
+#import "DeviceHealth-Swift.h"
+
 @implementation HabitPlugin
 
 - (void)getDeviceInfo:(CDVInvokedUrlCommand *)command {
