@@ -18,7 +18,7 @@ import Foundation
         DeviceHealthSDK.shared.getDeviceInfo(imei: imeinumber, serialNumber: serialnumber) { (result) in                             
                 let stringObject = self.JSONStringify(result!, prettyPrinted: true)
                 let status = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: stringObject)
-                self.commandDelegate.send(result, callbackId: command.callbackId)
+                self.commandDelegate.send(status, callbackId: command.callbackId)
         }
         */
     }
