@@ -8,7 +8,8 @@ import DeviceHealth
 
     override public func onAppTerminate() {
     }
-
+    
+    @objc(getDeviceInfo:)
     public func getDeviceInfo(_ command: CDVInvokedUrlCommand) {
         let serialnumber = command.arguments[0] as? String ?? ""
         let imeinumber = command.arguments[1] as? String ?? ""
