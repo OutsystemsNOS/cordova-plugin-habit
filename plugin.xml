@@ -39,9 +39,9 @@
             </feature>
         </config-file>
 	<!--<header-file src="src/ios/HabitPlugin-Bridging-Header.h"/>-->
-        <!--<source-file src="src/ios/HabitPlugin.swift"/>-->
-        <header-file src="src/ios/HabitPlugin.h"/>
-        <source-file src="src/ios/HabitPlugin.m"/>
+        <source-file src="src/ios/HabitPlugin.swift"/>
+        <!--<header-file src="src/ios/HabitPlugin.h"/>-->
+        <!--<source-file src="src/ios/HabitPlugin.m"/>-->
     	<framework src="src/ios/Frameworks/DeviceHealth.xcframework" custom="true" />
     </platform>
 </plugin>
