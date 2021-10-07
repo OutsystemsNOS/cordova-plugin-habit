@@ -17,8 +17,8 @@ import DeviceHealth
         DeviceHealthSDK.shared.getDeviceInfo(imei: imeinumber, serialNumber: serialnumber) { (result) in  
             DispatchQueue.main.async {
                 let stringObject = self.JSONStringify(result!, prettyPrinted: true)
-                let status = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: stringObject)
-                self.commandDelegate.send(status, callbackId: command.callbackId)
+                //let status = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: stringObject)
+                //self.commandDelegate.send(status, callbackId: command.callbackId)
             }
         }
     }
