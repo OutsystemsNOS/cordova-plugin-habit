@@ -22,9 +22,8 @@
     "cordova-android"
   ],
   "engines": [
-    {
-      "name": "cordova",
-      "version": ">=3.0.0"
+    "cordovaDependencies": {
+      "0.0.2": { "cordova-ios": ">4.3.0"}
     }
   ],
   "license": "NOS",
