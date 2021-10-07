@@ -1,5 +1,5 @@
 import Foundation
-//import DeviceHealth
+import DeviceHealth
 
 @objc(HabitPlugin) public class HabitPlugin : CDVPlugin  {
 
@@ -14,13 +14,11 @@ import Foundation
         let serialnumber = command.arguments[0] as? String ?? ""
         let imeinumber = command.arguments[1] as? String ?? ""
         
-        /*
         DeviceHealthSDK.shared.getDeviceInfo(imei: imeinumber, serialNumber: serialnumber) { (result) in                             
                 let stringObject = self.JSONStringify(result!, prettyPrinted: true)
                 let status = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: stringObject)
                 self.commandDelegate.send(status, callbackId: command.callbackId)
         }
-        */
     }
     
     func JSONStringify(_ value: [String:Any],prettyPrinted:Bool = false) -> String
