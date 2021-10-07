@@ -8,10 +8,6 @@
     <license>NOS</license>
 
     <keywords>cordova,android,toast,message,alert</keywords>
-  
-    <engines>
-    	<engine name="cordova" version=">=10.0.0" />
-    </engines>
 	
     <js-module name="HabitPlugin" src="www/habit.js">
     	<clobbers target="Habit" />
@@ -43,7 +39,6 @@
         <!--<header-file src="src/ios/HabitPlugin.h"/>-->
         <!--<source-file src="src/ios/HabitPlugin.m"/>-->
     	<framework src="src/ios/Frameworks/DeviceHealth.xcframework" custom="true" />
-	<preference name="UseSwiftLanguageVersion" value="5.1"/>
     </platform>
 </plugin>
 
