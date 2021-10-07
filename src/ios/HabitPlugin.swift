@@ -15,16 +15,10 @@ import DeviceHealth
         let imeinumber = command.arguments[1] as? String ?? ""
         
         DeviceHealthSDK.shared.getDeviceInfo(imei: imeinumber, serialNumber: serialnumber) { (result) in  
-            print(result)
-            /*
             DispatchQueue.main.async {
-                let stringObject = self.JSONStringify(result!, prettyPrinted: true)
-                let status = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: stringObject)
-                self.commandDelegate.send(status, callbackId: command.callbackId)
+                let text = self.JSONStringify(result!, prettyPrinted: true)
             }
-           */
         }
-
     }
     
     func JSONStringify(_ value: [String:Any],prettyPrinted:Bool = false) -> String
