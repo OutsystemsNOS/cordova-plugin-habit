@@ -21,14 +21,14 @@
     "ecosystem:cordova",
     "cordova-android"
   ],
-  "engines": [
+    "engines": {
     "cordovaDependencies": {
       "0.0.2": { "cordova-ios": ">4.3.0"}
     }
-  ],
+  },
   "license": "NOS",
   "bugs": {
-    "url": "https://github.com/miguelrosanos/NOSHabit"
+    "url": "https://github.com/MiguelRosaDev/NOSHabit"
   },
-  "homepage": "https://github.com/miguelrosanos/NOSHabit"
+  "homepage": "https://github.com/MiguelRosaDev/NOSHabit"
 }
