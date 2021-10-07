@@ -19,10 +19,4 @@ import DeviceHealth
         }
     }
 
-    public func performTests(_ command: CDVInvokedUrlCommand) {
-
-        let pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:"Ok"];
-        self.commandDelegate?.send(pluginResult, callbackId: command.callbackId)
-    }
-
 }
