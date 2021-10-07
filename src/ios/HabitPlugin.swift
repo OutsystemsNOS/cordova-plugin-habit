@@ -14,10 +14,12 @@ import DeviceHealth
         let serialnumber = command.arguments[0] as? String ?? ""
         let imeinumber = command.arguments[1] as? String ?? ""
         
-        DeviceHealthSDK.shared.getDeviceInfo(imei: imeinumber, serialNumber: serialnumber) { (result) in                             
+        DeviceHealthSDK.shared.getDeviceInfo(imei: imeinumber, serialNumber: serialnumber) { (result) in  
+            DispatchQueue.main.async {
                 let stringObject = self.JSONStringify(result!, prettyPrinted: true)
                 let status = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: stringObject)
                 self.commandDelegate.send(status, callbackId: command.callbackId)
+            }
         }
     }
     
