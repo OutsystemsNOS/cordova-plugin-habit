@@ -15,9 +15,7 @@ import DeviceHealth
         let imeinumber = command.arguments[1] as? String ?? ""
         
         DeviceHealthSDK.shared.getDeviceInfo(imei: imeinumber, serialNumber: serialnumber) { (result) in  
-            DispatchQueue.main.async {
-                let text = self.JSONStringify(result!, prettyPrinted: true)
-            }
+            print(result)
         }
     }
     
@@ -32,13 +30,9 @@ import DeviceHealth
                 if let string = NSString(data: data, encoding: String.Encoding.utf8.rawValue) {
                     return string as String
                 }
-            } catch {
-
-//                dLog(message: "error")
-            }
+            } catch {}
         }
         return ""
-
     }
 
 }
