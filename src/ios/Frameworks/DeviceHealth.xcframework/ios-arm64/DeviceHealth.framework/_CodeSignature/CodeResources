@@ -6,51 +6,51 @@
 	<dict>
 		<key>Assets.car</key>
 		<data>
-		sLsigIj1XxPy6iQAgu1jsHZ8Gw0=
+		4AwcxBHLZTqCTOt+ju9JMXEOtjQ=
 		</data>
 		<key>Buttons_v1_ViewController.nib/objects-13.0+.nib</key>
 		<data>
-		yTkKtCy5Y5G+Z0uL+mbCQH8AYwk=
+		enqy53VPGPTwfmkUF847A5PtMGM=
 		</data>
 		<key>Buttons_v1_ViewController.nib/runtime.nib</key>
 		<data>
-		g+wn+exvWLHipoD3cZIW6iw/81U=
+		GiqHh2gXn27ytNACLAs7+Pade48=
 		</data>
 		<key>Charging_v1_ViewController.nib/objects-13.0+.nib</key>
 		<data>
-		Ip7uCyVmziAbVx26fov+Ss5zBN4=
+		3vcC7n9vnT5gWUeEUbW7JlOd8tM=
 		</data>
 		<key>Charging_v1_ViewController.nib/runtime.nib</key>
 		<data>
-		CYTcRFCbmBgF9U9A3Gn1684WOp0=
+		VEsr8heqKGx32GC81pnjV2DvZIw=
 		</data>
 		<key>DeviceFrontVideo_v1_ViewController.nib/objects-13.0+.nib</key>
 		<data>
-		bT1XGnjtKefvsqWAKpD+nNld7fM=
+		ZiH9Jrg0FvSLMuK7myGFPiUMv74=
 		</data>
 		<key>DeviceFrontVideo_v1_ViewController.nib/runtime.nib</key>
 		<data>
-		akif5Meaadq7f8bKnJCrh4tMAr8=
+		bsC+hvAXIC9R23LPDYkif+UigaM=
 		</data>
 		<key>DeviceFrontVideo_v2_ViewController.nib/objects-13.0+.nib</key>
 		<data>
-		1V4qdbGS0CwjgGTD0WNj3Hup3c0=
+		CguEfuPGFPvcfjCqozXqUrZgL3Y=
 		</data>
 		<key>DeviceFrontVideo_v2_ViewController.nib/runtime.nib</key>
 		<data>
-		nKeQrFO/STuC+xzP/rFPqjjt9sQ=
+		KpNfGFeSPxY4ezLdIdJAaNV9W+E=
 		</data>
 		<key>Earspeaker_v1_ViewController.nib/objects-13.0+.nib</key>
 		<data>
-		mfXW199WHJTC0ihQvT4QIlrLG0k=
+		NVKiSd13yOEG0QixNHOY6GyITyg=
 		</data>
 		<key>Earspeaker_v1_ViewController.nib/runtime.nib</key>
 		<data>
-		JLP5ublueetLKFRch8uPMW2HHBM=
+		/putwgbhLSaH68U9uTE6G6bYUe0=
 		</data>
 		<key>Headers/DeviceHealth-Swift.h</key>
 		<data>
-		JzxRduRQU130lO8D9/OyUyfgi5Q=
+		FRBQYPxGqNOLNbTaPVkngm8QGI8=
 		</data>
 		<key>Headers/HealthLibrary.h</key>
 		<data>
@@ -58,47 +58,47 @@
 		</data>
 		<key>IMEIViewController.nib/objects-13.0+.nib</key>
 		<data>
-		nV46l1e9QFh2fCxWcNTRFDLPsLw=
+		BzEiOJfWpozHyyqWwUO4jNt/7i0=
 		</data>
 		<key>IMEIViewController.nib/runtime.nib</key>
 		<data>
-		0nKbDfB8BoA03umx5vQcHJNo+bw=
+		ypGGvCzNd69OyvufIbzlFuSEUgA=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		NkKq5iX9Xzmyy60fFe5/0SDOwvI=
+		qx8ZCX7lUbqvttKvGclC5tLfjnY=
 		</data>
 		<key>Loudspeaker_v1_ViewController.nib/objects-13.0+.nib</key>
 		<data>
-		8NXWZKSjeDTBMLdEQpO9OiLYjaM=
+		ccbt0PbgP+KVnG9dETlAqrL4cdg=
 		</data>
 		<key>Loudspeaker_v1_ViewController.nib/runtime.nib</key>
 		<data>
-		dArHoFx42by1rroU5U11IE2DByM=
+		iMgymDZ9vw7bkIBLDGzhd10RlrQ=
 		</data>
 		<key>Modules/DeviceHealth.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
-		YdcV0CWVmc1Zr720oMM5WG+36ZM=
+		1UeGWeUirNMdOQn53dOCjSxMsXU=
 		</data>
 		<key>Modules/DeviceHealth.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<data>
-		BB+KZjzhRbNCy+tDqsCupsz705g=
+		90tqA7O8G4GV8eyEsibPboNRlSQ=
 		</data>
 		<key>Modules/DeviceHealth.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		LRPS8OZbk/dVjmY881MbCLJ6EiY=
+		9gOwldHaCc8vtfquw6Zs6xI10LQ=
 		</data>
 		<key>Modules/DeviceHealth.swiftmodule/arm64.swiftdoc</key>
 		<data>
-		YdcV0CWVmc1Zr720oMM5WG+36ZM=
+		1UeGWeUirNMdOQn53dOCjSxMsXU=
 		</data>
 		<key>Modules/DeviceHealth.swiftmodule/arm64.swiftinterface</key>
 		<data>
-		BB+KZjzhRbNCy+tDqsCupsz705g=
+		90tqA7O8G4GV8eyEsibPboNRlSQ=
 		</data>
 		<key>Modules/DeviceHealth.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		LRPS8OZbk/dVjmY881MbCLJ6EiY=
+		9gOwldHaCc8vtfquw6Zs6xI10LQ=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -106,67 +106,67 @@
 		</data>
 		<key>MultiTouch_v1_ViewController.nib/objects-13.0+.nib</key>
 		<data>
-		nec/34FivMOS77+aEnEee6swaJY=
+		a4oQVn5g1tWm4Z+8969PcREcpQI=
 		</data>
 		<key>MultiTouch_v1_ViewController.nib/runtime.nib</key>
 		<data>
-		y4pLVq267kJxOgU9qDswJFjMa+Y=
+		5NbQJwY2x/eGBCHwyQAYzZtKMOQ=
 		</data>
 		<key>MultiTouch_v2_ViewController.nib/objects-13.0+.nib</key>
 		<data>
-		Z24JQH2Ks7v/v+UehDbAtspzOgQ=
+		IxJy9xfjWpADnRx0OIgr2+87dus=
 		</data>
 		<key>MultiTouch_v2_ViewController.nib/runtime.nib</key>
 		<data>
-		Xqe195RHulT0uZDaiH7Omnx/YsA=
+		8SJ8ukkrvyi7ori7f45PtKAIE0E=
 		</data>
 		<key>MultipleTestsTableViewCell.nib</key>
 		<data>
-		abDd5p/peQx88bD9yBryxQCmkx0=
+		GttZKNkzXs+FXKPH+6PEnUYGGDc=
 		</data>
 		<key>MultipleTests_v2_ViewController.nib/objects-13.0+.nib</key>
 		<data>
-		9LCDizTRYslmlaQAxE1OPuhpHuU=
+		WIVy1FEvOcv1/lluWLJW029UHV0=
 		</data>
 		<key>MultipleTests_v2_ViewController.nib/runtime.nib</key>
 		<data>
-		1LTxabrFMP0WL5wqwNif9zVXORE=
+		1SUlbPT6G+RWTdinN6SoCpIyES4=
 		</data>
 		<key>ReadText_v1_ViewController.nib/objects-13.0+.nib</key>
 		<data>
-		Mc0njO9a8LIIGqBO4SrVxeQ8r7w=
+		wo59UbVoyynbb47juhXReKBV5wI=
 		</data>
 		<key>ReadText_v1_ViewController.nib/runtime.nib</key>
 		<data>
-		yIO61yawnLBxIikbzOzAeOgwGdk=
+		4ycuu6FO8tn8aeoUwlTe8kRV7Jk=
 		</data>
 		<key>SpeakerRecording_v1_ViewController.nib/objects-13.0+.nib</key>
 		<data>
-		cGZCwFSdV8Jp5QT0KAufFImJvz4=
+		9s14bSCee63UPEs8t/IYtZFpojQ=
 		</data>
 		<key>SpeakerRecording_v1_ViewController.nib/runtime.nib</key>
 		<data>
-		UNmupuW1wX7IDRjjuKASQQ0OMqc=
+		bU4t0Le0ztUm+0y2kPTQhEWEV4A=
 		</data>
 		<key>StartViewController.nib/objects-13.0+.nib</key>
 		<data>
-		pBbB7gBFo9jujpxa9J1QRyxstSQ=
+		ztRBYpr8T2iWqmL4Meo+N+XcV9c=
 		</data>
 		<key>StartViewController.nib/objects-14.0+.nib</key>
 		<data>
-		ENdSqAtf0K4wZoI97IPouWLDZDA=
+		ztRBYpr8T2iWqmL4Meo+N+XcV9c=
 		</data>
 		<key>StartViewController.nib/runtime.nib</key>
 		<data>
-		a3EuS0Gyuw66WFa2atSEBvhnHqY=
+		qv+0nJegEfNcWd4MK7133okRbiU=
 		</data>
 		<key>TestsFinishedViewController.nib/objects-13.0+.nib</key>
 		<data>
-		hce8bZiWTmqCEEPhrEIjvZcMXSc=
+		up9kQK6mOQIgrdcTjPfk4vPuJYA=
 		</data>
 		<key>TestsFinishedViewController.nib/runtime.nib</key>
 		<data>
-		QVy9pyvU0tpzoiHr/dB01osXsok=
+		huicrLiL5YhnKZ6rLz4a2R2hREY=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -175,84 +175,84 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			FQ1ZDmhLidmWCtv76/9HMSY6595/mW4xJvP/pHl57Ik=
+			dKIkS2ZKI6rFj8oTuyHlF1wuPTK9y9E/i9xwwW/NHik=
 			</data>
 		</dict>
 		<key>Buttons_v1_ViewController.nib/objects-13.0+.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			zrcbGbcjDyMgQ0zXnpLyRH3Zj4e+rId+DV/QelVxHVo=
+			5jlDO92/bOPM0zt7lGZcc5koTq4Gl6jSEnrCz6083uk=
 			</data>
 		</dict>
 		<key>Buttons_v1_ViewController.nib/runtime.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			q04QRQwgT6D6OOUccZ1j4HuDb/n+i1G5D8YL1WWGH+8=
+			3NowhTL+MoCcvIGdUy+/9+qaz83NzfLvKlsWxd8vW94=
 			</data>
 		</dict>
 		<key>Charging_v1_ViewController.nib/objects-13.0+.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			lbTxk7JBC8uvKUimhhLuU10wIgayB+5m6c6sbaYhWnw=
+			CCY4L4L0HmklXQrHCkLYfOgKXAY1s+DuodO5IwBjSVU=
 			</data>
 		</dict>
 		<key>Charging_v1_ViewController.nib/runtime.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			TjBNOqmCNTFCHUP+Sn9Pq7B/W0DQY9tFoNtLyjulfDI=
+			H/6Le8SyifJgfX0f6oWKAAGGWS+qsx7NCcxUnVdZf6E=
 			</data>
 		</dict>
 		<key>DeviceFrontVideo_v1_ViewController.nib/objects-13.0+.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			wyzwZ9mVt4VimglRQI5CZnhJ5g+Qdjd75eixNk8WFas=
+			UmPhLKMij6RcH1jRbfVMAHBi8xgX9VU7YxZGAGLu+LY=
 			</data>
 		</dict>
 		<key>DeviceFrontVideo_v1_ViewController.nib/runtime.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Po9y4EFq24v7aR4LqgRWBkB4Ez+XGt8m0x3XcTwtveQ=
+			UlH/yLyjZZeTKZsr7y425PBhSE7f47EO4clVzadrbqA=
 			</data>
 		</dict>
 		<key>DeviceFrontVideo_v2_ViewController.nib/objects-13.0+.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			waCNKfvJRBVcr5yvkDsgWXdzOisOzVPA9mZDfyb5onU=
+			GyUdKMlAUT2c5JbbYVV5s+LZdzPXAcCQ14b65O7ffsE=
 			</data>
 		</dict>
 		<key>DeviceFrontVideo_v2_ViewController.nib/runtime.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			ddq1ifQDHi1w03Zylqh9zY0KQJZGUNn1Gk+NIvscTk8=
+			t8WD+9PWPchxhHG39U77a2J+jMhS+klmPZgt/TfiX3Y=
 			</data>
 		</dict>
 		<key>Earspeaker_v1_ViewController.nib/objects-13.0+.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			tMclt7I8YQDMUwiQ8jfD5V8DCud5pVpqWAXc1LKAc/E=
+			h8/NJKZugYsLB05N+QPrfxQijj4XQ3UfuLYxYfKjFXI=
 			</data>
 		</dict>
 		<key>Earspeaker_v1_ViewController.nib/runtime.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			v+P7GyLXI4rhX0PloJUnazarwlRzSiQS6msd+TPIryQ=
+			jy8CTFJyByhtJ/BNuvj2wTyajzC8/+Tw5tu1//nUt30=
 			</data>
 		</dict>
 		<key>Headers/DeviceHealth-Swift.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			RlGfyHgth9dsdxKUSUsMcR7xhV6cNhebUwjgAe7TBwk=
+			bSLG/vQ9SCkgkIkOxo5ye0KX1fdfWzMy6dbpJyjGt/I=
 			</data>
 		</dict>
 		<key>Headers/HealthLibrary.h</key>
@@ -266,70 +266,70 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			k1tp9O/9B0WEpBW6whFtdGMDmfm7QWqESCSJFaOGV1U=
+			CLF5eeJ9NHItZGycFNB6BPfN1QmMNptjEEFjwHa4cGQ=
 			</data>
 		</dict>
 		<key>IMEIViewController.nib/runtime.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			0xjSwh6lSf1pP0c6U0s26i6OM7iGldAL4FzkKihcDuA=
+			pbm7PG2KnB+Fiv9PLqtzpNmYHsR21tXRLMY27KaV+eY=
 			</data>
 		</dict>
 		<key>Loudspeaker_v1_ViewController.nib/objects-13.0+.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			DS63x5EzNdVA7xYE2ZpVxg5nBuSISess+hvIgkophWU=
+			jwwkFfji/yAi/LYpunsplegrHNf60HM1BG5DmA0DWyI=
 			</data>
 		</dict>
 		<key>Loudspeaker_v1_ViewController.nib/runtime.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			MKQ1zJqI9S7UiTcnaf1x0s8VEcJnQ1K/+Tllb9W+Jew=
+			FSzMyd8LMsrEcPfv5atczTrMgOqFwVfwluR3jyEaMmc=
 			</data>
 		</dict>
 		<key>Modules/DeviceHealth.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			IvpUX4+nfk4WyA3h/JGGsOJ1D+ueuV200Lrkyb/MBCA=
+			aL1Krj5tAVmqlWaXrA6QnRuAp1cNS/CrRlcopJZSwio=
 			</data>
 		</dict>
 		<key>Modules/DeviceHealth.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			4CAGRIDQAz1qlgk70MBE6avPpF5fV04Z7hmtYq20vRA=
+			aY0jRSBsLP2jW6cq8WTGGj4ZyjEy1CC0Zyq4ewsp6S8=
 			</data>
 		</dict>
 		<key>Modules/DeviceHealth.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			jDWCnKv6HUty+UaLxiYNktm6qzUtY0F0S4pc7HxKqk4=
+			/+gGRnziJ9aUzIisMwyIdNS+5DpHuvvjuWQJXyA1WDI=
 			</data>
 		</dict>
 		<key>Modules/DeviceHealth.swiftmodule/arm64.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			IvpUX4+nfk4WyA3h/JGGsOJ1D+ueuV200Lrkyb/MBCA=
+			aL1Krj5tAVmqlWaXrA6QnRuAp1cNS/CrRlcopJZSwio=
 			</data>
 		</dict>
 		<key>Modules/DeviceHealth.swiftmodule/arm64.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			4CAGRIDQAz1qlgk70MBE6avPpF5fV04Z7hmtYq20vRA=
+			aY0jRSBsLP2jW6cq8WTGGj4ZyjEy1CC0Zyq4ewsp6S8=
 			</data>
 		</dict>
 		<key>Modules/DeviceHealth.swiftmodule/arm64.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			jDWCnKv6HUty+UaLxiYNktm6qzUtY0F0S4pc7HxKqk4=
+			/+gGRnziJ9aUzIisMwyIdNS+5DpHuvvjuWQJXyA1WDI=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -343,112 +343,112 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			azh3ktpEs+p1xdrBwmpb+jHDrnhHPJTLhPEROwLq81U=
+			hnWi2XXBkEPJhwDqtFF3RQ/+Pq9XDjzRFJ/d6JIsg+k=
 			</data>
 		</dict>
 		<key>MultiTouch_v1_ViewController.nib/runtime.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			wOXNKrPE8OQVjFXkkp730KifjCpIPzoJIT71JojZRLQ=
+			EuOj6LdVTjwq5VJf1m9Neau9wOV5nHCqdxC/ZMbQc7o=
 			</data>
 		</dict>
 		<key>MultiTouch_v2_ViewController.nib/objects-13.0+.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			g6TqbLID/8pMc+mzzNU8vaYz5c0ttS91P8C2rOEZ4uo=
+			1RPhwArPJeMJJteTvtfeyHuGbN1gYfVWJsXlD6WGV1E=
 			</data>
 		</dict>
 		<key>MultiTouch_v2_ViewController.nib/runtime.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			0PwNQmFwNGbKxPinDJKFsnB2rR/Eb86UB0igOQQxoTc=
+			21q+9+RvtDVCnPP9Q0SfaEN9MyulfRRQtiBmpzgRuxU=
 			</data>
 		</dict>
 		<key>MultipleTestsTableViewCell.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			x93S2KEJXjNZf/yAIQL/ky+6K9/qh1ZNVPGQhpQKILk=
+			sul7ZMq4MFj2CfBX5TUl86M2D19ATC+jp/BXaEWu1u0=
 			</data>
 		</dict>
 		<key>MultipleTests_v2_ViewController.nib/objects-13.0+.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			FaPJLSsLPQLZk6gxgk78kWHXU/3fjDSjLQ1hrJrvVaU=
+			DVOUOc7hyDqGABakFgVirkA2GOGS7sdP0BNQkOU4P4A=
 			</data>
 		</dict>
 		<key>MultipleTests_v2_ViewController.nib/runtime.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			c2tVPHPPkXjQs7EFEmJ8pwHCyH7xEXuiA+e4NDmY6sA=
+			XASwNzJS+z6dBU39luNyn7zIKC3qRczwQGbWcMOxl70=
 			</data>
 		</dict>
 		<key>ReadText_v1_ViewController.nib/objects-13.0+.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			I6O5CzfPXCDlc5UYeWM+da2//RRwp+SL0HnIbx4wPlk=
+			2LntqzMK1JdmcfXXvDz/hTBfzz68CLCxvhYoHHRzYQg=
 			</data>
 		</dict>
 		<key>ReadText_v1_ViewController.nib/runtime.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			AcLMQyGLCZlxkaRP4JLUh+5+d826ANuYZF9Md5D2RjM=
+			9vG5TDg1G7w1L5LXLHkPllRMW0gwPeYKqFM64RF5tNI=
 			</data>
 		</dict>
 		<key>SpeakerRecording_v1_ViewController.nib/objects-13.0+.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			m8Q8LJoKHW+wNFGyRIC/fO+wqy+CdQzS67ErOjgV4QI=
+			1xAgirf4Lmx/fqbAgUyH0IK8QnJLdcuFS307bRLJF1k=
 			</data>
 		</dict>
 		<key>SpeakerRecording_v1_ViewController.nib/runtime.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			SZVZWtCP3yb+Z0jMjbfT8DQrXVa1zrM1AbenJ7f6nCM=
+			mKgcXcr2DIIwyTcSxAgt7qREEZx+bUkGXmpxlH9KU34=
 			</data>
 		</dict>
 		<key>StartViewController.nib/objects-13.0+.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			2FIGL/WhTfnLhs5eOQtIDkINV+dR9nhw7WxaP0TW3Gc=
+			6SNOVNZdEKOq8zBuVWnLZplzSXi2Er6fLF6w75kMxIU=
 			</data>
 		</dict>
 		<key>StartViewController.nib/objects-14.0+.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			USNT/GTkvjyXSTtgOXbv6sMVekPkUkMUAydG6cY3LO0=
+			6SNOVNZdEKOq8zBuVWnLZplzSXi2Er6fLF6w75kMxIU=
 			</data>
 		</dict>
 		<key>StartViewController.nib/runtime.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			aGjfQNpvwbbkbhb9biHiHdShWvYMTckhM4Q8iFOLhMw=
+			9WbaOgiYvJKPbY8fwwWaGAnP9lpTIhfhTdEguPYyJxA=
 			</data>
 		</dict>
 		<key>TestsFinishedViewController.nib/objects-13.0+.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			lGcLw+0Ax1mZnJKtOH3xVr795S0UiHBGjB/pKnkx0gA=
+			/64CRzbLcC2Tt4nHuZJZGkgYM51snR1BM4yMg2fWSR4=
 			</data>
 		</dict>
 		<key>TestsFinishedViewController.nib/runtime.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			PmWwLI4vNX22y6bhXgqkF/hVpXz7NlDebM9+1+wpvbI=
+			NwWu+geV1BAPlnCc79j/wIL6Ws64SPYE33Cl87x9r/A=
 			</data>
 		</dict>
 	</dict>
