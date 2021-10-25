@@ -37,7 +37,7 @@
         
         CDVPluginResult* pluginResult = nil;
         
-        pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:result];
+        pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:@"Ok"];
         [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
 }
 
