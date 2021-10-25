@@ -35,7 +35,7 @@
         BOOL hidesstartcreen = [[command.arguments objectAtIndex:7] boolValue];
         NSString* screencustomization = [command.arguments objectAtIndex:8];
         
-        CDVPluginResult* pluginResult = nil;
+        __block CDVPluginResult* pluginResult = nil;
         
         pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:@"Ok"];
         [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
