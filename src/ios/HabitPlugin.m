@@ -1,6 +1,6 @@
 #import "HabitPlugin.h"
 
-@import DeviceHealth;
+@import DeviceHealth
 
 @implementation HabitPlugin
 
@@ -18,7 +18,6 @@
                         }                                                                                                                                                                    
                         [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
                 }];
-        }
         }@catch (NSException* exception) {
               pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:[exception reason]];  
               [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
