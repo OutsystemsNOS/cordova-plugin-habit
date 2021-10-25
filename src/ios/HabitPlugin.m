@@ -10,9 +10,9 @@
         __block CDVPluginResult* pluginResult = nil;
         
         @try{   
-                [[DeviceHealthSDK shared] getDeviceInfoWithImei:imeinumber serialNumber:serialnumber completion:^(NSDictionary<NSString *,id> * result) {
+                [[DeviceHealthSDK shared] getDeviceInfoWithImei:imeinumber serialNumber:serialnumber SWIFT_WARN_UNUSED_RESULT) {
                         if (result != nil) {
-                                pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:result];
+                                pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:SWIFT_WARN_UNUSED_RESULT];
                         } else {
                                 pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:@"Some error getting device info"];
                         }                                                                                                                                                                    
