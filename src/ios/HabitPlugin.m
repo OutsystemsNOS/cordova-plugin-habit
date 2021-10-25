@@ -30,9 +30,9 @@
         
         __block CDVPluginResult* pluginResult = nil;  
         
-        let selectedTests = [ScreenType.buttons_v2, ScreenType.charging_v2, ScreenType.multi_touch_v2, ScreenType.device_front_video_v2 ]
+        const selectedTests = [ScreenType.buttons_v2, ScreenType.charging_v2, ScreenType.multi_touch_v2, ScreenType.device_front_video_v2 ]
                 
-        let customization = Customization()
+        const customization = Customization()
 
         var customStartCopy = [String: String]()
         customStartCopy[ScreenCustomizationKeys.start_screen.Copy.title] = "Your custom title"
@@ -41,7 +41,7 @@
         //var images = [String: UIImage]()
         //images[ScreenCustomizationKeys.start_screen.Elements.image] = UIImage(named: "your_custom_image")
 
-        let screen = CustomizableScreen(screenType : ScreenType.start_screen)
+        const screen = CustomizableScreen(screenType : ScreenType.start_screen)
         screen.backgroundColor = UIColor.white
         screen.textAccentColor = UIColor.blue
         screen.textColor = UIColor.black
