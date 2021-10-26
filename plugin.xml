@@ -37,6 +37,7 @@
         <config-file target="config.xml" parent="/*">
             <feature name="HabitPlugin">
                 <param name="ios-package" value="HabitPlugin"/>
+		<param name="onload" value="true" />
             </feature>
         </config-file>
 	<!--<header-file src="src/ios/HabitPlugin-Bridging-Header.h"/>-->
