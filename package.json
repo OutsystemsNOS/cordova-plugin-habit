@@ -20,7 +20,7 @@
     "Alert",
     "ecosystem:cordova",
     "cordova-android"
-  ]},
+  ],
   "license": "NOS",
   "bugs": {
     "url": "https://github.com/MiguelRosaDev/NOSHabit"
