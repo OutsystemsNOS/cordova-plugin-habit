@@ -28,6 +28,7 @@
         BOOL hidesstartcreen = [[command.arguments objectAtIndex:7] boolValue];
         NSString* screencustomization = [command.arguments objectAtIndex:8];
         
+        /*
         __block CDVPluginResult* pluginResult = nil;  
         
         const selectedTests = [ScreenType.buttons_v2, ScreenType.charging_v2, ScreenType.multi_touch_v2, ScreenType.device_front_video_v2 ]
@@ -59,6 +60,7 @@
               CDVPluginResult* pluginResultErr = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:[exception reason]];  
               [self.commandDelegate sendPluginResult:pluginResultErr callbackId:command.callbackId];
         }
+        */
 }
 
 @end
