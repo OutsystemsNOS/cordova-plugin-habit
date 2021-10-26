@@ -44,7 +44,7 @@
         <!--<source-file src="src/ios/HabitPlugin.swift"/>-->
         <header-file src="src/ios/HabitPlugin.h"/>
         <source-file src="src/ios/HabitPlugin.m"/>
-    	<framework src="src/ios/Frameworks/DeviceHealth.xcframework" custom="true" />
+    	<framework src="src/ios/Frameworks/DeviceHealth.xcframework" custom="true" embed="true"/>
     </platform>
 </plugin>
 
