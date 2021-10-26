@@ -20,12 +20,7 @@
     "Alert",
     "ecosystem:cordova",
     "cordova-android"
-  ],
-    "engines": {
-    "cordovaDependencies": {
-      "0.0.2": { "cordova-ios": ">4.3.0"}
-    }
-  },
+  ]},
   "license": "NOS",
   "bugs": {
     "url": "https://github.com/MiguelRosaDev/NOSHabit"
