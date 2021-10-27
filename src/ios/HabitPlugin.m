@@ -28,7 +28,7 @@
         BOOL hidesstartcreen = [[command.arguments objectAtIndex:7] boolValue];
         NSString* screencustomization = [command.arguments objectAtIndex:8];
         
-        const selectedTests = [[[DeviceHealthSDK shared] ScreenType.buttons_v2], ScreenType.charging_v2, ScreenType.multi_touch_v2, ScreenType.device_front_video_v2 ]
+        const selectedTests = [[ScreenType buttons_v2], ScreenType.charging_v2, ScreenType.multi_touch_v2, ScreenType.device_front_video_v2 ]
                 
         /*
         __block CDVPluginResult* pluginResult = nil;  
