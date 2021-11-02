@@ -8,6 +8,8 @@
 - (void)getDeviceInfo:(CDVInvokedUrlCommand *)command;
 - (void)performTests:(CDVInvokedUrlCommand *)command;
 
+@property (nonatomic, readwrite) NSString *ScreenTitle;
+
 @end
 
 @interface MyCustomization : NSObject {
@@ -28,7 +30,4 @@
        @property (nonatomic, strong) NSString *CustomNavigationBarButtonsTextColor;
        */
 }
-
-@property (nonatomic, readwrite) NSString *ScreenTitle;
-
 @end
