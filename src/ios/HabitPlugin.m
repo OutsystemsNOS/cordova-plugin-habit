@@ -21,7 +21,7 @@
        @property (nonatomic, strong) NSString *CustomNavigationBarButtonsTextColor;
        */
 }
-@property (nonatomic, readwrite) NSString *ScreenTitle
+@property (nonatomic, readwrite) NSString *ScreenTitle;
 
 @end
 
