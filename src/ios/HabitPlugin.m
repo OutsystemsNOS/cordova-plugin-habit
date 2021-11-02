@@ -21,11 +21,12 @@
        @property (nonatomic, strong) NSString *CustomNavigationBarButtonsTextColor;
        */
 }
-@property (nonatomic, readwrite) NSString *ScreenTitle;
 
 @end
 
 @implementation HabitPlugin
+
+@synthesize ScreenTitle;
 
 - (void)getDeviceInfo:(CDVInvokedUrlCommand *)command {
         NSString* serialnumber = [command.arguments objectAtIndex:0];
