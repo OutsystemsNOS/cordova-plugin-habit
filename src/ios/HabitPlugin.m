@@ -3,7 +3,7 @@
 
 @import DeviceHealth;
 
-@interface MyCustomization : NSObject
+@interface MyCustomization : NSObject {
        NSString *ScreenTitle;
        NSString *ScreenDescription;
        NSString *ScreenBackgroundColor;
@@ -18,6 +18,7 @@
        NSString *CustomNavigationBarBackgroundColor;
        NSString *CustomNavigationBarTextColor;
        NSString *CustomNavigationBarButtonsTextColor;
+}
 @end
 
 @implementation HabitPlugin
