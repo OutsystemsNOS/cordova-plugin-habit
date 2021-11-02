@@ -30,6 +30,7 @@
         BOOL hidesstartcreen = [[command.arguments objectAtIndex:7] boolValue];
         NSString* screencustomization = [command.arguments objectAtIndex:8];
         
+        /*
         //Deserialize JSON to objet MyCustomization
         NSString* path  = [[NSBundle mainBundle] pathForResource:screencustomization ofType:@"json"];
         NSString* jsonString = [[NSString alloc] initWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
@@ -61,6 +62,7 @@
         } else {
                 NSLog(@"Error in parsing JSON");
         }
+        /*
         
         /*
         
