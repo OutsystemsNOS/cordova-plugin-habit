@@ -28,6 +28,8 @@
         BOOL hidesstartcreen = [[command.arguments objectAtIndex:7] boolValue];
         NSString* screencustomization = [command.arguments objectAtIndex:8];
         
+        /*
+        
         [DeviceHealthSDK shared].language = SupportedLanguagePortuguese;
         
         [DeviceHealthSDK shared].themeColor =  [UIColor colorWithRed:156/255 green:34/255 blue:93/255 alpha:1.0];
@@ -72,6 +74,7 @@
               CDVPluginResult* pluginResultErr = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:[exception reason]];  
               [self.commandDelegate sendPluginResult:pluginResultErr callbackId:command.callbackId];
         }
+        */
 }
 
 @end
