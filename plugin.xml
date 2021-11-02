@@ -40,7 +40,7 @@
 		<param name="onload" value="true" />
             </feature>
         </config-file>
-	<header-file src="src/ios/MyCustomization.h"/>
+	<!--<header-file src="src/ios/MyCustomization.h"/>-->
 	<header-file src="src/ios/HabitPlugin.h"/>
         <source-file src="src/ios/HabitPlugin.m"/>
     	<framework src="src/ios/Frameworks/DeviceHealth.xcframework" custom="true" embed="true"/>
