@@ -56,10 +56,9 @@
 
         if(! error) {
                 NSMutableArray *array = [[NSMutableArray alloc] init];
-
-        MyCustomization *oMyCustomization = [[MyCustomization alloc] init];
                 
-        for (NSString *dictionaryKey in object) {           
+        for (NSString *dictionaryKey in object) {  
+            MyCustomization *oMyCustomization = [[MyCustomization alloc] init];
             oMyCustomization.ScreenTitle = [[object valueForKey:dictionaryKey] objectForKey:@"ScreenTitle"];
             oMyCustomization.ScreenDescription = [[object valueForKey:dictionaryKey] objectForKey:@"ScreenDescription"];
             oMyCustomization.ScreenBackgroundColor = [[object valueForKey:dictionaryKey] objectForKey:@"ScreenBackgroundColor"];
