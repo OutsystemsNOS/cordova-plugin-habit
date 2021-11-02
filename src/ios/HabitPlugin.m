@@ -29,7 +29,6 @@
         BOOL hidesstartcreen = [[command.arguments objectAtIndex:7] boolValue];
         NSString* screencustomization = [command.arguments objectAtIndex:8];
         
-        /*
         //Deserialize JSON to objet MyCustomization
         NSString* path  = [[NSBundle mainBundle] pathForResource:screencustomization ofType:@"json"];
         NSString* jsonString = [[NSString alloc] initWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
@@ -61,14 +60,11 @@
         } else {
                 NSLog(@"Error in parsing JSON");
         }
-        /*
         
         /*
         
-        [DeviceHealthSDK shared].language = SupportedLanguagePortuguese;
-        
-        [DeviceHealthSDK shared].themeColor =  [UIColor colorWithRed:156/255 green:34/255 blue:93/255 alpha:1.0];
-        
+        [DeviceHealthSDK shared].language = SupportedLanguagePortuguese;        
+        [DeviceHealthSDK shared].themeColor =  [UIColor colorWithRed:156/255 green:34/255 blue:93/255 alpha:1.0];        
         [DeviceHealthSDK shared].hideStartScreen  = true;
         
         NSArray * selectedTests = [NSArray arrayWithObjects:ScreenType.buttons_v2, ScreenType.charging_v2, ScreenType.multi_touch_v2, ScreenType.device_front_video_v2, nil];
