@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.3.2 (swiftlang-1200.0.45 clang-1200.0.32.28)
+// swift-compiler-version: Apple Swift version 5.5 (swiftlang-1300.0.31.1 clang-1300.0.29.1)
 // swift-module-flags: -target arm64-apple-ios12.1 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name DeviceHealth
 import AVFoundation
 import AVKit
@@ -13,226 +13,278 @@ import MobileCoreServices
 import Swift
 import SystemConfiguration
 import UIKit
-public class CustomizableScreen {
-  public var screenType: Swift.String?
-  public var copyStrings: [Swift.String : Swift.String]?
-  public var images: [Swift.String : UIKit.UIImage]?
-  public var backgroundColor: UIKit.UIColor?
-  public var textColor: UIKit.UIColor?
-  public var textAccentColor: UIKit.UIColor?
-  public init()
-  public init(screenType: Swift.String, copyStrings: [Swift.String : Swift.String]? = nil, images: [Swift.String : UIKit.UIImage]? = nil, backgroundColor: UIKit.UIColor? = nil, textColor: UIKit.UIColor? = nil, textAccentColor: UIKit.UIColor? = nil)
+import _Concurrency
+@objc @_inheritsConvenienceInitializers @objcMembers public class CustomizableScreen : ObjectiveC.NSObject {
+  @objc public var screenType: Swift.String?
+  @objc public var copyStrings: [Swift.String : Swift.String]?
+  @objc public var images: [Swift.String : UIKit.UIImage]?
+  @objc public var backgroundColor: UIKit.UIColor?
+  @objc public var textColor: UIKit.UIColor?
+  @objc public var textAccentColor: UIKit.UIColor?
+  @objc override dynamic public init()
+  @objc public init(screenType: Swift.String, copyStrings: [Swift.String : Swift.String]? = nil, images: [Swift.String : UIKit.UIImage]? = nil, backgroundColor: UIKit.UIColor? = nil, textColor: UIKit.UIColor? = nil, textAccentColor: UIKit.UIColor? = nil)
   @objc deinit
 }
 @objc @_inheritsConvenienceInitializers public class DeviceHealthSDK : ObjectiveC.NSObject {
   @objc public static let shared: DeviceHealth.DeviceHealthSDK
-  public var environment: DeviceHealth.Environment
-  public var language: DeviceHealth.SupportedLanguage
-  public var hideStartScreen: Swift.Bool
-  public var themeColor: UIKit.UIColor?
-  @objc public func performTests(appID: Swift.String, apiKey: Swift.String, testsToPerform: [Swift.String]?, imei: Swift.String? = nil, serialNumber: Swift.String? = nil, customization: DeviceHealth.Customization? = nil, completion: @escaping ([Swift.String : Any]?) -> Swift.Void)
+  @objc public var environment: DeviceHealth.Environment
+  @objc public var language: DeviceHealth.SupportedLanguage
+  @objc public var hideStartScreen: Swift.Bool
+  @objc public var themeColor: UIKit.UIColor?
+  @objc public func performTests(appID: Swift.String, apiKey: Swift.String, testsToPerform: [Swift.String]?, imei: Swift.String? = nil, serialNumber: Swift.String? = nil, customization: DeviceHealth.Customization? = nil, completion: @escaping (_ testResults: [Swift.String : Any]?) -> Swift.Void)
   @objc public func getDeviceInfo(imei: Swift.String? = nil, serialNumber: Swift.String? = nil) -> [Swift.String : Any]?
   @objc override dynamic public init()
   @objc deinit
 }
-public struct ScreenCustomizationKeys {
-  public struct start_screen {
-    public static let start_screen: Swift.String
-    public struct Copy {
-      public static let title: Swift.String
-      public static let description: Swift.String
-      public static let testsWarning_title: Swift.String
-      public static let testsWarning_charging: Swift.String
-      public static let testsWarning_camera: Swift.String
-      public static let testsWarning_audio: Swift.String
+@_inheritsConvenienceInitializers @objc public class ScreenCustomizationKeys : ObjectiveC.NSObject {
+  @_inheritsConvenienceInitializers @objc(ScreenCustomizationKeysStartScreen) @objcMembers public class start_screen : ObjectiveC.NSObject {
+    @objc public static let start_screen: Swift.String
+    @_inheritsConvenienceInitializers @objc(ScreenCustomizationKeysStartScreenCopy) @objcMembers public class Copy : ObjectiveC.NSObject {
+      @objc public static let title: Swift.String
+      @objc public static let text: Swift.String
+      @objc public static let testsWarning_title: Swift.String
+      @objc public static let testsWarning_charging: Swift.String
+      @objc public static let testsWarning_camera: Swift.String
+      @objc public static let testsWarning_audio: Swift.String
+      @objc override dynamic public init()
+      @objc deinit
     }
-    public struct Elements {
-      public static let image: Swift.String
-      public static let backgroundColor: Swift.String
-      public static let textColor: Swift.String
-      public static let textAccentColor: Swift.String
+    @_inheritsConvenienceInitializers @objc(ScreenCustomizationKeysStartScreenElements) @objcMembers public class Elements : ObjectiveC.NSObject {
+      @objc public static let image: Swift.String
+      @objc public static let backgroundColor: Swift.String
+      @objc public static let textColor: Swift.String
+      @objc public static let textAccentColor: Swift.String
+      @objc override dynamic public init()
+      @objc deinit
     }
+    @objc override dynamic public init()
+    @objc deinit
   }
-  public struct end_screen {
+  @_inheritsConvenienceInitializers @objc(ScreenCustomizationKeysEndScreen) public class end_screen : ObjectiveC.NSObject {
     public static let end_screen: Swift.String
-    public struct Copy {
-      public static let text: Swift.String
-      public static let buttonFinish: Swift.String
-      public static let buttonTestAgain: Swift.String
+    @_inheritsConvenienceInitializers @objc(ScreenCustomizationKeysEndScreenCopy) @objcMembers public class Copy : ObjectiveC.NSObject {
+      @objc public static let text: Swift.String
+      @objc public static let buttonFinish: Swift.String
+      @objc public static let buttonTestAgain: Swift.String
+      @objc override dynamic public init()
+      @objc deinit
     }
-    public struct Elements {
-      public static let image: Swift.String
-      public static let backgroundColor: Swift.String
-      public static let textColor: Swift.String
-      public static let textAccentColor: Swift.String
+    @_inheritsConvenienceInitializers @objc(ScreenCustomizationKeysEndScreenElements) @objcMembers public class Elements : ObjectiveC.NSObject {
+      @objc public static let image: Swift.String
+      @objc public static let backgroundColor: Swift.String
+      @objc public static let textColor: Swift.String
+      @objc public static let textAccentColor: Swift.String
+      @objc override dynamic public init()
+      @objc deinit
     }
+    @objc override dynamic public init()
+    @objc deinit
   }
-  public struct imei_screen {
-    public static let start_screen: Swift.String
-    public struct Copy {
-      public static let title: Swift.String
-      public static let description: Swift.String
-      public static let textfield_placeholder: Swift.String
-      public static let attach_text_label: Swift.String
-      public static let attach_button: Swift.String
-      public static let or: Swift.String
+  @_inheritsConvenienceInitializers @objc(ScreenCustomizationKeysIMEIScreen) public class imei_screen : ObjectiveC.NSObject {
+    public static let imei_screen: Swift.String
+    @_inheritsConvenienceInitializers @objc(ScreenCustomizationKeysIMEIScreenCopy) @objcMembers public class Copy : ObjectiveC.NSObject {
+      @objc public static let title: Swift.String
+      @objc public static let text: Swift.String
+      @objc public static let textfield_placeholder: Swift.String
+      @objc public static let attach_text_label: Swift.String
+      @objc public static let attach_button: Swift.String
+      @objc public static let or: Swift.String
+      @objc override dynamic public init()
+      @objc deinit
     }
-    public struct Elements {
-      public static let backgroundColor: Swift.String
-      public static let textColor: Swift.String
-      public static let textAccentColor: Swift.String
+    @_inheritsConvenienceInitializers @objc(ScreenCustomizationKeysIMEIScreenElements) @objcMembers public class Elements : ObjectiveC.NSObject {
+      @objc public static let backgroundColor: Swift.String
+      @objc public static let textColor: Swift.String
+      @objc public static let textAccentColor: Swift.String
+      @objc override dynamic public init()
+      @objc deinit
     }
+    @objc override dynamic public init()
+    @objc deinit
   }
-  public struct multi_touch_v2 {
+  @_inheritsConvenienceInitializers @objc(ScreenCustomizationKeysMultiTouchV2Screen) public class multi_touch_v2 : ObjectiveC.NSObject {
     public static let multi_touch_v2: Swift.String
-    public struct Copy {
-      public static let title: Swift.String
-      public static let description: Swift.String
+    @_inheritsConvenienceInitializers @objc(ScreenCustomizationKeysMultiTouchV2ScreenCopy) @objcMembers public class Copy : ObjectiveC.NSObject {
+      @objc public static let title: Swift.String
+      @objc public static let text: Swift.String
+      @objc override dynamic public init()
+      @objc deinit
     }
-    public struct Elements {
-      public static let imageOff: Swift.String
-      public static let imageOn: Swift.String
-      public static let backgroundColor: Swift.String
-      public static let textColor: Swift.String
-      public static let textAccentColor: Swift.String
+    @_inheritsConvenienceInitializers @objc(ScreenCustomizationKeysMultiTouchV2ScreenElements) @objcMembers public class Elements : ObjectiveC.NSObject {
+      @objc public static let imageOff: Swift.String
+      @objc public static let imageOn: Swift.String
+      @objc public static let backgroundColor: Swift.String
+      @objc public static let textColor: Swift.String
+      @objc public static let textAccentColor: Swift.String
+      @objc override dynamic public init()
+      @objc deinit
     }
+    @objc override dynamic public init()
+    @objc deinit
   }
-  public struct charging_v2 {
+  @_inheritsConvenienceInitializers @objc(ScreenCustomizationKeysChargingV2Screen) public class charging_v2 : ObjectiveC.NSObject {
     public static let charging_v2: Swift.String
-    public struct Copy {
-      public static let title: Swift.String
-      public static let description: Swift.String
+    @_inheritsConvenienceInitializers @objc(ScreenCustomizationKeysChargingV2Copy) @objcMembers public class Copy : ObjectiveC.NSObject {
+      @objc public static let title: Swift.String
+      @objc public static let text: Swift.String
+      @objc override dynamic public init()
+      @objc deinit
     }
-    public struct Elements {
-      public static let image: Swift.String
-      public static let backgroundColor: Swift.String
-      public static let textColor: Swift.String
-      public static let textAccentColor: Swift.String
+    @_inheritsConvenienceInitializers @objc(ScreenCustomizationKeysChargingV2Elements) @objcMembers public class Elements : ObjectiveC.NSObject {
+      @objc public static let image: Swift.String
+      @objc public static let backgroundColor: Swift.String
+      @objc public static let textColor: Swift.String
+      @objc public static let textAccentColor: Swift.String
+      @objc override dynamic public init()
+      @objc deinit
     }
+    @objc override dynamic public init()
+    @objc deinit
   }
-  public struct buttons_v2 {
+  @_inheritsConvenienceInitializers @objc(ScreenCustomizationKeysButtonsV2Screen) public class buttons_v2 : ObjectiveC.NSObject {
     public static let buttons_v2: Swift.String
-    public struct Copy {
-      public static let title_volume_up: Swift.String
-      public static let description_volume_up: Swift.String
-      public static let title_volume_down: Swift.String
-      public static let description_volume_down: Swift.String
+    @_inheritsConvenienceInitializers @objc(ScreenCustomizationKeysButtonsV2ScreenCopy) @objcMembers public class Copy : ObjectiveC.NSObject {
+      @objc public static let title_volume_up: Swift.String
+      @objc public static let description_volume_up: Swift.String
+      @objc public static let title_volume_down: Swift.String
+      @objc public static let description_volume_down: Swift.String
+      @objc override dynamic public init()
+      @objc deinit
     }
-    public struct Elements {
-      public static let image_volume_up: Swift.String
-      public static let image_volume_down: Swift.String
-      public static let backgroundColor: Swift.String
-      public static let textColor: Swift.String
-      public static let textAccentColor: Swift.String
+    @_inheritsConvenienceInitializers @objc(ScreenCustomizationKeysButtonsV2ScreenElements) @objcMembers public class Elements : ObjectiveC.NSObject {
+      @objc public static let image_volume_up: Swift.String
+      @objc public static let image_volume_down: Swift.String
+      @objc public static let backgroundColor: Swift.String
+      @objc public static let textColor: Swift.String
+      @objc public static let textAccentColor: Swift.String
+      @objc override dynamic public init()
+      @objc deinit
     }
+    @objc override dynamic public init()
+    @objc deinit
   }
-  public struct device_front_video_v2 {
+  @_inheritsConvenienceInitializers @objc(ScreenCustomizationKeysDeviceFrontVideoV2Screen) public class device_front_video_v2 : ObjectiveC.NSObject {
     public static let device_front_video_v2: Swift.String
-    public struct Copy {
-      public static let initial_title: Swift.String
-      public static let initial_description: Swift.String
-      public static let initial_next_button: Swift.String
-      public static let info_button_copy: Swift.String
-      public static let preview_title: Swift.String
-      public static let preview_description: Swift.String
-      public static let video_review_title: Swift.String
-      public static let video_review_description: Swift.String
-      public static let video_review_try_again: Swift.String
-      public static let video_review_checkbox_text: Swift.String
-      public static let video_review_next_button: Swift.String
+    @_inheritsConvenienceInitializers @objc(ScreenCustomizationKeysDeviceFrontVideoV2ScreenCopy) @objcMembers public class Copy : ObjectiveC.NSObject {
+      @objc public static let initial_title: Swift.String
+      @objc public static let initial_description: Swift.String
+      @objc public static let initial_next_button: Swift.String
+      @objc public static let info_button_copy: Swift.String
+      @objc public static let preview_title: Swift.String
+      @objc public static let preview_description: Swift.String
+      @objc public static let video_review_title: Swift.String
+      @objc public static let video_review_description: Swift.String
+      @objc public static let video_review_try_again: Swift.String
+      @objc public static let video_review_checkbox_text: Swift.String
+      @objc public static let video_review_next_button: Swift.String
+      @objc override dynamic public init()
+      @objc deinit
     }
-    public struct Elements {
-      public static let image_initial_screen: Swift.String
+    @_inheritsConvenienceInitializers @objc(ScreenCustomizationKeysDeviceFrontVideoV2ScreenElements) @objcMembers public class Elements : ObjectiveC.NSObject {
+      @objc public static let image_initial_screen: Swift.String
+      @objc override dynamic public init()
+      @objc deinit
     }
+    @objc override dynamic public init()
+    @objc deinit
   }
-}
-@objc @_inheritsConvenienceInitializers public class Customization : ObjectiveC.NSObject {
-  public var skipTestButtonColor: UIKit.UIColor
-  public var customNavigationBarBackgroundColor: UIKit.UIColor
-  public var customNavigationBarTextColor: UIKit.UIColor
-  public var customNavigationBarButtonsTextColor: UIKit.UIColor
-  public var progressBarBackgroundColor: UIKit.UIColor
-  public var progressBarSelectedColor: UIKit.UIColor
-  public var buttonsStyle: DeviceHealth.ButtonsStyle
-  public var customScreens: [DeviceHealth.CustomizableScreen]
   @objc override dynamic public init()
   @objc deinit
 }
-public struct ScreenType {
-  public static let start_screen: Swift.String
-  public static let imei_screen: Swift.String
-  public static let end_screen: Swift.String
-  public static let device_front_video_v2: Swift.String
-  public static let multi_touch_v2: Swift.String
-  public static let buttons_v2: Swift.String
-  public static let charging_v2: Swift.String
-}
-@_hasMissingDesignatedInitializers public class ButtonsStyle {
-  public var borderType: DeviceHealth.BorderType
-  public var backgroundColor: UIKit.UIColor?
-  public var foregroundColor: UIKit.UIColor
+@_inheritsConvenienceInitializers @objc public class Customization : ObjectiveC.NSObject {
+  @objc public var skipTestButtonColor: UIKit.UIColor
+  @objc public var customNavigationBarBackgroundColor: UIKit.UIColor
+  @objc public var customNavigationBarTextColor: UIKit.UIColor
+  @objc public var customNavigationBarButtonsTextColor: UIKit.UIColor
+  @objc public var progressBarBackgroundColor: UIKit.UIColor
+  @objc public var progressBarSelectedColor: UIKit.UIColor
+  @objc public var buttonsStyle: DeviceHealth.ButtonsStyle
+  @objc public var customScreens: [DeviceHealth.CustomizableScreen]
+  @objc override dynamic public init()
   @objc deinit
 }
-extension UINavigationController {
-  @objc override dynamic open var supportedInterfaceOrientations: UIKit.UIInterfaceOrientationMask {
-    @objc get
+@objc @_inheritsConvenienceInitializers @objcMembers public class ScreenType : ObjectiveC.NSObject {
+  @objc public static let test: Swift.String
+  @objc public static let start_screen: Swift.String
+  @objc public static let imei_screen: Swift.String
+  @objc public static let end_screen: Swift.String
+  @objc public static let device_front_video_v2: Swift.String
+  @objc public static let multi_touch_v2: Swift.String
+  @objc public static let buttons_v2: Swift.String
+  @objc public static let charging_v2: Swift.String
+  @objc override dynamic public init()
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc public class ButtonsStyle : ObjectiveC.NSObject {
+  @objc public var borderType: DeviceHealth.BorderType
+  @objc public var backgroundColor: UIKit.UIColor?
+  @objc public var foregroundColor: UIKit.UIColor
+  @objc override dynamic public init()
+  @objc deinit
+}
+extension UIKit.UINavigationController {
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var supportedInterfaceOrientations: UIKit.UIInterfaceOrientationMask {
+    @_Concurrency.MainActor(unsafe) @objc get
   }
 }
 public enum Model : Swift.String {
   case simulator, iPad2, iPad3, iPad4, iPadAir, iPadAir2, iPadAir3, iPadAir4, iPad5, iPad6, iPad7, iPad8, iPadMini, iPadMini2, iPadMini3, iPadMini4, iPadMini5, iPadMini6, iPadPro9_7, iPadPro10_5, iPadPro11, iPadPro2_11, iPadPro3_11, iPadPro12_9, iPadPro2_12_9, iPadPro3_12_9, iPadPro4_12_9, iPadPro5_12_9, iPhone4, iPhone4S, iPhone5, iPhone5S, iPhone5C, iPhone6, iPhone6Plus, iPhone6S, iPhone6SPlus, iPhoneSE, iPhone7, iPhone7Plus, iPhone8, iPhone8Plus, iPhoneX, iPhoneXS, iPhoneXSMax, iPhoneXR, iPhone11, iPhone11Pro, iPhone11ProMax, iPhoneSE2, iPhone12Mini, iPhone12, iPhone12Pro, iPhone12ProMax, iPhone13Mini, iPhone13, iPhone13Pro, iPhone13ProMax, AppleWatch1, AppleWatchS1, AppleWatchS2, AppleWatchS3, AppleWatchS4, AppleWatchS5, AppleWatchSE, AppleWatchS6, AppleWatchS7, unrecognized
+  public init?(rawValue: Swift.String)
   public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
     get
   }
-  public init?(rawValue: Swift.String)
 }
-extension UIDevice {
-  public var type: DeviceHealth.Model {
+extension UIKit.UIDevice {
+  @_Concurrency.MainActor(unsafe) public var type: DeviceHealth.Model {
     get
   }
 }
 @_hasMissingDesignatedInitializers public class DeviceImages {
   @objc deinit
 }
-extension Data {
+extension Foundation.Data {
   public func sha256() -> Swift.String
   public func MD5() -> Swift.String
 }
-public enum SupportedLanguage {
+@objc public enum SupportedLanguage : Swift.Int {
   case English, Portuguese
-  public static func == (a: DeviceHealth.SupportedLanguage, b: DeviceHealth.SupportedLanguage) -> Swift.Bool
-  public var hashValue: Swift.Int {
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
     get
   }
-  public func hash(into hasher: inout Swift.Hasher)
 }
-public enum Environment {
+@objc public enum Environment : Swift.Int {
   case PRD, QA, INT
-  public static func == (a: DeviceHealth.Environment, b: DeviceHealth.Environment) -> Swift.Bool
-  public var hashValue: Swift.Int {
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
     get
   }
-  public func hash(into hasher: inout Swift.Hasher)
 }
-public enum BorderType {
+@objc public enum BorderType : Swift.Int {
   case Rounded, RoundedCorners, Square
-  public static func == (a: DeviceHealth.BorderType, b: DeviceHealth.BorderType) -> Swift.Bool
-  public var hashValue: Swift.Int {
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
     get
   }
-  public func hash(into hasher: inout Swift.Hasher)
 }
 @objc @_inheritsConvenienceInitializers public class StatusCodes : ObjectiveC.NSObject {
   @objc public static func getDescription(code: Swift.Int) -> Swift.String
-  @objc deinit
   @objc override dynamic public init()
+  @objc deinit
 }
 extension DeviceHealth.Model : Swift.Equatable {}
 extension DeviceHealth.Model : Swift.Hashable {}
 extension DeviceHealth.Model : Swift.RawRepresentable {}
 extension DeviceHealth.SupportedLanguage : Swift.Equatable {}
 extension DeviceHealth.SupportedLanguage : Swift.Hashable {}
+extension DeviceHealth.SupportedLanguage : Swift.RawRepresentable {}
 extension DeviceHealth.Environment : Swift.Equatable {}
 extension DeviceHealth.Environment : Swift.Hashable {}
+extension DeviceHealth.Environment : Swift.RawRepresentable {}
 extension DeviceHealth.BorderType : Swift.Equatable {}
 extension DeviceHealth.BorderType : Swift.Hashable {}
+extension DeviceHealth.BorderType : Swift.RawRepresentable {}
