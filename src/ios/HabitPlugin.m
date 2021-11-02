@@ -1,6 +1,4 @@
 #import "HabitPlugin.h"
-//#import "MyCustomization.h"
-#import <Foundation/Foundation.h>
 
 @import DeviceHealth;
 
