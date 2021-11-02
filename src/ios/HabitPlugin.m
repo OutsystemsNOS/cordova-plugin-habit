@@ -3,20 +3,20 @@
 @import DeviceHealth;
 
 @interface MyCustomization : NSObject
-        NSString *ScreenTitle;
-        NSString *ScreenDescription;
-        NSString *ScreenBackgroundColor;
-        NSString *ScreenTextAccentColor;
-        NSString *ScreenTestColor;
-        NSString *ButtonStyleBackgroundColor;
-        NSString *ButtonStyleForegroundColor;
-        NSString *ButtonStyleBorderType;
-        NSString *StyleSkipTestButtonColor;
-        NSString *StyleProgressBarBackgroundColor;
-        NSString *ProgressBarSelectedColor;
-        NSString *CustomNavigationBarBackgroundColor;
-        NSString *CustomNavigationBarTextColor;
-        NSString *CustomNavigationBarButtonsTextColor;
+       NSString *ScreenTitle;
+       NSString *ScreenDescription;
+       NSString *ScreenBackgroundColor;
+       NSString *ScreenTextAccentColor;
+       NSString *ScreenTestColor;
+       NSString *ButtonStyleBackgroundColor;
+       NSString *ButtonStyleForegroundColor;
+       NSString *ButtonStyleBorderType;
+       NSString *StyleSkipTestButtonColor;
+       NSString *StyleProgressBarBackgroundColor;
+       NSString *ProgressBarSelectedColor;
+       NSString *CustomNavigationBarBackgroundColor;
+       NSString *CustomNavigationBarTextColor;
+       NSString *CustomNavigationBarButtonsTextColor;
 @end
 
 @implementation HabitPlugin
