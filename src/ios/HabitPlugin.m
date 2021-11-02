@@ -4,20 +4,20 @@
 @import DeviceHealth;
 
 @interface MyCustomization : NSObject {
-       NSString *ScreenTitle;
-       NSString *ScreenDescription;
-       NSString *ScreenBackgroundColor;
-       NSString *ScreenTextAccentColor;
-       NSString *ScreenTestColor;
-       NSString *ButtonStyleBackgroundColor;
-       NSString *ButtonStyleForegroundColor;
-       NSString *ButtonStyleBorderType;
-       NSString *StyleSkipTestButtonColor;
-       NSString *StyleProgressBarBackgroundColor;
-       NSString *ProgressBarSelectedColor;
-       NSString *CustomNavigationBarBackgroundColor;
-       NSString *CustomNavigationBarTextColor;
-       NSString *CustomNavigationBarButtonsTextColor;
+       @property (nonatomic, strong) NSString *ScreenTitle;
+       @property (nonatomic, strong) NSString *ScreenDescription;
+       @property (nonatomic, strong) NSString *ScreenBackgroundColor;
+       @property (nonatomic, strong) NSString *ScreenTextAccentColor;
+       @property (nonatomic, strong) NSString *ScreenTestColor;
+       @property (nonatomic, strong) NSString *ButtonStyleBackgroundColor;
+       @property (nonatomic, strong) NSString *ButtonStyleForegroundColor;
+       @property (nonatomic, strong) NSString *ButtonStyleBorderType;
+       @property (nonatomic, strong) NSString *StyleSkipTestButtonColor;
+       @property (nonatomic, strong) NSString *StyleProgressBarBackgroundColor;
+       @property (nonatomic, strong) NSString *ProgressBarSelectedColor;
+       @property (nonatomic, strong) NSString *CustomNavigationBarBackgroundColor;
+       @property (nonatomic, strong) NSString *CustomNavigationBarTextColor;
+       @property (nonatomic, strong) NSString *CustomNavigationBarButtonsTextColor;
 }
 @end
 
