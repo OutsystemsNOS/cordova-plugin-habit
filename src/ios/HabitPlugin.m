@@ -4,7 +4,8 @@
 @import DeviceHealth;
 
 @interface MyCustomization : NSObject {
-       @property (nonatomic, strong) NSString *ScreenTitle;
+      NSString *ScreenTitle;
+       /*
        @property (nonatomic, strong) NSString *ScreenDescription;
        @property (nonatomic, strong) NSString *ScreenBackgroundColor;
        @property (nonatomic, strong) NSString *ScreenTextAccentColor;
@@ -18,10 +19,15 @@
        @property (nonatomic, strong) NSString *CustomNavigationBarBackgroundColor;
        @property (nonatomic, strong) NSString *CustomNavigationBarTextColor;
        @property (nonatomic, strong) NSString *CustomNavigationBarButtonsTextColor;
+       */
 }
+@property (nonatomic, readwrite) NSString *ScreenTitle
+
 @end
 
 @implementation HabitPlugin
+
+@synthesize ScreenTitle;
 
 - (void)getDeviceInfo:(CDVInvokedUrlCommand *)command {
         NSString* serialnumber = [command.arguments objectAtIndex:0];
@@ -60,6 +66,7 @@
         for (NSString *dictionaryKey in object) {  
             MyCustomization *oMyCustomization = [[MyCustomization alloc] init];
             oMyCustomization.ScreenTitle = [[object valueForKey:dictionaryKey] objectForKey:@"ScreenTitle"];
+               /*
             oMyCustomization.ScreenDescription = [[object valueForKey:dictionaryKey] objectForKey:@"ScreenDescription"];
             oMyCustomization.ScreenBackgroundColor = [[object valueForKey:dictionaryKey] objectForKey:@"ScreenBackgroundColor"];
             oMyCustomization.ScreenTextAccentColor = [[object valueForKey:dictionaryKey] objectForKey:@"ScreenTextAccentColor"];
@@ -73,6 +80,7 @@
             oMyCustomization.CustomNavigationBarBackgroundColor = [[object valueForKey:dictionaryKey] objectForKey:@"CustomNavigationBarBackgroundColor"];
             oMyCustomization.CustomNavigationBarTextColor = [[object valueForKey:dictionaryKey] objectForKey:@"CustomNavigationBarTextColor"];
             oMyCustomization.CustomNavigationBarButtonsTextColor = [[object valueForKey:dictionaryKey] objectForKey:@"CustomNavigationBarButtonsTextColor"];
+            */
             [array addObject:oMyCustomization];
         }
         } else {
