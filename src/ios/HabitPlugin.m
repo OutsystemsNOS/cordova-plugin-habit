@@ -3,7 +3,6 @@
 
 @import DeviceHealth;
 
-@implementation MyCustomization
 @implementation HabitPlugin
 
 - (void)getDeviceInfo:(CDVInvokedUrlCommand *)command {
