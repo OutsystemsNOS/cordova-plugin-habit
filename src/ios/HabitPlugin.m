@@ -1,24 +1,6 @@
-#import <Foundation/Foundation.h>
 #import "HabitPlugin.h"
 
 @import DeviceHealth;
-
-@interface MyCustomization ()
-       @property (nonatomic, strong) NSString *ScreenTitle;
-       @property (nonatomic, strong) NSString *ScreenDescription;
-       @property (nonatomic, strong) NSString *ScreenBackgroundColor;
-       @property (nonatomic, strong) NSString *ScreenTextAccentColor;
-       @property (nonatomic, strong) NSString *ScreenTestColor;
-       @property (nonatomic, strong) NSString *ButtonStyleBackgroundColor;
-       @property (nonatomic, strong) NSString *ButtonStyleForegroundColor;
-       @property (nonatomic, strong) NSString *ButtonStyleBorderType;
-       @property (nonatomic, strong) NSString *StyleSkipTestButtonColor;
-       @property (nonatomic, strong) NSString *StyleProgressBarBackgroundColor;
-       @property (nonatomic, strong) NSString *ProgressBarSelectedColor;
-       @property (nonatomic, strong) NSString *CustomNavigationBarBackgroundColor;
-       @property (nonatomic, strong) NSString *CustomNavigationBarTextColor;
-       @property (nonatomic, strong) NSString *CustomNavigationBarButtonsTextColor;
-@end
 
 @implementation HabitPlugin
 
@@ -45,36 +27,47 @@
         NSString* themecolor = [command.arguments objectAtIndex:6];
         BOOL hidesstartcreen = [[command.arguments objectAtIndex:7] boolValue];
         NSString* screencustomization = [command.arguments objectAtIndex:8];
+       
+        //MyCustomization
+        NSString* ScreenTitle;
+        NSString* ScreenDescription;
+        NSString* ScreenBackgroundColor;
+        NSString* ScreenTextAccentColor;
+        NSString* ScreenTestColor;
+        NSString* ButtonStyleBackgroundColor;
+        NSString* ButtonStyleForegroundColor;
+        NSString* ButtonStyleBorderType;
+        NSString* StyleSkipTestButtonColor;
+        NSString* StyleProgressBarBackgroundColor;
+        NSString* ProgressBarSelectedColor;
+        NSString* CustomNavigationBarBackgroundColor;
+        NSString* CustomNavigationBarTextColor;
+        NSString* CustomNavigationBarButtonsTextColor;
         
-        //Deserialize JSON to objet MyCustomization
+        //Deserialize JSON to variables
         NSString* path  = [[NSBundle mainBundle] pathForResource:screencustomization ofType:@"json"];
         NSString* jsonString = [[NSString alloc] initWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
         NSData* jsonData = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
         NSError *error = nil;
         NSDictionary  *object = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:&error];
 
-        if(! error) {
-                NSMutableArray *array = [[NSMutableArray alloc] init];
-                
-        for (NSString *dictionaryKey in object) {  
-            self.ScreenTitle = [[object valueForKey:dictionaryKey] objectForKey:@"ScreenTitle"];
-               /*
-            oMyCustomization.ScreenDescription = [[object valueForKey:dictionaryKey] objectForKey:@"ScreenDescription"];
-            oMyCustomization.ScreenBackgroundColor = [[object valueForKey:dictionaryKey] objectForKey:@"ScreenBackgroundColor"];
-            oMyCustomization.ScreenTextAccentColor = [[object valueForKey:dictionaryKey] objectForKey:@"ScreenTextAccentColor"];
-            oMyCustomization.ScreenTestColor = [[object valueForKey:dictionaryKey] objectForKey:@"ScreenTestColor"];
-            oMyCustomization.ButtonStyleBackgroundColor = [[object valueForKey:dictionaryKey] objectForKey:@"ButtonStyleBackgroundColor"];
-            oMyCustomization.ButtonStyleForegroundColor = [[object valueForKey:dictionaryKey] objectForKey:@"ButtonStyleForegroundColor"];
-            oMyCustomization.ButtonStyleBorderType = [[object valueForKey:dictionaryKey] objectForKey:@"ButtonStyleBorderType"];
-            oMyCustomization.StyleSkipTestButtonColor = [[object valueForKey:dictionaryKey] objectForKey:@"StyleSkipTestButtonColor"];
-            oMyCustomization.StyleProgressBarBackgroundColor = [[object valueForKey:dictionaryKey] objectForKey:@"StyleProgressBarBackgroundColor"];
-            oMyCustomization.ProgressBarSelectedColor = [[object valueForKey:dictionaryKey] objectForKey:@"ProgressBarSelectedColor"];
-            oMyCustomization.CustomNavigationBarBackgroundColor = [[object valueForKey:dictionaryKey] objectForKey:@"CustomNavigationBarBackgroundColor"];
-            oMyCustomization.CustomNavigationBarTextColor = [[object valueForKey:dictionaryKey] objectForKey:@"CustomNavigationBarTextColor"];
-            oMyCustomization.CustomNavigationBarButtonsTextColor = [[object valueForKey:dictionaryKey] objectForKey:@"CustomNavigationBarButtonsTextColor"];
-            */
-            [array addObject:oMyCustomization];
-        }
+        if(! error) {               
+               for (NSString *dictionaryKey in object) {  
+                   ScreenTitle = [[object valueForKey:dictionaryKey] objectForKey:@"ScreenTitle"];
+                   ScreenDescription = [[object valueForKey:dictionaryKey] objectForKey:@"ScreenDescription"];
+                   ScreenBackgroundColor = [[object valueForKey:dictionaryKey] objectForKey:@"ScreenBackgroundColor"];
+                   ScreenTextAccentColor = [[object valueForKey:dictionaryKey] objectForKey:@"ScreenTextAccentColor"];
+                   ScreenTestColor = [[object valueForKey:dictionaryKey] objectForKey:@"ScreenTestColor"];
+                   ButtonStyleBackgroundColor = [[object valueForKey:dictionaryKey] objectForKey:@"ButtonStyleBackgroundColor"];
+                   ButtonStyleForegroundColor = [[object valueForKey:dictionaryKey] objectForKey:@"ButtonStyleForegroundColor"];
+                   ButtonStyleBorderType = [[object valueForKey:dictionaryKey] objectForKey:@"ButtonStyleBorderType"];
+                   StyleSkipTestButtonColor = [[object valueForKey:dictionaryKey] objectForKey:@"StyleSkipTestButtonColor"];
+                   StyleProgressBarBackgroundColor = [[object valueForKey:dictionaryKey] objectForKey:@"StyleProgressBarBackgroundColor"];
+                   ProgressBarSelectedColor = [[object valueForKey:dictionaryKey] objectForKey:@"ProgressBarSelectedColor"];
+                   CustomNavigationBarBackgroundColor = [[object valueForKey:dictionaryKey] objectForKey:@"CustomNavigationBarBackgroundColor"];
+                   CustomNavigationBarTextColor = [[object valueForKey:dictionaryKey] objectForKey:@"CustomNavigationBarTextColor"];
+                   CustomNavigationBarButtonsTextColor = [[object valueForKey:dictionaryKey] objectForKey:@"CustomNavigationBarButtonsTextColor"];
+               }
         } else {
                 NSLog(@"Error in parsing JSON");
         }
