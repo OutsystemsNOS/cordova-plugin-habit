@@ -18,7 +18,6 @@
        @property (nonatomic, strong) NSString *CustomNavigationBarBackgroundColor;
        @property (nonatomic, strong) NSString *CustomNavigationBarTextColor;
        @property (nonatomic, strong) NSString *CustomNavigationBarButtonsTextColor;
-
 @end
 
 @implementation HabitPlugin
