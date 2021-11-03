@@ -78,7 +78,8 @@
         }else{
                 [DeviceHealthSDK shared].language = SupportedLanguageEnglish;
         }
-        [DeviceHealthSDK shared].themeColor =  [UIColor colorWithRed:156/255 green:34/255 blue:93/255 alpha:1.0];        
+        
+        [DeviceHealthSDK shared].themeColor =  colorFromHexString:themecolor; //[UIColor colorWithRed:156/255 green:34/255 blue:93/255 alpha:1.0];        
         [DeviceHealthSDK shared].hideStartScreen  = hidesstartcreen;
         
         NSArray * selectedTests = [NSArray arrayWithObjects:ScreenType.buttons_v2, ScreenType.charging_v2, ScreenType.multi_touch_v2, ScreenType.device_front_video_v2, nil];
@@ -103,7 +104,7 @@
         //NSDictionary * images = @{ScreenCustomizationKeysStartScreenElements.image: [UIImage imageNamed:@"customImage"]};
         //screen.images = images;
 
-        NSDictionary * customStartCopy = @{ScreenCustomizationKeysStartScreenCopy.title : ScreenTitle, ScreenCustomizationKeysStartScreenCopy.text : ScreenDescription};
+        NSDictionary * customStartCopy = @{ScreenCustomizationKeysStartScreenCopy.title:ScreenTitle, ScreenCustomizationKeysStartScreenCopy.text:ScreenDescription};
         screen.copyStrings = customStartCopy;
 
         customization.customScreens = [NSArray arrayWithObjects: screen, nil];
