@@ -51,7 +51,7 @@
         NSError *error = nil;
         NSDictionary  *object = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:&error];
 
-        if(! error) {               
+        if(!error) {               
                for (NSString *dictionaryKey in object) {  
                    ScreenTitle = [[object valueForKey:dictionaryKey] objectForKey:@"ScreenTitle"];
                    ScreenDescription = [[object valueForKey:dictionaryKey] objectForKey:@"ScreenDescription"];
