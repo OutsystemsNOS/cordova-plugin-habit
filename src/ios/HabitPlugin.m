@@ -73,9 +73,13 @@
                 [self.commandDelegate sendPluginResult:pluginResultErr1 callbackId:command.callbackId];
         }
         
-        [DeviceHealthSDK shared].language = SupportedLanguagePortuguese;        
+        if(language == "Portuguese"){
+                [DeviceHealthSDK shared].language = SupportedLanguagePortuguese; 
+        }else{
+                [DeviceHealthSDK shared].language = SupportedLanguageEnglish;
+        }
         [DeviceHealthSDK shared].themeColor =  [UIColor colorWithRed:156/255 green:34/255 blue:93/255 alpha:1.0];        
-        [DeviceHealthSDK shared].hideStartScreen  = false;
+        [DeviceHealthSDK shared].hideStartScreen  = hidesstartcreen;
         
         NSArray * selectedTests = [NSArray arrayWithObjects:ScreenType.buttons_v2, ScreenType.charging_v2, ScreenType.multi_touch_v2, ScreenType.device_front_video_v2, nil];
         
@@ -99,7 +103,7 @@
         //NSDictionary * images = @{ScreenCustomizationKeysStartScreenElements.image: [UIImage imageNamed:@"customImage"]};
         //screen.images = images;
 
-        NSDictionary * customStartCopy = @{ScreenCustomizationKeysStartScreenCopy.title : @"Your custom title", ScreenCustomizationKeysStartScreenCopy.text : @"Your custom text"};
+        NSDictionary * customStartCopy = @{ScreenCustomizationKeysStartScreenCopy.title : ScreenTitle, ScreenCustomizationKeysStartScreenCopy.text : ScreenDescription};
         screen.copyStrings = customStartCopy;
 
         customization.customScreens = [NSArray arrayWithObjects: screen, nil];
@@ -113,6 +117,14 @@
               CDVPluginResult* pluginResultErr2 = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:[exception reason]];  
               [self.commandDelegate sendPluginResult:pluginResultErr2 callbackId:command.callbackId];
         }
+}
+
++ (UIColor *)colorFromHexString:(NSString *)hexString {
+    unsigned rgbValue = 0;
+    NSScanner *scanner = [NSScanner scannerWithString:hexString];
+    [scanner setScanLocation:1]; // bypass '#' character
+    [scanner scanHexInt:&rgbValue];
+    return [UIColor colorWithRed:((rgbValue & 0xFF0000) >> 16)/255.0 green:((rgbValue & 0xFF00) >> 8)/255.0 blue:(rgbValue & 0xFF)/255.0 alpha:1.0];
 }
 
 @end
