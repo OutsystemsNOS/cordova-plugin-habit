@@ -3,7 +3,7 @@
 
 @import DeviceHealth;
 
-@Interface MyCustomization ()
+@interface MyCustomization ()
        @property (nonatomic, strong) NSString *ScreenTitle;
        @property (nonatomic, strong) NSString *ScreenDescription;
        @property (nonatomic, strong) NSString *ScreenBackgroundColor;
