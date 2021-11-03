@@ -90,8 +90,6 @@
         customization.customNavigationBarBackgroundColor = [UIColor blueColor];
         customization.customNavigationBarTextColor = [UIColor blackColor];
         customization.customNavigationBarButtonsTextColor = [UIColor whiteColor];
-        
-        Customization * customization = [[Customization alloc] init];
 
         CustomizableScreen * screen = [[CustomizableScreen alloc] init];
         screen.screenType = ScreenType.start_screen;
