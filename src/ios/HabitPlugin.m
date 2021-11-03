@@ -82,7 +82,20 @@
         [DeviceHealthSDK shared].themeColor =  colorFromHexString:themecolor; //[UIColor colorWithRed:156/255 green:34/255 blue:93/255 alpha:1.0];        
         [DeviceHealthSDK shared].hideStartScreen  = hidesstartcreen;
         
-        NSArray* selectedTests = [NSArray arrayWithObjects:ScreenType.buttons_v2, ScreenType.charging_v2, ScreenType.multi_touch_v2, ScreenType.device_front_video_v2, nil];
+        //NSArray* selectedTests = [NSArray arrayWithObjects:ScreenType.buttons_v2, ScreenType.charging_v2, ScreenType.multi_touch_v2, ScreenType.device_front_video_v2, nil];
+        
+        NSArray* selectedTests;
+        if (["ScreenType.buttons_v2" containsString:testsToPerform]){
+                [selectedTests addObject:ScreenType.buttons_v2];        
+        }else if (["ScreenType.charging_v2" containsString:testsToPerform]){
+                [selectedTests addObject:ScreenType.charging_v2];
+        }else if (["ScreenType.multi_touch_v2" containsString:testsToPerform]){
+                [selectedTests addObject:ScreenType.multi_touch_v2];
+        }else if (["ScreenType.device_front_video_v2" containsString:testsToPerform]){
+                [selectedTests addObject:ScreenType.device_front_video_v2];
+        }else{
+                [selectedTests addObject:nil];
+        }
         
         Customization* customization = [[Customization alloc] init];
         customization.skipTestButtonColor = [UIColor blackColor];
