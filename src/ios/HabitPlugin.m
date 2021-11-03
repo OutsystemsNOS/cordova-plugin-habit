@@ -74,7 +74,7 @@
                         [self.commandDelegate sendPluginResult:pluginResultErr1 callbackId:command.callbackId];
                 }
 
-                if(language isEqual:@"Portuguese"){
+                if(language == @"Portuguese"){
                         [DeviceHealthSDK shared].language = SupportedLanguagePortuguese; 
                 }else{
                         [DeviceHealthSDK shared].language = SupportedLanguageEnglish;
@@ -95,7 +95,6 @@
                 }else if ([testsToPerform rangeOfString:@"ScreenType.device_front_video_v2"].location != NSNotFound){
                         selectedTests = [selectedTests arrayByAddingObject:ScreenType.device_front_video_v2];
                 }else{
-                        selectedTests = [selectedTests addObject:nil];
                 }
 
                 Customization* customization = [[Customization alloc] init];
