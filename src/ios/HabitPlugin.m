@@ -80,11 +80,9 @@
                         [DeviceHealthSDK shared].language = SupportedLanguageEnglish;
                 }
 
-                [DeviceHealthSDK shared].themeColor =  [self colorFromHexString:themecolor]; //[UIColor colorWithRed:156/255 green:34/255 blue:93/255 alpha:1.0];        
+                [DeviceHealthSDK shared].themeColor =  [self colorFromHexString:themecolor];        
                 [DeviceHealthSDK shared].hideStartScreen  = hidesstartcreen;
-
-                //NSArray* selectedTests = [NSArray arrayWithObjects:ScreenType.buttons_v2, ScreenType.charging_v2, ScreenType.multi_touch_v2, ScreenType.device_front_video_v2, nil];
-
+                
                 NSArray* selectedTests;
                 if ([testsToPerform rangeOfString:@"ScreenType.buttons_v2"].location != NSNotFound){
                         selectedTests = [selectedTests arrayByAddingObject:ScreenType.buttons_v2];        
