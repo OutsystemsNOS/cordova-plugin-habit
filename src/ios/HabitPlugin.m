@@ -74,7 +74,7 @@
                         [self.commandDelegate sendPluginResult:pluginResultErr1 callbackId:command.callbackId];
                 }
 
-                if(language == @"Portuguese"){
+                if(language isEqual:@"Portuguese"){
                         [DeviceHealthSDK shared].language = SupportedLanguagePortuguese; 
                 }else{
                         [DeviceHealthSDK shared].language = SupportedLanguageEnglish;
@@ -86,13 +86,13 @@
                 //NSArray* selectedTests = [NSArray arrayWithObjects:ScreenType.buttons_v2, ScreenType.charging_v2, ScreenType.multi_touch_v2, ScreenType.device_front_video_v2, nil];
 
                 NSArray* selectedTests;
-                if (["ScreenType.buttons_v2" containsString:testsToPerform]){
+                if ([testsToPerform rangeOfString:@"ScreenType.buttons_v2"].location != NSNotFound){
                         selectedTests = [selectedTests arrayByAddingObject:ScreenType.buttons_v2];        
-                }else if (["ScreenType.charging_v2" containsString:testsToPerform]){
+                }else if ([testsToPerform rangeOfString:@"ScreenType.charging_v2"].location != NSNotFound){
                         selectedTests = [selectedTests arrayByAddingObject:ScreenType.charging_v2];
-                }else if (["ScreenType.multi_touch_v2" containsString:testsToPerform]){
+                }else if ([testsToPerform rangeOfString:@"ScreenType.multi_touch_v2"].location != NSNotFound){
                         selectedTests = [selectedTests arrayByAddingObject:ScreenType.multi_touch_v2];
-                }else if (["ScreenType.device_front_video_v2" containsString:testsToPerform]){
+                }else if ([testsToPerform rangeOfString:@"ScreenType.device_front_video_v2"].location != NSNotFound){
                         selectedTests = [selectedTests arrayByAddingObject:ScreenType.device_front_video_v2];
                 }else{
                         selectedTests = [selectedTests addObject:nil];
