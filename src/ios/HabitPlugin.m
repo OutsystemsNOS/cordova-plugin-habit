@@ -82,9 +82,9 @@
         [DeviceHealthSDK shared].themeColor =  colorFromHexString:themecolor; //[UIColor colorWithRed:156/255 green:34/255 blue:93/255 alpha:1.0];        
         [DeviceHealthSDK shared].hideStartScreen  = hidesstartcreen;
         
-        NSArray * selectedTests = [NSArray arrayWithObjects:ScreenType.buttons_v2, ScreenType.charging_v2, ScreenType.multi_touch_v2, ScreenType.device_front_video_v2, nil];
+        NSArray* selectedTests = [NSArray arrayWithObjects:ScreenType.buttons_v2, ScreenType.charging_v2, ScreenType.multi_touch_v2, ScreenType.device_front_video_v2, nil];
         
-        Customization * customization = [[Customization alloc] init];
+        Customization* customization = [[Customization alloc] init];
         customization.skipTestButtonColor = [UIColor blackColor];
         customization.buttonsStyle.backgroundColor = [UIColor blueColor];
         customization.buttonsStyle.foregroundColor = [UIColor whiteColor];
@@ -96,7 +96,7 @@
         customization.customNavigationBarTextColor = [UIColor blackColor];
         customization.customNavigationBarButtonsTextColor = [UIColor whiteColor];
 
-        CustomizableScreen * screen = [[CustomizableScreen alloc] init];
+        CustomizableScreen* screen = [[CustomizableScreen alloc] init];
         screen.screenType = ScreenType.start_screen;
         screen.backgroundColor = [UIColor whiteColor];
         screen.textColor = [UIColor blackColor];
@@ -104,7 +104,7 @@
         //NSDictionary * images = @{ScreenCustomizationKeysStartScreenElements.image: [UIImage imageNamed:@"customImage"]};
         //screen.images = images;
 
-        NSDictionary * customStartCopy = @{ScreenCustomizationKeysStartScreenCopy.title:ScreenTitle, ScreenCustomizationKeysStartScreenCopy.text:ScreenDescription};
+        NSDictionary* customStartCopy = @{ScreenCustomizationKeysStartScreenCopy.title:ScreenTitle, ScreenCustomizationKeysStartScreenCopy.text:ScreenDescription};
         screen.copyStrings = customStartCopy;
 
         customization.customScreens = [NSArray arrayWithObjects: screen, nil];
@@ -122,7 +122,7 @@
 
 + (UIColor *)colorFromHexString:(NSString *)hexString {
     unsigned rgbValue = 0;
-    NSScanner *scanner = [NSScanner scannerWithString:hexString];
+    NSScanner* scanner = [NSScanner scannerWithString:hexString];
     [scanner setScanLocation:1]; // bypass '#' character
     [scanner scanHexInt:&rgbValue];
     return [UIColor colorWithRed:((rgbValue & 0xFF0000) >> 16)/255.0 green:((rgbValue & 0xFF00) >> 8)/255.0 blue:(rgbValue & 0xFF)/255.0 alpha:1.0];
