@@ -74,7 +74,7 @@
                         [self.commandDelegate sendPluginResult:pluginResultErr1 callbackId:command.callbackId];
                 }
 
-                if(language == "Portuguese"){
+                if(language == @"Portuguese"){
                         [DeviceHealthSDK shared].language = SupportedLanguagePortuguese; 
                 }else{
                         [DeviceHealthSDK shared].language = SupportedLanguageEnglish;
@@ -87,15 +87,15 @@
 
                 NSArray* selectedTests;
                 if (["ScreenType.buttons_v2" containsString:testsToPerform]){
-                        [selectedTests addObject:ScreenType.buttons_v2];        
+                        selectedTests = [selectedTests arrayByAddingObject:ScreenType.buttons_v2];        
                 }else if (["ScreenType.charging_v2" containsString:testsToPerform]){
-                        [selectedTests addObject:ScreenType.charging_v2];
+                        selectedTests = [selectedTests arrayByAddingObject:ScreenType.charging_v2];
                 }else if (["ScreenType.multi_touch_v2" containsString:testsToPerform]){
-                        [selectedTests addObject:ScreenType.multi_touch_v2];
+                        selectedTests = [selectedTests arrayByAddingObject:ScreenType.multi_touch_v2];
                 }else if (["ScreenType.device_front_video_v2" containsString:testsToPerform]){
-                        [selectedTests addObject:ScreenType.device_front_video_v2];
+                        selectedTests = [selectedTests arrayByAddingObject:ScreenType.device_front_video_v2];
                 }else{
-                        [selectedTests addObject:nil];
+                        selectedTests = [selectedTests addObject:nil];
                 }
 
                 Customization* customization = [[Customization alloc] init];
@@ -138,7 +138,7 @@
         }
 }
 
-+ (UIColor *)colorFromHexString:(NSString *)hexString {
+- (UIColor *)colorFromHexString:(NSString *)hexString {
     unsigned rgbValue = 0;
     NSScanner* scanner = [NSScanner scannerWithString:hexString];
     [scanner setScanLocation:1]; // bypass '#' character
