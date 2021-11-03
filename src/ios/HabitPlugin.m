@@ -3,7 +3,7 @@
 
 @import DeviceHealth;
 
-@Interface MyCustomization {
+@Interface MyCustomization ()
        @property (nonatomic, strong) NSString *ScreenTitle;
        @property (nonatomic, strong) NSString *ScreenDescription;
        @property (nonatomic, strong) NSString *ScreenBackgroundColor;
@@ -18,7 +18,6 @@
        @property (nonatomic, strong) NSString *CustomNavigationBarBackgroundColor;
        @property (nonatomic, strong) NSString *CustomNavigationBarTextColor;
        @property (nonatomic, strong) NSString *CustomNavigationBarButtonsTextColor;
-}
 
 @end
 
