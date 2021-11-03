@@ -44,92 +44,97 @@
         NSString* CustomNavigationBarTextColor;
         NSString* CustomNavigationBarButtonsTextColor;
         
-        //Deserialize JSON to variables
-        NSString* path  = [[NSBundle mainBundle] pathForResource:screencustomization ofType:@"json"];
-        NSString* jsonString = [[NSString alloc] initWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
-        NSData* jsonData = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
-        NSError *error = nil;
-        NSDictionary  *object = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:&error];
-
-        if(!error) {               
-               for (NSString *dictionaryKey in object) {  
-                   ScreenTitle = [[object valueForKey:dictionaryKey] objectForKey:@"ScreenTitle"];
-                   ScreenDescription = [[object valueForKey:dictionaryKey] objectForKey:@"ScreenDescription"];
-                   ScreenBackgroundColor = [[object valueForKey:dictionaryKey] objectForKey:@"ScreenBackgroundColor"];
-                   ScreenTextAccentColor = [[object valueForKey:dictionaryKey] objectForKey:@"ScreenTextAccentColor"];
-                   ScreenTestColor = [[object valueForKey:dictionaryKey] objectForKey:@"ScreenTestColor"];
-                   ButtonStyleBackgroundColor = [[object valueForKey:dictionaryKey] objectForKey:@"ButtonStyleBackgroundColor"];
-                   ButtonStyleForegroundColor = [[object valueForKey:dictionaryKey] objectForKey:@"ButtonStyleForegroundColor"];
-                   ButtonStyleBorderType = [[object valueForKey:dictionaryKey] objectForKey:@"ButtonStyleBorderType"];
-                   StyleSkipTestButtonColor = [[object valueForKey:dictionaryKey] objectForKey:@"StyleSkipTestButtonColor"];
-                   StyleProgressBarBackgroundColor = [[object valueForKey:dictionaryKey] objectForKey:@"StyleProgressBarBackgroundColor"];
-                   ProgressBarSelectedColor = [[object valueForKey:dictionaryKey] objectForKey:@"ProgressBarSelectedColor"];
-                   CustomNavigationBarBackgroundColor = [[object valueForKey:dictionaryKey] objectForKey:@"CustomNavigationBarBackgroundColor"];
-                   CustomNavigationBarTextColor = [[object valueForKey:dictionaryKey] objectForKey:@"CustomNavigationBarTextColor"];
-                   CustomNavigationBarButtonsTextColor = [[object valueForKey:dictionaryKey] objectForKey:@"CustomNavigationBarButtonsTextColor"];
-               }
-        } else {
-                CDVPluginResult* pluginResultErr1 = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:@"Error in parsing JSON"];  
-                [self.commandDelegate sendPluginResult:pluginResultErr1 callbackId:command.callbackId];
-        }
-        
-        if(language == "Portuguese"){
-                [DeviceHealthSDK shared].language = SupportedLanguagePortuguese; 
-        }else{
-                [DeviceHealthSDK shared].language = SupportedLanguageEnglish;
-        }
-        
-        [DeviceHealthSDK shared].themeColor =  colorFromHexString:themecolor; //[UIColor colorWithRed:156/255 green:34/255 blue:93/255 alpha:1.0];        
-        [DeviceHealthSDK shared].hideStartScreen  = hidesstartcreen;
-        
-        //NSArray* selectedTests = [NSArray arrayWithObjects:ScreenType.buttons_v2, ScreenType.charging_v2, ScreenType.multi_touch_v2, ScreenType.device_front_video_v2, nil];
-        
-        NSArray* selectedTests;
-        if (["ScreenType.buttons_v2" containsString:testsToPerform]){
-                [selectedTests addObject:ScreenType.buttons_v2];        
-        }else if (["ScreenType.charging_v2" containsString:testsToPerform]){
-                [selectedTests addObject:ScreenType.charging_v2];
-        }else if (["ScreenType.multi_touch_v2" containsString:testsToPerform]){
-                [selectedTests addObject:ScreenType.multi_touch_v2];
-        }else if (["ScreenType.device_front_video_v2" containsString:testsToPerform]){
-                [selectedTests addObject:ScreenType.device_front_video_v2];
-        }else{
-                [selectedTests addObject:nil];
-        }
-        
-        Customization* customization = [[Customization alloc] init];
-        customization.skipTestButtonColor = [UIColor blackColor];
-        customization.buttonsStyle.backgroundColor = [UIColor blueColor];
-        customization.buttonsStyle.foregroundColor = [UIColor whiteColor];
-        customization.buttonsStyle.borderType = BorderTypeSquare;
-        customization.progressBarBackgroundColor = [UIColor whiteColor];
-        customization.progressBarSelectedColor = [UIColor blackColor];
-
-        customization.customNavigationBarBackgroundColor = [UIColor blueColor];
-        customization.customNavigationBarTextColor = [UIColor blackColor];
-        customization.customNavigationBarButtonsTextColor = [UIColor whiteColor];
-
-        CustomizableScreen* screen = [[CustomizableScreen alloc] init];
-        screen.screenType = ScreenType.start_screen;
-        screen.backgroundColor = [UIColor whiteColor];
-        screen.textColor = [UIColor blackColor];
-        screen.textAccentColor = [UIColor blueColor];
-        //NSDictionary * images = @{ScreenCustomizationKeysStartScreenElements.image: [UIImage imageNamed:@"customImage"]};
-        //screen.images = images;
-
-        NSDictionary* customStartCopy = @{ScreenCustomizationKeysStartScreenCopy.title:ScreenTitle, ScreenCustomizationKeysStartScreenCopy.text:ScreenDescription};
-        screen.copyStrings = customStartCopy;
-
-        customization.customScreens = [NSArray arrayWithObjects: screen, nil];
-                
         @try{
-        [[DeviceHealthSDK shared] performTestsWithAppID:appid apiKey:apikey testsToPerform:selectedTests imei:imeinumber serialNumber:serialnumber customization:customization completion:^(NSDictionary<NSString *,id> * result) {
-                CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:result];
-                [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
-        }];
+                //Deserialize JSON to variables
+                NSString* path  = [[NSBundle mainBundle] pathForResource:screencustomization ofType:@"json"];
+                NSString* jsonString = [[NSString alloc] initWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
+                NSData* jsonData = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
+                NSError *error = nil;
+                NSDictionary  *object = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:&error];
+
+                if(!error) {               
+                       for (NSString *dictionaryKey in object) {  
+                           ScreenTitle = [[object valueForKey:dictionaryKey] objectForKey:@"ScreenTitle"];
+                           ScreenDescription = [[object valueForKey:dictionaryKey] objectForKey:@"ScreenDescription"];
+                           ScreenBackgroundColor = [[object valueForKey:dictionaryKey] objectForKey:@"ScreenBackgroundColor"];
+                           ScreenTextAccentColor = [[object valueForKey:dictionaryKey] objectForKey:@"ScreenTextAccentColor"];
+                           ScreenTestColor = [[object valueForKey:dictionaryKey] objectForKey:@"ScreenTestColor"];
+                           ButtonStyleBackgroundColor = [[object valueForKey:dictionaryKey] objectForKey:@"ButtonStyleBackgroundColor"];
+                           ButtonStyleForegroundColor = [[object valueForKey:dictionaryKey] objectForKey:@"ButtonStyleForegroundColor"];
+                           ButtonStyleBorderType = [[object valueForKey:dictionaryKey] objectForKey:@"ButtonStyleBorderType"];
+                           StyleSkipTestButtonColor = [[object valueForKey:dictionaryKey] objectForKey:@"StyleSkipTestButtonColor"];
+                           StyleProgressBarBackgroundColor = [[object valueForKey:dictionaryKey] objectForKey:@"StyleProgressBarBackgroundColor"];
+                           ProgressBarSelectedColor = [[object valueForKey:dictionaryKey] objectForKey:@"ProgressBarSelectedColor"];
+                           CustomNavigationBarBackgroundColor = [[object valueForKey:dictionaryKey] objectForKey:@"CustomNavigationBarBackgroundColor"];
+                           CustomNavigationBarTextColor = [[object valueForKey:dictionaryKey] objectForKey:@"CustomNavigationBarTextColor"];
+                           CustomNavigationBarButtonsTextColor = [[object valueForKey:dictionaryKey] objectForKey:@"CustomNavigationBarButtonsTextColor"];
+                       }
+                } else {
+                        CDVPluginResult* pluginResultErr1 = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:@"Error in parsing JSON"];  
+                        [self.commandDelegate sendPluginResult:pluginResultErr1 callbackId:command.callbackId];
+                }
+
+                if(language == "Portuguese"){
+                        [DeviceHealthSDK shared].language = SupportedLanguagePortuguese; 
+                }else{
+                        [DeviceHealthSDK shared].language = SupportedLanguageEnglish;
+                }
+
+                [DeviceHealthSDK shared].themeColor =  colorFromHexString:themecolor; //[UIColor colorWithRed:156/255 green:34/255 blue:93/255 alpha:1.0];        
+                [DeviceHealthSDK shared].hideStartScreen  = hidesstartcreen;
+
+                //NSArray* selectedTests = [NSArray arrayWithObjects:ScreenType.buttons_v2, ScreenType.charging_v2, ScreenType.multi_touch_v2, ScreenType.device_front_video_v2, nil];
+
+                NSArray* selectedTests;
+                if (["ScreenType.buttons_v2" containsString:testsToPerform]){
+                        [selectedTests addObject:ScreenType.buttons_v2];        
+                }else if (["ScreenType.charging_v2" containsString:testsToPerform]){
+                        [selectedTests addObject:ScreenType.charging_v2];
+                }else if (["ScreenType.multi_touch_v2" containsString:testsToPerform]){
+                        [selectedTests addObject:ScreenType.multi_touch_v2];
+                }else if (["ScreenType.device_front_video_v2" containsString:testsToPerform]){
+                        [selectedTests addObject:ScreenType.device_front_video_v2];
+                }else{
+                        [selectedTests addObject:nil];
+                }
+
+                Customization* customization = [[Customization alloc] init];
+                customization.skipTestButtonColor = [UIColor blackColor];
+                customization.buttonsStyle.backgroundColor = [UIColor blueColor];
+                customization.buttonsStyle.foregroundColor = [UIColor whiteColor];
+                customization.buttonsStyle.borderType = BorderTypeSquare;
+                customization.progressBarBackgroundColor = [UIColor whiteColor];
+                customization.progressBarSelectedColor = [UIColor blackColor];
+
+                customization.customNavigationBarBackgroundColor = [UIColor blueColor];
+                customization.customNavigationBarTextColor = [UIColor blackColor];
+                customization.customNavigationBarButtonsTextColor = [UIColor whiteColor];
+
+                CustomizableScreen* screen = [[CustomizableScreen alloc] init];
+                screen.screenType = ScreenType.start_screen;
+                screen.backgroundColor = [UIColor whiteColor];
+                screen.textColor = [UIColor blackColor];
+                screen.textAccentColor = [UIColor blueColor];
+                //NSDictionary * images = @{ScreenCustomizationKeysStartScreenElements.image: [UIImage imageNamed:@"customImage"]};
+                //screen.images = images;
+
+                NSDictionary* customStartCopy = @{ScreenCustomizationKeysStartScreenCopy.title:ScreenTitle, ScreenCustomizationKeysStartScreenCopy.text:ScreenDescription};
+                screen.copyStrings = customStartCopy;
+
+                customization.customScreens = [NSArray arrayWithObjects: screen, nil];
+
+                @try{
+                [[DeviceHealthSDK shared] performTestsWithAppID:appid apiKey:apikey testsToPerform:selectedTests imei:imeinumber serialNumber:serialnumber customization:customization completion:^(NSDictionary<NSString *,id> * result) {
+                        CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:result];
+                        [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
+                }];
+                }@catch (NSException* exception) {
+                      CDVPluginResult* pluginResultErr2 = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:[exception reason]];  
+                      [self.commandDelegate sendPluginResult:pluginResultErr2 callbackId:command.callbackId];
+                }
         }@catch (NSException* exception) {
-              CDVPluginResult* pluginResultErr2 = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:[exception reason]];  
-              [self.commandDelegate sendPluginResult:pluginResultErr2 callbackId:command.callbackId];
+              CDVPluginResult* pluginResultErr3 = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:[exception reason]];  
+              [self.commandDelegate sendPluginResult:pluginResultErr3 callbackId:command.callbackId];
         }
 }
 
