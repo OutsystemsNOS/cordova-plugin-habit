@@ -69,14 +69,13 @@
                    CustomNavigationBarButtonsTextColor = [[object valueForKey:dictionaryKey] objectForKey:@"CustomNavigationBarButtonsTextColor"];
                }
         } else {
-                NSLog(@"Error in parsing JSON");
+                CDVPluginResult* pluginResultErr1 = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:@"Error in parsing JSON"];  
+                [self.commandDelegate sendPluginResult:pluginResultErr1 callbackId:command.callbackId];
         }
-        
-        /*
         
         [DeviceHealthSDK shared].language = SupportedLanguagePortuguese;        
         [DeviceHealthSDK shared].themeColor =  [UIColor colorWithRed:156/255 green:34/255 blue:93/255 alpha:1.0];        
-        [DeviceHealthSDK shared].hideStartScreen  = true;
+        [DeviceHealthSDK shared].hideStartScreen  = false;
         
         NSArray * selectedTests = [NSArray arrayWithObjects:ScreenType.buttons_v2, ScreenType.charging_v2, ScreenType.multi_touch_v2, ScreenType.device_front_video_v2, nil];
         
@@ -113,10 +112,9 @@
                 [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
         }];
         }@catch (NSException* exception) {
-              CDVPluginResult* pluginResultErr = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:[exception reason]];  
-              [self.commandDelegate sendPluginResult:pluginResultErr callbackId:command.callbackId];
+              CDVPluginResult* pluginResultErr2 = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:[exception reason]];  
+              [self.commandDelegate sendPluginResult:pluginResultErr2 callbackId:command.callbackId];
         }
-        */
 }
 
 @end
