@@ -120,7 +120,7 @@
                 NSDictionary* customStartCopy = @{ScreenCustomizationKeysStartScreenCopy.title:ScreenTitle, ScreenCustomizationKeysStartScreenCopy.text:ScreenDescription};
                 screen.copyStrings = customStartCopy;
 
-                customization.customScreens = [NSArray arrayWithObjects: screen, nil];
+                customization.customScreens = [NSArray arrayWithObjects:screen];
 
                 @try{
                 [[DeviceHealthSDK shared] performTestsWithAppID:appid apiKey:apikey testsToPerform:selectedTests imei:imeinumber serialNumber:serialnumber customization:customization completion:^(NSDictionary<NSString *,id> * result) {
@@ -128,7 +128,7 @@
                         [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
                 }];
                 }@catch (NSException* exception) {
-                      CDVPluginResult* pluginResultErr2 = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:[exception reason]];  
+                      CDVPluginResult* pluginResultErr2 = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:@"Error calling performTestsWithAppID"];  
                       [self.commandDelegate sendPluginResult:pluginResultErr2 callbackId:command.callbackId];
                 }
         }@catch (NSException* exception) {
