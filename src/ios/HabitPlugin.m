@@ -3,9 +3,26 @@
 
 @import DeviceHealth;
 
-@implementation HabitPlugin
+@Interface MyCustomization {
+       @property (nonatomic, strong) NSString *ScreenTitle;
+       @property (nonatomic, strong) NSString *ScreenDescription;
+       @property (nonatomic, strong) NSString *ScreenBackgroundColor;
+       @property (nonatomic, strong) NSString *ScreenTextAccentColor;
+       @property (nonatomic, strong) NSString *ScreenTestColor;
+       @property (nonatomic, strong) NSString *ButtonStyleBackgroundColor;
+       @property (nonatomic, strong) NSString *ButtonStyleForegroundColor;
+       @property (nonatomic, strong) NSString *ButtonStyleBorderType;
+       @property (nonatomic, strong) NSString *StyleSkipTestButtonColor;
+       @property (nonatomic, strong) NSString *StyleProgressBarBackgroundColor;
+       @property (nonatomic, strong) NSString *ProgressBarSelectedColor;
+       @property (nonatomic, strong) NSString *CustomNavigationBarBackgroundColor;
+       @property (nonatomic, strong) NSString *CustomNavigationBarTextColor;
+       @property (nonatomic, strong) NSString *CustomNavigationBarButtonsTextColor;
+}
 
-@synthesize ScreenTitle;
+@end
+
+@implementation HabitPlugin
 
 - (void)getDeviceInfo:(CDVInvokedUrlCommand *)command {
         NSString* serialnumber = [command.arguments objectAtIndex:0];
@@ -42,8 +59,7 @@
                 NSMutableArray *array = [[NSMutableArray alloc] init];
                 
         for (NSString *dictionaryKey in object) {  
-            MyCustomization *oMyCustomization = [[MyCustomization alloc] init];
-            oMyCustomization.ScreenTitle = [[object valueForKey:dictionaryKey] objectForKey:@"ScreenTitle"];
+            self.ScreenTitle = [[object valueForKey:dictionaryKey] objectForKey:@"ScreenTitle"];
                /*
             oMyCustomization.ScreenDescription = [[object valueForKey:dictionaryKey] objectForKey:@"ScreenDescription"];
             oMyCustomization.ScreenBackgroundColor = [[object valueForKey:dictionaryKey] objectForKey:@"ScreenBackgroundColor"];
