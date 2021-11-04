@@ -51,26 +51,12 @@
                 @try{
                 //Deserialize JSON to variables
                 NSError *error = nil;
-                NSString* jsonString = [[NSString alloc] initWithContentsOfFile:screencustomization encoding:NSUTF8StringEncoding error:&error];
-                NSData* jsonData = [jsonString dataUsingEncoding:NSUTF8StringEncoding];               
-                NSDictionary  *object = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:&error];         
+                NSData* jsonData = [screencustomization dataUsingEncoding:NSUTF8StringEncoding];               
+                NSMutableDictionary *s = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:&error];         
                
-               for (NSString *dictionaryKey in object) {  
-                   ScreenTitle = [[object valueForKey:dictionaryKey] objectForKey:@"ScreenTitle"];
-                   ScreenDescription = [[object valueForKey:dictionaryKey] objectForKey:@"ScreenDescription"];
-                   ScreenBackgroundColor = [[object valueForKey:dictionaryKey] objectForKey:@"ScreenBackgroundColor"];
-                   ScreenTextAccentColor = [[object valueForKey:dictionaryKey] objectForKey:@"ScreenTextAccentColor"];
-                   ScreenTestColor = [[object valueForKey:dictionaryKey] objectForKey:@"ScreenTestColor"];
-                   ButtonStyleBackgroundColor = [[object valueForKey:dictionaryKey] objectForKey:@"ButtonStyleBackgroundColor"];
-                   ButtonStyleForegroundColor = [[object valueForKey:dictionaryKey] objectForKey:@"ButtonStyleForegroundColor"];
-                   ButtonStyleBorderType = [[object valueForKey:dictionaryKey] objectForKey:@"ButtonStyleBorderType"];
-                   StyleSkipTestButtonColor = [[object valueForKey:dictionaryKey] objectForKey:@"StyleSkipTestButtonColor"];
-                   StyleProgressBarBackgroundColor = [[object valueForKey:dictionaryKey] objectForKey:@"StyleProgressBarBackgroundColor"];
-                   ProgressBarSelectedColor = [[object valueForKey:dictionaryKey] objectForKey:@"ProgressBarSelectedColor"];
-                   CustomNavigationBarBackgroundColor = [[object valueForKey:dictionaryKey] objectForKey:@"CustomNavigationBarBackgroundColor"];
-                   CustomNavigationBarTextColor = [[object valueForKey:dictionaryKey] objectForKey:@"CustomNavigationBarTextColor"];
-                   CustomNavigationBarButtonsTextColor = [[object valueForKey:dictionaryKey] objectForKey:@"CustomNavigationBarButtonsTextColor"];
-                }
+                ScreenTitle = [s objectForKey:@"ScreenTitle"];
+                ScreenDescription = [s objectForKey:@"ScreenDescription"]
+                        
                 }@catch (NSException* exception) {
                         CDVPluginResult* pluginResultErr3 = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:@"Error parsing json"];  
                         [self.commandDelegate sendPluginResult:pluginResultErr3 callbackId:command.callbackId];
