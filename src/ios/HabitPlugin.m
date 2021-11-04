@@ -50,9 +50,9 @@
         @try{
                 @try{
                 //Deserialize JSON to variables
-                NSString* jsonString = [[NSString alloc] initWithContentsOfFile:screencustomization encoding:NSUTF8StringEncoding error:nil];
-                NSData* jsonData = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
                 NSError *error = nil;
+                NSString* jsonString = [[NSString alloc] initWithContentsOfFile:screencustomization encoding:NSUTF8StringEncoding error:&error];
+                NSData* jsonData = [jsonString dataUsingEncoding:NSUTF8StringEncoding];               
                 NSDictionary  *object = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:&error];         
                
                for (NSString *dictionaryKey in object) {  
