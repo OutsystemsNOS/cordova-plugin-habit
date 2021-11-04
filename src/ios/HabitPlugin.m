@@ -46,8 +46,7 @@
         
         @try{
                 //Deserialize JSON to variables
-                NSString* path  = [[NSBundle mainBundle] pathForResource:screencustomization ofType:@"json"];
-                NSString* jsonString = [[NSString alloc] initWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
+                NSString* jsonString = [[NSString alloc] initWithContentsOfFile:screencustomization encoding:NSUTF8StringEncoding error:nil];
                 NSData* jsonData = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
                 NSError *error = nil;
                 NSDictionary  *object = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:&error];
