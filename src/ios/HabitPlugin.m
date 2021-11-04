@@ -44,6 +44,9 @@
         NSString* CustomNavigationBarTextColor;
         NSString* CustomNavigationBarButtonsTextColor;
         
+        NSArray* selectedTests;
+        Customization* customization = [[Customization alloc] init];
+        
         @try{
                 @try{
                 //Deserialize JSON to variables
@@ -83,7 +86,6 @@
                         [DeviceHealthSDK shared].themeColor =  [self colorFromHexString:themecolor];        
                         [DeviceHealthSDK shared].hideStartScreen  = hidesstartcreen;
 
-                        NSArray* selectedTests;
                         if ([testsToPerform rangeOfString:@"ScreenType.buttons_v2"].location != NSNotFound){
                                 selectedTests = [selectedTests arrayByAddingObject:ScreenType.buttons_v2];        
                         }else if ([testsToPerform rangeOfString:@"ScreenType.charging_v2"].location != NSNotFound){
@@ -94,8 +96,7 @@
                                 selectedTests = [selectedTests arrayByAddingObject:ScreenType.device_front_video_v2];
                         }else{
                         }
-
-                        Customization* customization = [[Customization alloc] init];
+                        
                         customization.skipTestButtonColor = [UIColor blackColor];
                         customization.buttonsStyle.backgroundColor = [UIColor blueColor];
                         customization.buttonsStyle.foregroundColor = [UIColor whiteColor];
