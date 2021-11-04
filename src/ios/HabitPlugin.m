@@ -47,12 +47,12 @@
         @try{
                 @try{
                 //Deserialize JSON to variables
-                NSError *error = nil;
-                NSData* jsonData = [screencustomization dataUsingEncoding:NSUTF8StringEncoding];               
-                NSMutableDictionary *s = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:&error];         
+                //NSError *error = nil;
+                //NSData* jsonData = [screencustomization dataUsingEncoding:NSUTF8StringEncoding];               
+                //NSMutableDictionary *s = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:&error];         
                
-                ScreenTitle = [s objectForKey:@"ScreenTitle"];
-                ScreenDescription = [s objectForKey:@"ScreenDescription"];
+                ScreenTitle = @"Teste 1"; //[s objectForKey:@"ScreenTitle"];
+                ScreenDescription = @"Teste 22";//[s objectForKey:@"ScreenDescription"];
                         
                 }@catch (NSException* exception) {
                         CDVPluginResult* pluginResultErr3 = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:@"Error parsing json"];  
