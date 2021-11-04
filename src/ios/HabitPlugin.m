@@ -43,10 +43,7 @@
         NSString* CustomNavigationBarBackgroundColor;
         NSString* CustomNavigationBarTextColor;
         NSString* CustomNavigationBarButtonsTextColor;
-        
-        NSArray* selectedTests;
-        Customization* customization = [[Customization alloc] init];
-        
+                
         @try{
                 @try{
                 //Deserialize JSON to variables
@@ -62,54 +59,51 @@
                         [self.commandDelegate sendPluginResult:pluginResultErr3 callbackId:command.callbackId];
                 }
                 
-                @try{
-                        if(language == @"Portuguese"){
-                                [DeviceHealthSDK shared].language = SupportedLanguagePortuguese; 
-                        }else{
-                                [DeviceHealthSDK shared].language = SupportedLanguageEnglish;
-                        }
-
-                        [DeviceHealthSDK shared].themeColor =  [self colorFromHexString:themecolor];        
-                        [DeviceHealthSDK shared].hideStartScreen  = hidesstartcreen;
-
-                        if ([testsToPerform rangeOfString:@"ScreenType.buttons_v2"].location != NSNotFound){
-                                selectedTests = [selectedTests arrayByAddingObject:ScreenType.buttons_v2];        
-                        }else if ([testsToPerform rangeOfString:@"ScreenType.charging_v2"].location != NSNotFound){
-                                selectedTests = [selectedTests arrayByAddingObject:ScreenType.charging_v2];
-                        }else if ([testsToPerform rangeOfString:@"ScreenType.multi_touch_v2"].location != NSNotFound){
-                                selectedTests = [selectedTests arrayByAddingObject:ScreenType.multi_touch_v2];
-                        }else if ([testsToPerform rangeOfString:@"ScreenType.device_front_video_v2"].location != NSNotFound){
-                                selectedTests = [selectedTests arrayByAddingObject:ScreenType.device_front_video_v2];
-                        }else{
-                        }
-                        
-                        customization.skipTestButtonColor = [UIColor blackColor];
-                        customization.buttonsStyle.backgroundColor = [UIColor blueColor];
-                        customization.buttonsStyle.foregroundColor = [UIColor whiteColor];
-                        customization.buttonsStyle.borderType = BorderTypeSquare;
-                        customization.progressBarBackgroundColor = [UIColor whiteColor];
-                        customization.progressBarSelectedColor = [UIColor blackColor];
-
-                        customization.customNavigationBarBackgroundColor = [UIColor blueColor];
-                        customization.customNavigationBarTextColor = [UIColor blackColor];
-                        customization.customNavigationBarButtonsTextColor = [UIColor whiteColor];
-
-                        CustomizableScreen* screen = [[CustomizableScreen alloc] init];
-                        screen.screenType = ScreenType.start_screen;
-                        screen.backgroundColor = [UIColor whiteColor];
-                        screen.textColor = [UIColor blackColor];
-                        screen.textAccentColor = [UIColor blueColor];
-                        //NSDictionary * images = @{ScreenCustomizationKeysStartScreenElements.image: [UIImage imageNamed:@"customImage"]};
-                        //screen.images = images;
-
-                        NSDictionary* customStartCopy = @{ScreenCustomizationKeysStartScreenCopy.title:ScreenTitle, ScreenCustomizationKeysStartScreenCopy.text:ScreenDescription};
-                        screen.copyStrings = customStartCopy;
-
-                        customization.customScreens = [NSArray arrayWithObjects:screen];
-                        }@catch (NSException* exception) {
-                        CDVPluginResult* pluginResultErr3 = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:@"Error in customizations"];  
-                        [self.commandDelegate sendPluginResult:pluginResultErr3 callbackId:command.callbackId];
+                if(language == @"Portuguese"){
+                        [DeviceHealthSDK shared].language = SupportedLanguagePortuguese; 
+                }else{
+                        [DeviceHealthSDK shared].language = SupportedLanguageEnglish;
                 }
+
+                [DeviceHealthSDK shared].themeColor =  [self colorFromHexString:themecolor];        
+                [DeviceHealthSDK shared].hideStartScreen  = hidesstartcreen;
+                
+                NSArray* selectedTests;
+                if ([testsToPerform rangeOfString:@"ScreenType.buttons_v2"].location != NSNotFound){
+                        selectedTests = [selectedTests arrayByAddingObject:ScreenType.buttons_v2];        
+                }else if ([testsToPerform rangeOfString:@"ScreenType.charging_v2"].location != NSNotFound){
+                        selectedTests = [selectedTests arrayByAddingObject:ScreenType.charging_v2];
+                }else if ([testsToPerform rangeOfString:@"ScreenType.multi_touch_v2"].location != NSNotFound){
+                        selectedTests = [selectedTests arrayByAddingObject:ScreenType.multi_touch_v2];
+                }else if ([testsToPerform rangeOfString:@"ScreenType.device_front_video_v2"].location != NSNotFound){
+                        selectedTests = [selectedTests arrayByAddingObject:ScreenType.device_front_video_v2];
+                }else{
+                }
+                
+                Customization* customization = [[Customization alloc] init];
+                customization.skipTestButtonColor = [UIColor blackColor];
+                customization.buttonsStyle.backgroundColor = [UIColor blueColor];
+                customization.buttonsStyle.foregroundColor = [UIColor whiteColor];
+                customization.buttonsStyle.borderType = BorderTypeSquare;
+                customization.progressBarBackgroundColor = [UIColor whiteColor];
+                customization.progressBarSelectedColor = [UIColor blackColor];
+
+                customization.customNavigationBarBackgroundColor = [UIColor blueColor];
+                customization.customNavigationBarTextColor = [UIColor blackColor];
+                customization.customNavigationBarButtonsTextColor = [UIColor whiteColor];
+
+                CustomizableScreen* screen = [[CustomizableScreen alloc] init];
+                screen.screenType = ScreenType.start_screen;
+                screen.backgroundColor = [UIColor whiteColor];
+                screen.textColor = [UIColor blackColor];
+                screen.textAccentColor = [UIColor blueColor];
+                //NSDictionary * images = @{ScreenCustomizationKeysStartScreenElements.image: [UIImage imageNamed:@"customImage"]};
+                //screen.images = images;
+
+                NSDictionary* customStartCopy = @{ScreenCustomizationKeysStartScreenCopy.title:ScreenTitle, ScreenCustomizationKeysStartScreenCopy.text:ScreenDescription};
+                screen.copyStrings = customStartCopy;
+
+                customization.customScreens = [NSArray arrayWithObjects:screen];
 
                 @try{
                 [[DeviceHealthSDK shared] performTestsWithAppID:appid apiKey:apikey testsToPerform:selectedTests imei:imeinumber serialNumber:serialnumber customization:customization completion:^(NSDictionary<NSString *,id> * result) {
