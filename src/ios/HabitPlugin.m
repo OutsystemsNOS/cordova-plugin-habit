@@ -55,7 +55,7 @@
                 NSMutableDictionary *s = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:&error];         
                
                 ScreenTitle = [s objectForKey:@"ScreenTitle"];
-                ScreenDescription = [s objectForKey:@"ScreenDescription"]
+                ScreenDescription = [s objectForKey:@"ScreenDescription"];
                         
                 }@catch (NSException* exception) {
                         CDVPluginResult* pluginResultErr3 = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:@"Error parsing json"];  
