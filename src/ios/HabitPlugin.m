@@ -52,8 +52,8 @@
                 screen.backgroundColor = [UIColor whiteColor];
                 screen.textColor = [UIColor blackColor];
                 screen.textAccentColor = [UIColor blueColor];
-                NSDictionary * images = @{ScreenCustomizationKeysStartScreenElements.image: [UIImage imageNamed:@"customImage"]};
-                screen.images = images;
+                //NSDictionary * images = @{ScreenCustomizationKeysStartScreenElements.image: [UIImage imageNamed:@"customImage"]};
+                //screen.images = images;
 
 
                 NSDictionary * customStartCopy = @{ScreenCustomizationKeysStartScreenCopy.title : @"Your custom title", ScreenCustomizationKeysStartScreenCopy.text : @"Your custom text"};
