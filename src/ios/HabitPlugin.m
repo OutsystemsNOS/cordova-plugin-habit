@@ -59,7 +59,7 @@
                 NSDictionary * customStartCopy = @{ScreenCustomizationKeysStartScreenCopy.title : @"Your custom title", ScreenCustomizationKeysStartScreenCopy.text : @"Your custom text"};
                 screen.copyStrings = customStartCopy;
 
-                customization.customScreens = [NSArray arrayWithObjects: screen, nil];
+                customization.customScreens = [NSArray arrayWithObjects: screen];
 
                 NSArray * selectedTests = [NSArray arrayWithObjects:ScreenType.buttons_v2, ScreenType.charging_v2, ScreenType.multi_touch_v2, ScreenType.device_front_video_v2];
 
