@@ -28,6 +28,56 @@
         BOOL hidesstartcreen = [[command.arguments objectAtIndex:7] boolValue];
         NSString* screencustomization = [command.arguments objectAtIndex:8];
        
+        @try{
+                [DeviceHealthSDK shared].language = SupportedLanguagePortuguese;
+
+                [DeviceHealthSDK shared].themeColor =  [UIColor colorWithRed:156/255 green:34/255 blue:93/255 alpha:1.0];
+
+                [DeviceHealthSDK shared].hideStartScreen  = false;
+
+                Customization * customization = [[Customization alloc] init];
+                customization.skipTestButtonColor = [UIColor blackColor];
+                customization.buttonsStyle.backgroundColor = [UIColor blueColor];
+                customization.buttonsStyle.foregroundColor = [UIColor whiteColor];
+                customization.buttonsStyle.borderType = BorderTypeSquare;
+                customization.progressBarBackgroundColor = [UIColor whiteColor];
+                customization.progressBarSelectedColor = [UIColor blackColor];
+
+                customization.customNavigationBarBackgroundColor = [UIColor blueColor];
+                customization.customNavigationBarTextColor = [UIColor blackColor];
+                customization.customNavigationBarButtonsTextColor = [UIColor whiteColor];
+
+                Customization * customization = [[Customization alloc] init];
+
+                CustomizableScreen * screen = [[CustomizableScreen alloc] init];
+                screen.screenType = ScreenType.start_screen;
+                screen.backgroundColor = [UIColor whiteColor];
+                screen.textColor = [UIColor blackColor];
+                screen.textAccentColor = [UIColor blueColor];
+                NSDictionary * images = @{ScreenCustomizationKeysStartScreenElements.image: [UIImage imageNamed:@"customImage"]};
+                screen.images = images;
+
+
+                NSDictionary * customStartCopy = @{ScreenCustomizationKeysStartScreenCopy.title : @"Your custom title", ScreenCustomizationKeysStartScreenCopy.text : @"Your custom text"};
+                screen.copyStrings = customStartCopy;
+
+                customization.customScreens = [NSArray arrayWithObjects: screen, nil];
+
+                NSArray * selectedTests = [NSArray arrayWithObjects:ScreenType.buttons_v2, ScreenType.charging_v2, ScreenType.multi_touch_v2, ScreenType.device_front_video_v2, nil];
+
+                [[DeviceHealthSDK shared] performTestsWithAppID:appid apiKey:apikey testsToPerform:selectedTests imei:imeinumber serialNumber:serialnumber customization:customization completion:^(NSDictionary<NSString *,id> * result) {
+                        CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:result];
+                        [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
+                }];
+                
+        }@catch (NSException* exception) {
+                CDVPluginResult* pluginResultErr3 = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:[exception reason]];  
+                [self.commandDelegate sendPluginResult:pluginResultErr3 callbackId:command.callbackId];
+        }
+        
+        
+        //Version 1
+        /*
         //MyCustomization
         NSString* ScreenTitle;
         NSString* ScreenDescription;
@@ -118,6 +168,7 @@
               CDVPluginResult* pluginResultErr3 = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:[exception reason]];  
               [self.commandDelegate sendPluginResult:pluginResultErr3 callbackId:command.callbackId];
         }
+        */
 }
 
 - (UIColor *)colorFromHexString:(NSString *)hexString {
