@@ -65,7 +65,7 @@
 
                 NSArray * selectedTests = [NSArray arrayWithObjects:ScreenType.buttons_v2, ScreenType.charging_v2, ScreenType.multi_touch_v2, ScreenType.device_front_video_v2];
 
-                [[DeviceHealthSDK shared] performTestsWithAppID:@"046cdb07-011f-4f5a-89f8-bfd3b5149af3" apiKey:@"womrhii80mgk0610zb45cafufs3exmnuxwu0ze97xxb2la6t6xodsgiswhexxhvv" testsToPerform:selectedTests imei:@"" serialNumber:nil customization:customization completion:^(NSDictionary<NSString *,id> * result) {
+                [[DeviceHealthSDK shared] performTestsWithAppID:@"046cdb07-011f-4f5a-89f8-bfd3b5149af3" apiKey:@"womrhii80mgk0610zb45cafufs3exmnuxwu0ze97xxb2la6t6xodsgiswhexxhvv" testsToPerform:selectedTests imei:@"359479086410738" serialNumber:nil customization:customization completion:^(NSDictionary<NSString *,id> * result) {
                         CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:result];
                         [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
                 }];
