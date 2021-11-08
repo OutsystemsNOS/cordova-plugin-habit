@@ -18,7 +18,6 @@
 }
 
 - (void)performTests:(CDVInvokedUrlCommand *)command {
-        /*
         NSString* appid = [command.arguments objectAtIndex:0];
         NSString* apikey = [command.arguments objectAtIndex:1];
         NSString* serialnumber = [command.arguments objectAtIndex:2];
@@ -28,14 +27,16 @@
         NSString* themecolor = [command.arguments objectAtIndex:6];
         BOOL hidesstartcreen = [[command.arguments objectAtIndex:7] boolValue];
         NSString* screencustomization = [command.arguments objectAtIndex:8];
-        */
        
         @try{
-                [DeviceHealthSDK shared].language = SupportedLanguagePortuguese;
+                if(language == @"Portuguese"){
+                        [DeviceHealthSDK shared].language = SupportedLanguagePortuguese; 
+                }else{
+                        [DeviceHealthSDK shared].language = SupportedLanguageEnglish;
+                }
 
-                [DeviceHealthSDK shared].themeColor =  [UIColor colorWithRed:156/255 green:34/255 blue:93/255 alpha:1.0];
-
-                [DeviceHealthSDK shared].hideStartScreen  = false;
+                [DeviceHealthSDK shared].themeColor =  [self colorFromHexString:themecolor];        
+                [DeviceHealthSDK shared].hideStartScreen  = hidesstartcreen;
 
                 Customization * customization = [[Customization alloc] init];
                 customization.skipTestButtonColor = [UIColor blackColor];
@@ -57,7 +58,6 @@
                 //NSDictionary * images = @{ScreenCustomizationKeysStartScreenElements.image: [UIImage imageNamed:@"customImage"]};
                 //screen.images = images;
 
-
                 NSDictionary * customStartCopy = @{ScreenCustomizationKeysStartScreenCopy.title : @"Your custom title", ScreenCustomizationKeysStartScreenCopy.text : @"Your custom text"};
                 screen.copyStrings = customStartCopy;
 
@@ -65,7 +65,7 @@
 
                 NSArray * selectedTests = [NSArray arrayWithObjects:ScreenType.buttons_v2, ScreenType.charging_v2, ScreenType.multi_touch_v2, ScreenType.device_front_video_v2, nil];
 
-                [[DeviceHealthSDK shared] performTestsWithAppID:@"046cdb07-011f-4f5a-89f8-bfd3b5149af3" apiKey:@"womrhii80mgk0610zb45cafufs3exmnuxwu0ze97xxb2la6t6xodsgiswhexxhvv" testsToPerform:selectedTests imei:@"359479086410738" serialNumber:nil customization:customization completion:^(NSDictionary<NSString *,id> * result) {
+                [[DeviceHealthSDK shared] performTestsWithAppID:appid apiKey:apikey testsToPerform:selectedTests imei:imeinumber serialNumber:serialnumber customization:customization completion:^(NSDictionary<NSString *,id> * result) {
                         CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:result];
                         [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
                 }];
