@@ -30,6 +30,18 @@
        
         NSString* ScreenTitle;
         NSString* ScreenDescription;
+        NSString* ScreenBackgroundColor;
+        NSString* ScreenTextAccentColor;
+        NSString* ScreenTestColor;
+        NSString* ButtonStyleBackgroundColor;
+        NSString* ButtonStyleForegroundColor;
+        NSString* ButtonStyleBorderType;
+        NSString* StyleSkipTestButtonColor;
+        NSString* StyleProgressBarBackgroundColor;
+        NSString* ProgressBarSelectedColor;
+        NSString* CustomNavigationBarBackgroundColor;
+        NSString* CustomNavigationBarTextColor;
+        NSString* CustomNavigationBarButtonsTextColor;
         
         @try{
                 @try{
@@ -39,7 +51,18 @@
                 NSMutableDictionary *s = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:&error];         
                
                 ScreenTitle = [s objectForKey:@"ScreenTitle"];
-                ScreenDescription = [s objectForKey:@"ScreenDescription"];
+                ScreenDescription = [s objectForKey:@"ScreenDescription"];                        
+                ScreenBackgroundColor = [s objectForKey:@"ScreenBackgroundColor"];
+                ScreenTextAccentColor = [s objectForKey:@"ScreenTextAccentColor"];
+                ScreenTestColor = [s objectForKey:@"ScreenTestColor"];
+                ButtonStyleBackgroundColor = [s objectForKey:@"ButtonStyleBackgroundColor"];
+                ButtonStyleForegroundColor = [s objectForKey:@"ButtonStyleForegroundColor"];
+                StyleSkipTestButtonColor = [s objectForKey:@"StyleSkipTestButtonColor"];
+                StyleProgressBarBackgroundColor = [s objectForKey:@"StyleProgressBarBackgroundColor"];
+                ProgressBarSelectedColor = [s objectForKey:@"ProgressBarSelectedColor"];
+                CustomNavigationBarBackgroundColor = [s objectForKey:@"CustomNavigationBarBackgroundColor"];
+                CustomNavigationBarTextColor = [s objectForKey:@"CustomNavigationBarTextColor"];
+                CustomNavigationBarButtonsTextColor = [s objectForKey:@"CustomNavigationBarButtonsTextColor"];
                         
                 }@catch (NSException* exception) {
                         CDVPluginResult* pluginResultErr3 = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:@"Error parsing json"];  
@@ -56,22 +79,22 @@
                 [DeviceHealthSDK shared].hideStartScreen  = hidesstartcreen;
 
                 Customization * customization = [[Customization alloc] init];
-                customization.skipTestButtonColor = [UIColor blackColor];
-                customization.buttonsStyle.backgroundColor = [UIColor blueColor];
-                customization.buttonsStyle.foregroundColor = [UIColor whiteColor];
+                customization.skipTestButtonColor = [self colorFromHexString:StyleSkipTestButtonColor];
+                customization.buttonsStyle.backgroundColor = [self colorFromHexString:ButtonStyleBackgroundColor];
+                customization.buttonsStyle.foregroundColor = [self colorFromHexString:ButtonStyleForegroundColor];
                 customization.buttonsStyle.borderType = BorderTypeSquare;
-                customization.progressBarBackgroundColor = [UIColor whiteColor];
-                customization.progressBarSelectedColor = [UIColor blackColor];
+                customization.progressBarBackgroundColor = [self colorFromHexString:StyleProgressBarBackgroundColor];
+                customization.progressBarSelectedColor = [self colorFromHexString:ProgressBarSelectedColor];
 
-                customization.customNavigationBarBackgroundColor = [UIColor blueColor];
-                customization.customNavigationBarTextColor = [UIColor blackColor];
-                customization.customNavigationBarButtonsTextColor = [UIColor whiteColor];
+                customization.customNavigationBarBackgroundColor = [self colorFromHexString:CustomNavigationBarBackgroundColor];
+                customization.customNavigationBarTextColor = [self colorFromHexString:CustomNavigationBarTextColor];
+                customization.customNavigationBarButtonsTextColor = [self colorFromHexString:CustomNavigationBarButtonsTextColor];
 
                 CustomizableScreen * screen = [[CustomizableScreen alloc] init];
                 screen.screenType = ScreenType.start_screen;
-                screen.backgroundColor = [UIColor whiteColor];
-                screen.textColor = [UIColor blackColor];
-                screen.textAccentColor = [UIColor blueColor];
+                screen.backgroundColor = [self colorFromHexString:ScreenBackgroundColor];
+                screen.textColor = [self colorFromHexString:ScreenTestColor];
+                screen.textAccentColor = [self colorFromHexString:ScreenTextAccentColor];
                 //NSDictionary * images = @{ScreenCustomizationKeysStartScreenElements.image: [UIImage imageNamed:@"customImage"]};
                 //screen.images = images;
 
