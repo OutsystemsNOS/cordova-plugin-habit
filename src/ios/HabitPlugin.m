@@ -29,6 +29,20 @@
         NSString* screencustomization = [command.arguments objectAtIndex:8];
        
         @try{
+                @try{
+                //Deserialize JSON to variables
+                NSError *error = nil;
+                NSData* jsonData = [screencustomization dataUsingEncoding:NSUTF8StringEncoding];               
+                NSMutableDictionary *s = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:&error];         
+               
+                ScreenTitle = [s objectForKey:@"ScreenTitle"];
+                ScreenDescription = [s objectForKey:@"ScreenDescription"];
+                        
+                }@catch (NSException* exception) {
+                        CDVPluginResult* pluginResultErr3 = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:@"Error parsing json"];  
+                        [self.commandDelegate sendPluginResult:pluginResultErr3 callbackId:command.callbackId];
+                }
+                
                 if(language == @"Portuguese"){
                         [DeviceHealthSDK shared].language = SupportedLanguagePortuguese; 
                 }else{
