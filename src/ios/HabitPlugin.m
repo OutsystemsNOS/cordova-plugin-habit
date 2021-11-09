@@ -28,6 +28,9 @@
         BOOL hidesstartcreen = [[command.arguments objectAtIndex:7] boolValue];
         NSString* screencustomization = [command.arguments objectAtIndex:8];
        
+        NSString* ScreenTitle;
+        NSString* ScreenDescription;
+        
         @try{
                 @try{
                 //Deserialize JSON to variables
