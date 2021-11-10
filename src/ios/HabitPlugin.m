@@ -5,8 +5,8 @@
 @implementation HabitPlugin
 
 - (void)getDeviceInfo:(CDVInvokedUrlCommand *)command {
-        NSString* serialnumber = [command.arguments objectAtIndex:0] != nil ? [command.arguments objectAtIndex:0], nil;
-        NSString* imeinumber = [command.arguments objectAtIndex:1] != nil ? [command.arguments objectAtIndex:1], nil;
+        NSString* serialnumber = [command.arguments objectAtIndex:0] != nil ? [command.arguments objectAtIndex:0] : nil;
+        NSString* imeinumber = [command.arguments objectAtIndex:1] != nil ? [command.arguments objectAtIndex:1] : nil;
         
         @try{   
                 CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:[[DeviceHealthSDK shared] getDeviceInfoWithImei:imeinumber serialNumber:serialnumber]];
