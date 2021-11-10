@@ -20,8 +20,8 @@
 - (void)performTests:(CDVInvokedUrlCommand *)command {
         NSString* appid = [command.arguments objectAtIndex:0];
         NSString* apikey = [command.arguments objectAtIndex:1];
-        NSString* serialnumber = [command.arguments objectAtIndex:2];
-        NSString* imeinumber = [command.arguments objectAtIndex:3];
+        NSString* serialnumber = [command.arguments objectAtIndex:2] != (NSString *)[NSNull null] ? [command.arguments objectAtIndex:2] : nil;
+        NSString* imeinumber = [command.arguments objectAtIndex:3] != (NSString *)[NSNull null] ? [command.arguments objectAtIndex:3] : nil;
         NSString* testsToPerform = [command.arguments objectAtIndex:4];
         NSString* language = [command.arguments objectAtIndex:5];
         NSString* themecolor = [command.arguments objectAtIndex:6];
