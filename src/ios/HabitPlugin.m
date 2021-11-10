@@ -105,22 +105,22 @@
 
                 //NSArray * selectedTests = [NSArray arrayWithObjects:ScreenType.buttons_v2, ScreenType.charging_v2, ScreenType.multi_touch_v2, ScreenType.device_front_video_v2, nil];
                 
-                NSArray* selectedTests;
+                NSArray* selectedTests = = [NSMutableArray array];;
                 if ([testsToPerform rangeOfString:@"buttons_v2"].location != NSNotFound)
                 {
-                        [self.selectedTests addObject:ScreenType.buttons_v2]; 
+                        [selectedTests addObject:ScreenType.buttons_v2]; 
                 }
                 if ([testsToPerform rangeOfString:@"charging_v2"].location != NSNotFound)
                 {
-                        [self.selectedTests addObject:ScreenType.charging_v2]; 
+                        [selectedTests addObject:ScreenType.charging_v2]; 
                 }
                 if ([testsToPerform rangeOfString:@"multi_touch_v2"].location != NSNotFound)
                 {
-                        [self.selectedTests addObject:ScreenType.multi_touch_v2];
+                        [selectedTests addObject:ScreenType.multi_touch_v2];
                 }
                 if ([testsToPerform rangeOfString:@"device_front_video_v2"].location != NSNotFound)
                 {
-                        [self.selectedTests addObject:ScreenType.device_front_video_v2];
+                        [selectedTests addObject:ScreenType.device_front_video_v2];
                 }
                 
                 __block NSString* HabitResult;
