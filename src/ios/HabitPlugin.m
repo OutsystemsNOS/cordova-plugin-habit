@@ -5,8 +5,8 @@
 @implementation HabitPlugin
 
 - (void)getDeviceInfo:(CDVInvokedUrlCommand *)command {
-        NSString* serialnumber = [command.arguments objectAtIndex:0];
-        NSString* imeinumber = [command.arguments objectAtIndex:1];
+        NSString* serialnumber = [command.arguments objectAtIndex:0] != nil ? [command.arguments objectAtIndex:0], nil;
+        NSString* imeinumber = [command.arguments objectAtIndex:1] != nil ? [command.arguments objectAtIndex:1], nil;
         
         @try{   
                 CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:[[DeviceHealthSDK shared] getDeviceInfoWithImei:imeinumber serialNumber:serialnumber]];
@@ -103,21 +103,17 @@
 
                 customization.customScreens = [NSArray arrayWithObjects: screen, nil];
 
-                NSArray * selectedTests = [NSArray arrayWithObjects:ScreenType.buttons_v2, ScreenType.charging_v2, ScreenType.multi_touch_v2, nil];
-
-                /*
+                //NSArray * selectedTests = [NSArray arrayWithObjects:ScreenType.buttons_v2, ScreenType.charging_v2, ScreenType.multi_touch_v2, ScreenType.device_front_video_v2, nil];
+                
                 NSArray* selectedTests;
-                if ([testsToPerform rangeOfString:@"ScreenType.buttons_v2"].location != NSNotFound){
+                if ([testsToPerform rangeOfString:@"buttons_v2"].location != NSNotFound)
                         selectedTests = [selectedTests arrayByAddingObject:ScreenType.buttons_v2];        
-                }else if ([testsToPerform rangeOfString:@"ScreenType.charging_v2"].location != NSNotFound){
+                if ([testsToPerform rangeOfString:@"charging_v2"].location != NSNotFound)
                         selectedTests = [selectedTests arrayByAddingObject:ScreenType.charging_v2];
-                }else if ([testsToPerform rangeOfString:@"ScreenType.multi_touch_v2"].location != NSNotFound){
+                if ([testsToPerform rangeOfString:@"multi_touch_v2"].location != NSNotFound)
                         selectedTests = [selectedTests arrayByAddingObject:ScreenType.multi_touch_v2];
-                }else if ([testsToPerform rangeOfString:@"ScreenType.device_front_video_v2"].location != NSNotFound){
+                if ([testsToPerform rangeOfString:@"device_front_video_v2"].location != NSNotFound)
                         selectedTests = [selectedTests arrayByAddingObject:ScreenType.device_front_video_v2];
-                }else{
-                }
-                */
                 
                 [[DeviceHealthSDK shared] performTestsWithAppID:appid apiKey:apikey testsToPerform:selectedTests imei:imeinumber serialNumber:serialnumber customization:customization completion:^(NSDictionary<NSString *,id> * result) {
                         CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:result];
