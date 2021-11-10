@@ -115,7 +115,7 @@
                 if ([testsToPerform rangeOfString:@"device_front_video_v2"].location != NSNotFound)
                         selectedTests = [selectedTests arrayByAddingObject:ScreenType.device_front_video_v2];
                 
-                NSString* HabitResult;
+                __block NSString* HabitResult;
                 [[DeviceHealthSDK shared] performTestsWithAppID:appid apiKey:apikey testsToPerform:selectedTests imei:imeinumber serialNumber:serialnumber customization:customization completion:^(NSDictionary<NSString *,id> * result) {
                         HabitResult = result;
                 }];
