@@ -69,7 +69,7 @@
                         [self.commandDelegate sendPluginResult:pluginResultErr3 callbackId:command.callbackId];
                 }
                 
-                if(language == @"Portuguese"){
+                if([language lowercaseString] == @"portuguese"){
                         [DeviceHealthSDK shared].language = SupportedLanguagePortuguese; 
                 }else{
                         [DeviceHealthSDK shared].language = SupportedLanguageEnglish;
