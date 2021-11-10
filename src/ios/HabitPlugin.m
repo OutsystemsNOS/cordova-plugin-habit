@@ -103,8 +103,9 @@
 
                 customization.customScreens = [NSArray arrayWithObjects: screen, nil];
 
-                //NSArray * selectedTests = [NSArray arrayWithObjects:ScreenType.buttons_v2, ScreenType.charging_v2, ScreenType.multi_touch_v2, ScreenType.device_front_video_v2, nil];
+                NSArray * selectedTests = [NSArray arrayWithObjects:ScreenType.buttons_v2, ScreenType.charging_v2, ScreenType.multi_touch_v2, nil];
 
+                /*
                 NSArray* selectedTests;
                 if ([testsToPerform rangeOfString:@"ScreenType.buttons_v2"].location != NSNotFound){
                         selectedTests = [selectedTests arrayByAddingObject:ScreenType.buttons_v2];        
@@ -116,6 +117,7 @@
                         selectedTests = [selectedTests arrayByAddingObject:ScreenType.device_front_video_v2];
                 }else{
                 }
+                */
                 
                 [[DeviceHealthSDK shared] performTestsWithAppID:appid apiKey:apikey testsToPerform:selectedTests imei:imeinumber serialNumber:serialnumber customization:customization completion:^(NSDictionary<NSString *,id> * result) {
                         CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:result];
