@@ -105,7 +105,7 @@
 
                 //NSArray * selectedTests = [NSArray arrayWithObjects:ScreenType.buttons_v2, ScreenType.charging_v2, ScreenType.multi_touch_v2, ScreenType.device_front_video_v2, nil];
                 
-                NSArray* selectedTests = = [NSMutableArray array];
+                NSArray* selectedTests = [NSMutableArray array];
                 if ([testsToPerform rangeOfString:@"buttons_v2"].location != NSNotFound)
                 {
                         [selectedTests addObject:ScreenType.buttons_v2]; 
