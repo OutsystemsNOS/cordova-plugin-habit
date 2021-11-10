@@ -69,10 +69,10 @@
                         [self.commandDelegate sendPluginResult:pluginResultErr3 callbackId:command.callbackId];
                 }
                 
-                if([language isEqualToString:@"Portuguese"]){
-                        [DeviceHealthSDK shared].language = SupportedLanguagePortuguese; 
+                if([language isEqualToString:@"English"]){
+                        [DeviceHealthSDK shared].language = SupportedLanguageEnglish; 
                 }else{
-                        [DeviceHealthSDK shared].language = SupportedLanguageEnglish;
+                        [DeviceHealthSDK shared].language = SupportedLanguagePortuguese;
                 }
 
                 [DeviceHealthSDK shared].themeColor =  [self colorFromHexString:themecolor];        
