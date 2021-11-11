@@ -102,9 +102,7 @@
                 screen.copyStrings = customStartCopy;
 
                 customization.customScreens = [NSArray arrayWithObjects: screen, nil];
-
-                //NSArray * selectedTests = [NSArray arrayWithObjects:ScreenType.buttons_v2, ScreenType.charging_v2, ScreenType.multi_touch_v2, ScreenType.device_front_video_v2, nil];
-                
+                                
                 NSMutableArray* selectedTests = [NSMutableArray array];
                 if ([testsToPerform rangeOfString:@"buttons_v2"].location != NSNotFound)
                 {
