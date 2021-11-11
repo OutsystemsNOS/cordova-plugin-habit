@@ -105,7 +105,7 @@
 
                 //NSArray * selectedTests = [NSArray arrayWithObjects:ScreenType.buttons_v2, ScreenType.charging_v2, ScreenType.multi_touch_v2, ScreenType.device_front_video_v2, nil];
                 
-                NSArray* selectedTests = [NSMutableArray array];
+                NSMutableArray* selectedTests = [NSMutableArray array];
                 if ([testsToPerform rangeOfString:@"buttons_v2"].location != NSNotFound)
                 {
                         [selectedTests addObject:ScreenType.buttons_v2]; 
@@ -123,9 +123,8 @@
                         [selectedTests addObject:ScreenType.device_front_video_v2];
                 }
                 
-                __block NSString* HabitResult;
                 [[DeviceHealthSDK shared] performTestsWithAppID:appid apiKey:apikey testsToPerform:selectedTests imei:imeinumber serialNumber:serialnumber customization:customization completion:^(NSDictionary<NSString *,id> * result) {
-                        HabitResult = result;
+                        __block NSDictionary *HabitResult = [result copy];
                 }];
                 
                 if(HabitResult != nil){
