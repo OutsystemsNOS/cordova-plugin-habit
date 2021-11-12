@@ -69,7 +69,7 @@
                         [self.commandDelegate sendPluginResult:pluginResultErr3 callbackId:command.callbackId];
                 }
                 
-                [DeviceHealthSDK shared].language = [language isEqualToString:@"English"] ? SupportedLanguageEnglish : SupportedLanguagePortuguese; 
+                [DeviceHealthSDK shared].language = [language isEqualToString:@"pt"] ? SupportedLanguagePortuguese: SupportedLanguageEnglish; 
 
                 [DeviceHealthSDK shared].themeColor =  [self colorFromHexString:themecolor];        
                 [DeviceHealthSDK shared].hideStartScreen  = hidesstartcreen;
