@@ -121,12 +121,14 @@
                         [selectedTests addObject:ScreenType.device_front_video_v2];
                 }
                 
-                [[DeviceHealthSDK shared] performTestsWithAppID:appid apiKey:apikey testsToPerform:selectedTests imei:imeinumber serialNumber:serialnumber customization:customization completion:^(NSDictionary<NSString *,id> * result) {
-                        NSError * err;
-                        NSData * jsonData = [NSJSONSerialization dataWithJSONObject:result options:0 error:&err]; 
-                        NSString * myString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
-                        CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:myString];
-                        [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
+                [self.commandDelegate runInBackground:^{
+                        [[DeviceHealthSDK shared] performTestsWithAppID:appid apiKey:apikey testsToPerform:selectedTests imei:imeinumber serialNumber:serialnumber customization:customization completion:^(NSDictionary<NSString *,id> * result) {
+                                NSError * err;
+                                NSData * jsonData = [NSJSONSerialization dataWithJSONObject:result options:0 error:&err]; 
+                                NSString * myString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+                                CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:myString];
+                                [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
+                        }];
                 }];
                 
         }@catch (NSException* exception) {
