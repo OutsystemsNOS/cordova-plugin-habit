@@ -133,11 +133,8 @@ public class HabitPlugin extends CordovaPlugin {
   private void getDeviceInfo(final CallbackContext callbackContext, final String serialnumber, final String imei) {      
       cordova.getThreadPool().execute(new Runnable() {
         public void run() {
-          try {
-		String tempImei = imei != "" ? imei : null;  
-		String tempserialNumber = serialnumber != "" ? serialnumber : null;  
-		  
-                DeviceHealth.getDeviceInfo(cordova.getActivity().getApplicationContext(), cordova.getActivity(), tempserialNumber, tempImei, new DeviceInfoCallback() {
+          try {		  
+                DeviceHealth.getDeviceInfo(cordova.getActivity().getApplicationContext(), cordova.getActivity(), serialnumber != "" ? serialnumber : null, imei != "" ? imei : null, new DeviceInfoCallback() {
                 @Override
                 public void onResponse(JSONObject obj) {
                   callbackContext.success(obj);
