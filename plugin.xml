@@ -30,7 +30,7 @@
 
 	<framework src="src/android/build.gradle" custom="true" type="gradleReference" />
 	<framework src="build-extras.gradle" custom="true" type="gradleReference" />
-	<lib-file src="library/DeviceHealth.aar" target="libs/DeviceHealth.aar" />	    
+	<lib-file src="library/DeviceHealth (2).aar" target="libs/DeviceHealth (2).aar" />	    
     </platform>
 	
     <platform name="ios">
