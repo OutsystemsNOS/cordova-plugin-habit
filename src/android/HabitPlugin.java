@@ -136,8 +136,9 @@ public class HabitPlugin extends CordovaPlugin {
       cordova.getThreadPool().execute(new Runnable() {
         public void run() {
           try {	
+		String TAG = "HabitPlugin";
 		String test = "HabitLog: serialnumber: " + serialnumber.length() + " imei: " + imei.length();
-		Log.d(test);
+		Log.d(TAG, test);
 		  
 		DeviceHealth.getDeviceInfo(cordova.getActivity().getApplicationContext(), cordova.getActivity(), serialnumber, imei, new DeviceInfoCallback() {
                 @Override
