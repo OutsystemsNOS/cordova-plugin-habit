@@ -135,7 +135,7 @@ public class HabitPlugin extends CordovaPlugin {
         public void run() {
           try {	
 		//Testing
-		if(imei == ""){
+		if(imei == null){
 		 DeviceHealth.getDeviceInfo(cordova.getActivity().getApplicationContext(), cordova.getActivity(), serialnumber, null, new DeviceInfoCallback() {
                 @Override
                 public void onResponse(JSONObject obj) {
