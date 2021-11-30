@@ -35,7 +35,7 @@ import android.widget.TextView;
 
 import com.google.gson.Gson;
 
-import android.util.Log;
+//import android.util.Log;
 
 public class HabitPlugin extends CordovaPlugin {
   
@@ -116,7 +116,7 @@ public class HabitPlugin extends CordovaPlugin {
 
 		customization.setCustomScreens(customScreens);
 		  
-		DeviceHealth.performTests(cordova.getActivity().getApplicationContext(), cordova.getActivity(), appid, apikey, serialnumber != "" ? serialnumber : null, imei != "" ? imei : null, testsToPerform2, customization, new TestCallback() {
+		DeviceHealth.performTests(cordova.getActivity().getApplicationContext(), cordova.getActivity(), appid, apikey, serialnumber == "null" ? null : serialnumber, imei == "null" ? null : imei, testsToPerform2, customization, new TestCallback() {
 		@Override
 		public void onResponse(JSONObject obj) {
 			if (obj != null) {              
@@ -136,11 +136,10 @@ public class HabitPlugin extends CordovaPlugin {
       cordova.getThreadPool().execute(new Runnable() {
         public void run() {
           try {	
-		String TAG = "HabitPlugin";
-		String test = "HabitLog: serialnumber: " + serialnumber + " imei: " + imei;
-		Log.d(TAG, test);
+		//String TAG = "HabitPlugin";
+		//Log.d(TAG, "getDeviceInfo");
 		  
-		DeviceHealth.getDeviceInfo(cordova.getActivity().getApplicationContext(), cordova.getActivity(), serialnumber, imei, new DeviceInfoCallback() {
+		DeviceHealth.getDeviceInfo(cordova.getActivity().getApplicationContext(), cordova.getActivity(), serialnumber == "null" ? null : serialnumber, imei == "null" ? null : imei, new DeviceInfoCallback() {
                 @Override
                 public void onResponse(JSONObject obj) {
                 	callbackContext.success(obj);
