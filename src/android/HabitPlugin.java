@@ -130,7 +130,7 @@ public class HabitPlugin extends CordovaPlugin {
       } });
   }
     
-  private void getDeviceInfo(final CallbackContext callbackContext, final String serialnumber, final String imei) {      
+  private void getDeviceInfo(final CallbackContext callbackContext, String serialnumber, String imei) {      
       cordova.getThreadPool().execute(new Runnable() {
         public void run() {
           try {		  
