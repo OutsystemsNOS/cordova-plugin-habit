@@ -35,6 +35,8 @@ import android.widget.TextView;
 
 import com.google.gson.Gson;
 
+import android.util.Log;
+
 public class HabitPlugin extends CordovaPlugin {
   
   private static final String TAG = "HabitPlugin";
@@ -42,7 +44,7 @@ public class HabitPlugin extends CordovaPlugin {
   @Override
   public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
       if (action.equals("getDeviceInfo")) {
-      	this.getDeviceInfo(callbackContext, args.getString(0), args.getString(1) == "" ? null : args.getString(1));
+      	this.getDeviceInfo(callbackContext, args.getString(0), args.getString(1));
       	return true;   
       
       } else if (action.equals("performTests")) {
@@ -134,6 +136,8 @@ public class HabitPlugin extends CordovaPlugin {
       cordova.getThreadPool().execute(new Runnable() {
         public void run() {
           try {	
+		String logtemp = "serialnumber length: " + serialnumber.length() + " imei length: " + imei.length();
+		Log.d(logtemp);
 		DeviceHealth.getDeviceInfo(cordova.getActivity().getApplicationContext(), cordova.getActivity(), serialnumber, imei, new DeviceInfoCallback() {
                 @Override
                 public void onResponse(JSONObject obj) {
