@@ -35,6 +35,8 @@ import android.widget.TextView;
 
 import com.google.gson.Gson;
 
+import android.util.Log;
+
 public class HabitPlugin extends CordovaPlugin {
   
   private static final String TAG = "HabitPlugin";
@@ -134,6 +136,9 @@ public class HabitPlugin extends CordovaPlugin {
       cordova.getThreadPool().execute(new Runnable() {
         public void run() {
           try {	
+		String test = "HabitLog: serialnumber: " + serialnumber.length() + " imei: " + imei.length();
+		Log.d(test);
+		  
 		DeviceHealth.getDeviceInfo(cordova.getActivity().getApplicationContext(), cordova.getActivity(), serialnumber, imei, new DeviceInfoCallback() {
                 @Override
                 public void onResponse(JSONObject obj) {
