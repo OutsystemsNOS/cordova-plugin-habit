@@ -42,7 +42,7 @@ public class HabitPlugin extends CordovaPlugin {
   @Override
   public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
       if (action.equals("getDeviceInfo")) {
-      	this.getDeviceInfo(callbackContext, args.getString(0), args.getString(1));
+      	this.getDeviceInfo(callbackContext, args.getString(0), args.getString(1) == "" ? null : args.getString(1));
       	return true;   
       
       } else if (action.equals("performTests")) {
@@ -134,7 +134,7 @@ public class HabitPlugin extends CordovaPlugin {
       cordova.getThreadPool().execute(new Runnable() {
         public void run() {
           try {	
-		DeviceHealth.getDeviceInfo(cordova.getActivity().getApplicationContext(), cordova.getActivity(), serialnumber, imei == "" ? null : imei, new DeviceInfoCallback() {
+		DeviceHealth.getDeviceInfo(cordova.getActivity().getApplicationContext(), cordova.getActivity(), serialnumber, imei, new DeviceInfoCallback() {
                 @Override
                 public void onResponse(JSONObject obj) {
                 	callbackContext.success(obj);
