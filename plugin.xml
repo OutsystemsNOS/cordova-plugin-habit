@@ -33,8 +33,10 @@
 	<lib-file src="library/DeviceHealth.aar" target="libs/DeviceHealth.aar" />	
 	    
         <config-file target="AndroidManifest.xml" parent="/*">
+		<uses-feature android:name="android.hardware.camera" android:required="false" />
 		<uses-permission android:name="android.permission.CAMERA" /> 
 		<uses-permission android:name="android.permission.RECORD_AUDIO" /> 
+		<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
         </config-file>
     </platform>
 	
