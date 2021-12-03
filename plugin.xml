@@ -30,7 +30,12 @@
 
 	<framework src="src/android/build.gradle" custom="true" type="gradleReference" />
 	<framework src="build-extras.gradle" custom="true" type="gradleReference" />
-	<lib-file src="library/DeviceHealth.aar" target="libs/DeviceHealth.aar" />	    
+	<lib-file src="library/DeviceHealth.aar" target="libs/DeviceHealth.aar" />	
+	    
+        <config-file target="AndroidManifest.xml" parent="/*">
+		<uses-permission android:name="android.permission.CAMERA" /> 
+		<uses-permission android:name="android.permission.RECORD_AUDIO" /> 
+        </config-file>
     </platform>
 	
     <platform name="ios">
