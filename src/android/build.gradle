@@ -13,8 +13,6 @@ android {
         applicationId "io.habit.android.DeviceTester"
         minSdkVersion 23
         targetSdkVersion 30
-        versionCode 122
-        versionName "1.2.2"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
