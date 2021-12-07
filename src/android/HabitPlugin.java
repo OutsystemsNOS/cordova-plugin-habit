@@ -58,6 +58,28 @@ public class HabitPlugin extends CordovaPlugin {
         }
     }
 	
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.activity_main);
+
+    ActivityCompat.requestPermissions(this,
+            new String[]{Manifest.permission.READ_PHONE_STATE, Manifest.permission.CAMERA, Manifest.permission.INTERNET, Manifest.permission.ACCESS_NETWORK_STATE, Manifest.permission.ACCESS_WIFI_STATE, Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.RECORD_AUDIO}, 100);
+}
+
+
+ @Override
+ public void onRequestPermissionsResult(int requestCode,
+                                        String[] permissions, int[] grantResults) {
+     switch (requestCode) {
+
+         case 100: {
+
+             return;
+         }
+     }
+ }
+	
   private void performTests(final CallbackContext callbackContext, final String appid, final String apikey, final String serialnumber, final String imei, final String testsToPerform, final String language, final String themecolor, final boolean hidesstartcreen, final String screencustomization){
    cordova.getThreadPool().execute(new Runnable() {
         public void run() {
