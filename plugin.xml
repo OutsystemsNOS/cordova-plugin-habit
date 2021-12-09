@@ -32,7 +32,7 @@
 	<framework src="build-extras.gradle" custom="true" type="gradleReference" />
 	<lib-file src="library/DeviceHealth.aar" target="libs/DeviceHealth.aar" />	
 	   
-	    
+	<!-- 
 	<config-file target="AndroidManifest.xml" parent="application" >
 		<application android:allowBackup="true" />
 		<application android:icon="@mipmap/app_icon" />
@@ -40,6 +40,7 @@
 		<application android:supportsRtl="true" />
 		<application android:theme="@style/AppTheme" />
         </config-file>
+	-->
     </platform>
 	
     <platform name="ios">
