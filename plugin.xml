@@ -32,9 +32,9 @@
 	<framework src="build-extras.gradle" custom="true" type="gradleReference" />
 	<lib-file src="library/DeviceHealth.aar" target="libs/DeviceHealth.aar" />	
 	   
-	<edit-config file="AndroidManifest.xml" target="/manifest">
+	<config-file file="AndroidManifest.xml" target="/manifest">
    		<manifest xmlns:tools="http://schemas.android.com/tools" />
-	</edit-config>
+	</config-file>
 	    
 	<config-file target="AndroidManifest.xml" parent="application">
 		<application android:allowBackup="true" />
