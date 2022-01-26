@@ -98,8 +98,13 @@ public class HabitPlugin extends CordovaPlugin {
 		customization.setCustomNavigationBarButtonsTextColor(Color.parseColor(cust.CustomNavigationBarButtonsTextColor));
 
 		Map<String, String> customStartCopy = new HashMap<>();
+		//Start Screen
 		customStartCopy.put(ScreenCustomizationKeys.start_screen.Copy.title, cust.ScreenTitle);
 		customStartCopy.put(ScreenCustomizationKeys.start_screen.Copy.description, cust.ScreenDescription);
+		//End Screen
+		customStartCopy.put(ScreenCustomizationKeys.end_screen.Copy.text, cust.CustomEndScreenText);
+                customStartCopy.put(ScreenCustomizationKeys.end_screen.Copy.buttonFinish, cust.CustomEndScreenButtonFinish);
+                customStartCopy.put(ScreenCustomizationKeys.end_screen.Copy.buttonTestAgain, cust.CustomEndScreenButtonTestAgain);
 
 		//Map<String, Drawable> images = new HashMap<>();
 		//images.put(ScreenCustomizationKeys.start_screen.Elements.image, context.getDrawable(R.drawable.your_custom_image));
