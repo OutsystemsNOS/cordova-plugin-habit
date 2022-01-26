@@ -41,7 +41,10 @@
         NSString* ProgressBarSelectedColor;
         NSString* CustomNavigationBarBackgroundColor;
         NSString* CustomNavigationBarTextColor;
-        NSString* CustomNavigationBarButtonsTextColor;
+        NSString* CustomNavigationBarButtonsTextColor;        
+        NSString* CustomEndScreenText;
+	NSString* CustomEndScreenButtonFinish;
+	NSString* CustomEndScreenButtonTestAgain;
         
         @try{
                 @try{
@@ -63,6 +66,9 @@
                 CustomNavigationBarBackgroundColor = [s objectForKey:@"CustomNavigationBarBackgroundColor"];
                 CustomNavigationBarTextColor = [s objectForKey:@"CustomNavigationBarTextColor"];
                 CustomNavigationBarButtonsTextColor = [s objectForKey:@"CustomNavigationBarButtonsTextColor"];
+                CustomEndScreenText = [s objectForKey:@"CustomEndScreenText"];
+                CustomEndScreenButtonFinish = [s objectForKey:@"CustomEndScreenButtonFinish"];
+                CustomEndScreenButtonTestAgain = [s objectForKey:@"CustomEndScreenButtonTestAgain"];
                         
                 }@catch (NSException* exception) {
                         CDVPluginResult* pluginResultErr3 = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:@"Error parsing json"];  
@@ -94,7 +100,7 @@
                 //NSDictionary * images = @{ScreenCustomizationKeysStartScreenElements.image: [UIImage imageNamed:@"customImage"]};
                 //screen.images = images;
 
-                NSDictionary * customStartCopy = @{ScreenCustomizationKeysStartScreenCopy.title : ScreenTitle, ScreenCustomizationKeysStartScreenCopy.text : ScreenDescription};
+                NSDictionary * customStartCopy = @{ScreenCustomizationKeysStartScreenCopy.title : ScreenTitle, ScreenCustomizationKeysStartScreenCopy.text : ScreenDescription, ScreenCustomizationKeysEndScreenCopy.text : CustomEndScreenText, ScreenCustomizationKeysEndScreenCopy.buttonFinish : CustomEndScreenButtonFinish, ScreenCustomizationKeysEndScreenCopy.buttonTestAgain : CustomEndScreenButtonTestAgain};
                 screen.copyStrings = customStartCopy;
 
                 customization.customScreens = [NSArray arrayWithObjects: screen, nil];
