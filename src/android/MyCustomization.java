@@ -16,4 +16,7 @@ public class MyCustomization {
 	String CustomNavigationBarBackgroundColor;
 	String CustomNavigationBarTextColor;
 	String CustomNavigationBarButtonsTextColor;
+	String CustomEndScreenText;
+	String CustomEndScreenButtonFinish;
+	String CustomEndScreenButtonTestAgain;
 }
