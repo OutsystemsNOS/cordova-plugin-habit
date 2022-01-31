@@ -121,8 +121,8 @@ public class HabitPlugin extends CordovaPlugin {
 		CustomizableScreen screen2 = new CustomizableScreen();
 		screen2.screenType = ScreenType.end_screen;
 		screen2.backgroundColor = Color.parseColor(cust.ScreenBackgroundColor);
-		screen2.textAccentColor = Color.parseColor(cust.ScreenTextAccentColor);
-		screen2.textColor = Color.parseColor(cust.ScreenTestColor);
+		//screen2.textAccentColor = Color.parseColor(cust.ScreenTextAccentColor);
+		//screen2.textColor = Color.parseColor(cust.ScreenTestColor);
 		screen2.copyStrings = customEndCopy;
 
 		CustomizableScreen[] customScreens = new CustomizableScreen[]{ screen, screen2 };
