@@ -102,9 +102,10 @@ public class HabitPlugin extends CordovaPlugin {
 		customStartCopy.put(ScreenCustomizationKeys.start_screen.Copy.title, cust.ScreenTitle);
 		customStartCopy.put(ScreenCustomizationKeys.start_screen.Copy.description, cust.ScreenDescription);
 		//End Screen
-		customStartCopy.put(ScreenCustomizationKeys.end_screen.Copy.text, cust.CustomEndScreenText);
-                customStartCopy.put(ScreenCustomizationKeys.end_screen.Copy.buttonFinish, cust.CustomEndScreenButtonFinish);
-                customStartCopy.put(ScreenCustomizationKeys.end_screen.Copy.buttonTestAgain, cust.CustomEndScreenButtonTestAgain);
+		Map<String, String> customEndCopy = new HashMap<>();
+		customEndCopy.put(ScreenCustomizationKeys.end_screen.Copy.text, cust.CustomEndScreenText);
+                customEndCopy.put(ScreenCustomizationKeys.end_screen.Copy.buttonFinish, cust.CustomEndScreenButtonFinish);
+                customEndCopy.put(ScreenCustomizationKeys.end_screen.Copy.buttonTestAgain, cust.CustomEndScreenButtonTestAgain);
 
 		//Map<String, Drawable> images = new HashMap<>();
 		//images.put(ScreenCustomizationKeys.start_screen.Elements.image, context.getDrawable(R.drawable.your_custom_image));
@@ -116,8 +117,15 @@ public class HabitPlugin extends CordovaPlugin {
 		screen.textColor = Color.parseColor(cust.ScreenTestColor);
 		//screen.images = images;
 		screen.copyStrings = customStartCopy;
+		  
+		CustomizableScreen screen2 = new CustomizableScreen();
+		screen2.screenType = ScreenType.end_screen;
+		screen2.backgroundColor = Color.parseColor(cust.ScreenBackgroundColor);
+		screen2.textAccentColor = Color.parseColor(cust.ScreenTextAccentColor);
+		screen2.textColor = Color.parseColor(cust.ScreenTestColor);
+		screen2.copyStrings = customEndCopy;
 
-		CustomizableScreen[] customScreens = new CustomizableScreen[]{ screen };
+		CustomizableScreen[] customScreens = new CustomizableScreen[]{ screen, screen2 };
 
 		customization.setCustomScreens(customScreens);
 		  
