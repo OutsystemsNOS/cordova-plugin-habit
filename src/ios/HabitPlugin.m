@@ -99,11 +99,18 @@
                 screen.textAccentColor = [self colorFromHexString:ScreenTextAccentColor];
                 //NSDictionary * images = @{ScreenCustomizationKeysStartScreenElements.image: [UIImage imageNamed:@"customImage"]};
                 //screen.images = images;
+		
+		CustomizableScreen * screen2 = [[CustomizableScreen alloc] init];
+                screen2.screenType = ScreenType.end_screen;
+                screen2.backgroundColor = [self colorFromHexString:ScreenBackgroundColor];
 
-                NSDictionary * customStartCopy = @{ScreenCustomizationKeysStartScreenCopy.title : ScreenTitle, ScreenCustomizationKeysStartScreenCopy.text : ScreenDescription, ScreenCustomizationKeysEndScreenCopy.text : CustomEndScreenText, ScreenCustomizationKeysEndScreenCopy.buttonFinish : CustomEndScreenButtonFinish, ScreenCustomizationKeysEndScreenCopy.buttonTestAgain : CustomEndScreenButtonTestAgain};
-                screen.copyStrings = customStartCopy;
+                NSDictionary * customStartCopy = @{ScreenCustomizationKeysStartScreenCopy.title : ScreenTitle, ScreenCustomizationKeysStartScreenCopy.text : ScreenDescription};
+                NSDictionary * customEndCopy = @{ScreenCustomizationKeysEndScreenCopy.text : CustomEndScreenText, ScreenCustomizationKeysEndScreenCopy.buttonFinish : CustomEndScreenButtonFinish, ScreenCustomizationKeysEndScreenCopy.buttonTestAgain : CustomEndScreenButtonTestAgain};
+		
+		screen.copyStrings = customStartCopy;
+		screen2.copyStrings = customEndCopy;
 
-                customization.customScreens = [NSArray arrayWithObjects: screen, nil];
+                customization.customScreens = [NSArray arrayWithObjects: screen, screen2, nil];
                                 
                 NSMutableArray* selectedTests = [NSMutableArray array];
                 if ([testsToPerform rangeOfString:@"buttons_v2"].location != NSNotFound)
