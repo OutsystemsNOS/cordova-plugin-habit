@@ -18,11 +18,7 @@
     	<clobbers target="Habit" />
     </js-module>
   
-    <platform name="android">	 	
-	<config-file target="../../config.xml" parent="/widget">
-            <custom-preference name="android-manifest/@xmlns:tools" value="http://schemas.android.com/tools" />
-        </config-file>
-	    
+    <platform name="android">	 		    
     	<source-file src="src/android/HabitPlugin.java" target-dir="src/com/cordova/plugin/HabitPlugin" />
 	<source-file src="src/android/MyCustomization.java" target-dir="src/com/cordova/plugin/HabitPlugin" />
 
