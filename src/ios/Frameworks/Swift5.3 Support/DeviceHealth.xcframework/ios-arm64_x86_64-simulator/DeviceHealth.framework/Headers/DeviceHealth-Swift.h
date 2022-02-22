@@ -243,6 +243,8 @@ SWIFT_CLASS("_TtC12DeviceHealth18CustomizableScreen")
 SWIFT_CLASS("_TtC12DeviceHealth13Customization")
 @interface Customization : NSObject
 @property (nonatomic, strong) UIColor * _Nonnull skipTestButtonColor;
+@property (nonatomic, copy) NSString * _Nonnull skipTestButtonText;
+@property (nonatomic, copy) NSString * _Nonnull nextButtonText;
 @property (nonatomic, strong) UIColor * _Nonnull customNavigationBarBackgroundColor;
 @property (nonatomic, strong) UIColor * _Nonnull customNavigationBarTextColor;
 @property (nonatomic, strong) UIColor * _Nonnull customNavigationBarButtonsTextColor;
@@ -826,6 +828,8 @@ SWIFT_CLASS("_TtC12DeviceHealth18CustomizableScreen")
 SWIFT_CLASS("_TtC12DeviceHealth13Customization")
 @interface Customization : NSObject
 @property (nonatomic, strong) UIColor * _Nonnull skipTestButtonColor;
+@property (nonatomic, copy) NSString * _Nonnull skipTestButtonText;
+@property (nonatomic, copy) NSString * _Nonnull nextButtonText;
 @property (nonatomic, strong) UIColor * _Nonnull customNavigationBarBackgroundColor;
 @property (nonatomic, strong) UIColor * _Nonnull customNavigationBarTextColor;
 @property (nonatomic, strong) UIColor * _Nonnull customNavigationBarButtonsTextColor;
