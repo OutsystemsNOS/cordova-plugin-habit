@@ -6,7 +6,7 @@
 	<dict>
 		<key>Assets.car</key>
 		<data>
-		7/JDHfijJRiKN8cxsuIMEUW1cIo=
+		OVLlCq/diywNPee/Yf3kpXtF/l4=
 		</data>
 		<key>Buttons_v1_ViewController.nib/objects-13.0+.nib</key>
 		<data>
@@ -50,7 +50,7 @@
 		</data>
 		<key>Headers/DeviceHealth-Swift.h</key>
 		<data>
-		WDiGu6aOlx8K/dpR6oIDyi9TDaM=
+		JqofF3zZkWJRK+CsRIau3ChB7yo=
 		</data>
 		<key>Headers/HealthLibrary.h</key>
 		<data>
@@ -66,7 +66,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		eu36nBu0VY1Ifp2y8kmT8Zr3kR0=
+		9RIpHeUUP2cPp4ezqo9MD5DB6Yk=
 		</data>
 		<key>Loudspeaker_v1_ViewController.nib/objects-13.0+.nib</key>
 		<data>
@@ -82,11 +82,11 @@
 		</data>
 		<key>Modules/DeviceHealth.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<data>
-		iZQSoyo8trdM0srf3QsdqYh13Lk=
+		zilxlEdUOt9GhvKv4MnqzuTDn90=
 		</data>
 		<key>Modules/DeviceHealth.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		IOlAQ87EDSytaRokwF+FRC/aqQY=
+		tl19XQxe6EflYDRrAmm/eKVshGs=
 		</data>
 		<key>Modules/DeviceHealth.swiftmodule/arm64.swiftdoc</key>
 		<data>
@@ -94,11 +94,11 @@
 		</data>
 		<key>Modules/DeviceHealth.swiftmodule/arm64.swiftinterface</key>
 		<data>
-		iZQSoyo8trdM0srf3QsdqYh13Lk=
+		zilxlEdUOt9GhvKv4MnqzuTDn90=
 		</data>
 		<key>Modules/DeviceHealth.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		IOlAQ87EDSytaRokwF+FRC/aqQY=
+		tl19XQxe6EflYDRrAmm/eKVshGs=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -167,7 +167,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			6CgJM+Abk0sxf1ZFBpGlQOSbw+Bc6YddTwfi4VIiTrY=
+			zbSxZcY4bPr+P3LHC+tJf/c79OR3XmyEvkrxK0XqwtI=
 			</data>
 		</dict>
 		<key>Buttons_v1_ViewController.nib/objects-13.0+.nib</key>
@@ -244,7 +244,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			uRONhVd7MLGXtus5LNahsPUWTgWaE8Msiyap0KvxXso=
+			PEAkYHndPPF8ZZD9s18axUQS6lgGwBx+gUJZzRS5/m0=
 			</data>
 		</dict>
 		<key>Headers/HealthLibrary.h</key>
@@ -293,14 +293,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			OrKA0hLT+kwA/sD30CWKXWlF2ixFn8SUSPFtwwYfdYI=
+			zioz9regjav7odsaUervAlyjLy0kkPfM1D2JF7E9bQ8=
 			</data>
 		</dict>
 		<key>Modules/DeviceHealth.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			ShkAjRBFI6FqwuEAS0RkwfJmRtBzUgtVtP2cscyeTlk=
+			vSL3eB6wGRJv2CZ89G7fiTsLjcSygS3XAtiARMdoYyw=
 			</data>
 		</dict>
 		<key>Modules/DeviceHealth.swiftmodule/arm64.swiftdoc</key>
@@ -314,14 +314,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			OrKA0hLT+kwA/sD30CWKXWlF2ixFn8SUSPFtwwYfdYI=
+			zioz9regjav7odsaUervAlyjLy0kkPfM1D2JF7E9bQ8=
 			</data>
 		</dict>
 		<key>Modules/DeviceHealth.swiftmodule/arm64.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			ShkAjRBFI6FqwuEAS0RkwfJmRtBzUgtVtP2cscyeTlk=
+			vSL3eB6wGRJv2CZ89G7fiTsLjcSygS3XAtiARMdoYyw=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

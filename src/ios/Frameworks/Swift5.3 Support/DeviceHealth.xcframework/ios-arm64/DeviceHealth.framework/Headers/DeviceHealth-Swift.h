@@ -567,7 +567,6 @@ typedef SWIFT_ENUM(NSInteger, SupportedLanguage, open) {
 
 
 
-
 @interface UINavigationController (SWIFT_EXTENSION(DeviceHealth))
 @property (nonatomic, readonly) UIInterfaceOrientationMask supportedInterfaceOrientations;
 @end

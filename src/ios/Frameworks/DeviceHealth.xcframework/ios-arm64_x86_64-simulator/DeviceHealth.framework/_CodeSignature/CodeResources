@@ -6,7 +6,7 @@
 	<dict>
 		<key>Assets.car</key>
 		<data>
-		p2OO1g/sBr26Bz/tK25zY+iXkGU=
+		4kRHDx8JskvxUditrEce02FrvSA=
 		</data>
 		<key>Buttons_v1_ViewController.nib/objects-13.0+.nib</key>
 		<data>
@@ -50,7 +50,7 @@
 		</data>
 		<key>Headers/DeviceHealth-Swift.h</key>
 		<data>
-		tI2Q/KkDODB4QEpCcTnYIv9WVho=
+		3LJLuhdd9oRw+hfS8aWguHXyneQ=
 		</data>
 		<key>Headers/HealthLibrary.h</key>
 		<data>
@@ -66,7 +66,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		AH8mS4daiTvOCcHyTj2AieL6OH0=
+		9tjbMvjzBMrnZ+eSTr22brGcTzs=
 		</data>
 		<key>Loudspeaker_v1_ViewController.nib/objects-13.0+.nib</key>
 		<data>
@@ -82,11 +82,11 @@
 		</data>
 		<key>Modules/DeviceHealth.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		Ch0GQ6U/pBB8/A7WDKDNN3qiunY=
+		fks6KX8A1l/IokFXJvrkpE8oUQg=
 		</data>
 		<key>Modules/DeviceHealth.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		frGkBDP+keuNY8L43ed1fuj47uk=
+		j0uj+zOn74Op1SPPwBKMdkBqouE=
 		</data>
 		<key>Modules/DeviceHealth.swiftmodule/arm64.swiftdoc</key>
 		<data>
@@ -94,11 +94,11 @@
 		</data>
 		<key>Modules/DeviceHealth.swiftmodule/arm64.swiftinterface</key>
 		<data>
-		Ch0GQ6U/pBB8/A7WDKDNN3qiunY=
+		fks6KX8A1l/IokFXJvrkpE8oUQg=
 		</data>
 		<key>Modules/DeviceHealth.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		frGkBDP+keuNY8L43ed1fuj47uk=
+		j0uj+zOn74Op1SPPwBKMdkBqouE=
 		</data>
 		<key>Modules/DeviceHealth.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -106,11 +106,11 @@
 		</data>
 		<key>Modules/DeviceHealth.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		hVd2JnBrwcYdfMiEfpOJUtu31Eo=
+		X7da+hK6byQd+4Kah/4RyHKaxAQ=
 		</data>
 		<key>Modules/DeviceHealth.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		4SclKc97fi+VTdsYL9dHKA7rrW0=
+		Nn9oXjuVVEj3y3aaK4pl64BM/GI=
 		</data>
 		<key>Modules/DeviceHealth.swiftmodule/x86_64.swiftdoc</key>
 		<data>
@@ -118,11 +118,11 @@
 		</data>
 		<key>Modules/DeviceHealth.swiftmodule/x86_64.swiftinterface</key>
 		<data>
-		hVd2JnBrwcYdfMiEfpOJUtu31Eo=
+		X7da+hK6byQd+4Kah/4RyHKaxAQ=
 		</data>
 		<key>Modules/DeviceHealth.swiftmodule/x86_64.swiftmodule</key>
 		<data>
-		4SclKc97fi+VTdsYL9dHKA7rrW0=
+		Nn9oXjuVVEj3y3aaK4pl64BM/GI=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -191,7 +191,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			5lZkXdOzSgDovcN0IcGstDUBCMzIv4ePw4M+6COQIHE=
+			lNT51sR2FzJ2Iyzut8UTF8cH/iyb0dlbJZbEQ9TICgU=
 			</data>
 		</dict>
 		<key>Buttons_v1_ViewController.nib/objects-13.0+.nib</key>
@@ -268,7 +268,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			pXyv03RucwyBDKcX4f1aw7Oth3foSzUhkUFMeTfqCJY=
+			59dkSirhiw9NFCaLxket9gQ539Mz9RYyW1iz/8/3/vM=
 			</data>
 		</dict>
 		<key>Headers/HealthLibrary.h</key>
@@ -317,14 +317,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			WN+qVn5/5YAk5FlNUCW0oaQ1639Jt0Tmm+voHN6TxbU=
+			Doz1x8KKcEAfOHy1sfc0sbdi3/e9WAZVFXhKfMNE5is=
 			</data>
 		</dict>
 		<key>Modules/DeviceHealth.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			MDnJCTe/MSBVmvA8+K7rEBDOOVy7shrikzFT3Bsob2c=
+			F3baQZmCs6s40FUOvkj/vFU99WuVCuvWQAiuz+VdKoM=
 			</data>
 		</dict>
 		<key>Modules/DeviceHealth.swiftmodule/arm64.swiftdoc</key>
@@ -338,14 +338,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			WN+qVn5/5YAk5FlNUCW0oaQ1639Jt0Tmm+voHN6TxbU=
+			Doz1x8KKcEAfOHy1sfc0sbdi3/e9WAZVFXhKfMNE5is=
 			</data>
 		</dict>
 		<key>Modules/DeviceHealth.swiftmodule/arm64.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			MDnJCTe/MSBVmvA8+K7rEBDOOVy7shrikzFT3Bsob2c=
+			F3baQZmCs6s40FUOvkj/vFU99WuVCuvWQAiuz+VdKoM=
 			</data>
 		</dict>
 		<key>Modules/DeviceHealth.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
@@ -359,14 +359,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			wYxL/ZqaL/A+wHRrs60sQHy0Z+whBIC6LMQeXjEaCbA=
+			jGe0gczxr1EHf9gfwQ/HNfdZFpatiuci/c4OlWXO2r4=
 			</data>
 		</dict>
 		<key>Modules/DeviceHealth.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			IfXHT2y60wI8XTaC5Km0mwsDglYozXtGch44BavXWXo=
+			/0SC1+caOhecMCcKPOj8GQncdewEYtWMCjo0MDtcZfs=
 			</data>
 		</dict>
 		<key>Modules/DeviceHealth.swiftmodule/x86_64.swiftdoc</key>
@@ -380,14 +380,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			wYxL/ZqaL/A+wHRrs60sQHy0Z+whBIC6LMQeXjEaCbA=
+			jGe0gczxr1EHf9gfwQ/HNfdZFpatiuci/c4OlWXO2r4=
 			</data>
 		</dict>
 		<key>Modules/DeviceHealth.swiftmodule/x86_64.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			IfXHT2y60wI8XTaC5Km0mwsDglYozXtGch44BavXWXo=
+			/0SC1+caOhecMCcKPOj8GQncdewEYtWMCjo0MDtcZfs=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
