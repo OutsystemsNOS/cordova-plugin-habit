@@ -11,7 +11,8 @@ android {
 
     defaultConfig {
         applicationId "io.habit.android.DeviceTester"
-        minSdkVersion 23
+        //minSdkVersion 23
+        minSdkVersion 26
         targetSdkVersion 30
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
